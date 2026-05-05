@@ -1,0 +1,14 @@
+{
+  "itemId" : "_DoMtgD_jEfGpjKblEgTuvw",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_bO1PEELtEfG7HqyOm3C_vw",
+    "parameterList" : [ {
+      "id" : "_MJa_EEMBEfG7HqyOm3C_vw",
+      "name" : "gatewayCallUrl"
+    }, {
+      "id" : "_Tvk4IEMBEfG7HqyOm3C_vw",
+      "name" : "gatewayCallBody"
+    } ]
+  } ]
+}
