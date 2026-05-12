@@ -1,0 +1,45 @@
+{
+  "itemId" : "_Dj-rME3hEfG1_a8QyPoyXQ",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_bO1PEELtEfG7HqyOm3C_vw",
+    "parameterList" : [ {
+      "id" : "_MJa_EEMBEfG7HqyOm3C_vw",
+      "name" : "gatewayCallUrl"
+    }, {
+      "id" : "_Tvk4IEMBEfG7HqyOm3C_vw",
+      "name" : "gatewayCallBody"
+    }, {
+      "id" : "_Ig18UEOlEfGBj7EpAX9f2Q",
+      "name" : "authCredentials"
+    } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_Xqs-8EPHEfGf-Y5EppSWeA",
+    "parameterList" : [ {
+      "id" : "_nnsTIESjEfGwUO8nDzfxDw",
+      "name" : "databaseType"
+    }, {
+      "id" : "_nnsTIUSjEfGwUO8nDzfxDw",
+      "name" : "databaseHost"
+    }, {
+      "id" : "_nnsTIkSjEfGwUO8nDzfxDw",
+      "name" : "databasePort"
+    }, {
+      "id" : "_nnsTI0SjEfGwUO8nDzfxDw",
+      "name" : "databaseSchema"
+    }, {
+      "id" : "_nnsTJESjEfGwUO8nDzfxDw",
+      "name" : "databaseUsername"
+    }, {
+      "id" : "_nnsTJUSjEfGwUO8nDzfxDw",
+      "name" : "databasePassword"
+    }, {
+      "id" : "_LVd9wEePEfGAEo5GTlyLcA",
+      "name" : "databaseTable"
+    }, {
+      "id" : "_LVd9wUePEfGAEo5GTlyLcA",
+      "name" : "databaseQuery"
+    } ]
+  } ]
+}
