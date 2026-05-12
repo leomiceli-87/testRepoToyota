@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Project xmi:id="_D8wdAUq_EfG_NLJwmHQGbg" label="TestProgetto" language="java" technicalLabel="TESTPROGETTO" author="_D8wdAkq_EfG_NLJwmHQGbg" productVersion="Qlik Talend Cloud Enterprise Edition-8.0.1.20250218_0945-patch" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/leomiceli-87/testRepoToyota.git&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DQ" itemsRelationVersion="1.3" bigData="false">
+    <migrationTask xmi:id="_EDWNMEq_EfG_NLJwmHQGbg" id="org.talend.repository.model.migration.CheckProductVersionMigrationTask" breaks="7.1.0" version="7.1.1"/>
+  </TalendProperties:Project>
+  <TalendProperties:User xmi:id="_D8wdAkq_EfG_NLJwmHQGbg" login="lo5dxlkvd3@trial.ba9f4zzzmwys2aq.us.qlikcloud.com" firstName="User Test Test" lastName="User Test Test" type="DQ"/>
+</xmi:XMI>

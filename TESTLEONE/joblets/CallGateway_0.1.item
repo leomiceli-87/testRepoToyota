@@ -91,7 +91,7 @@
     </node>
     <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="280" posY="160">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_2" show="false"/>
-      <elementParameter field="MEMO_JAVA" name="CODE" value="context.gatewayCallUrl = input_row.gatewayCallUrl;&#xD;&#xA;context.gatewayCallBody = input_row.gatewayCallBody;&#xA;context.authCredentials = input_row.authCredentials;&#xA;System.out.println(&quot;===== INVOKING GATEWAY =====&quot;);&#xA;System.out.println(&quot;URL => &quot; + input_row.gatewayCallUrl);&#xA;System.out.println(&quot;BODY => &quot; + input_row.gatewayCallBody);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+      <elementParameter field="MEMO_JAVA" name="CODE" value="context.gatewayCallUrl = input_row.gatewayCallUrl;&#xD;&#xA;context.gatewayCallBody = input_row.gatewayCallBody&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   .replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   .trim();&#xA;context.authCredentials = input_row.authCredentials;&#xA;System.out.println(&quot;===== INVOKING GATEWAY =====&quot;);&#xA;System.out.println(&quot;URL => &quot; + input_row.gatewayCallUrl);&#xA;System.out.println(&quot;BODY => &quot; + input_row.gatewayCallBody);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
       <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tJavaRow_2">

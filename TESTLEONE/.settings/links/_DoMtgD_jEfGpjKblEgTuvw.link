@@ -9,6 +9,9 @@
     }, {
       "id" : "_Tvk4IEMBEfG7HqyOm3C_vw",
       "name" : "gatewayCallBody"
+    }, {
+      "id" : "_Ig18UEOlEfGBj7EpAX9f2Q",
+      "name" : "authCredentials"
     } ]
   } ]
 }
