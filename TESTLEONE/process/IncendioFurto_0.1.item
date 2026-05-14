@@ -18,7 +18,7 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="160" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="100" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
@@ -175,7 +175,7 @@
       <column comment="" key="false" length="-1" name="authCredentials" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1040" posY="400">
+  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1040" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="CallGateway_1"/>
     <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
@@ -198,7 +198,7 @@
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="760" posY="400">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="760" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="String body = row2.Body.replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;).replaceAll(&quot;\\s+&quot;, &quot; &quot;).trim();                      &#xA;System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xA;System.out.println(body);&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -214,14 +214,14 @@
       <column comment="" key="false" length="-1" name="databaseQuery" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="560" posY="400">
+  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="560" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFlowToIterate_1" show="false"/>
     <elementParameter field="CHECK" name="DEFAULT_MAP" value="false"/>
     <elementParameter field="TABLE" name="MAP"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFlowToIterate_1"/>
   </node>
-  <node componentName="tDB2Row" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="400" posY="400">
+  <node componentName="tDB2Row" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="400" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBRow_1" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
@@ -235,7 +235,7 @@
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;LE&quot;.equals(String.valueOf(globalMap.get(&quot;row3.tipo&quot;)))&#xD;&#xA;?&#xD;&#xA;&quot;UPDATE LECES SET &quot; +&#xD;&#xA;&quot;STATO = 'P', &quot; +&#xD;&#xA;&quot;DATA_PERFEZIONAMENTO = '&quot; + globalMap.get(&quot;row3.data&quot;) + &quot;' &quot; +&#xD;&#xA;&quot;WHERE ID = &quot; + globalMap.get(&quot;row3.id&quot;)&#xD;&#xA;:&#xD;&#xA;&quot;CO&quot;.equals(String.valueOf(globalMap.get(&quot;row3.tipo&quot;)))&#xD;&#xA;?&#xD;&#xA;&quot;UPDATE PLPRAT SET &quot; +&#xD;&#xA;&quot;STATO = 'P', &quot; +&#xD;&#xA;&quot;DATA_PERFEZIONAMENTO = '&quot; + globalMap.get(&quot;row3.data&quot;) + &quot;' &quot; +&#xD;&#xA;&quot;WHERE ID = &quot; + globalMap.get(&quot;row3.id&quot;)&#xD;&#xA;:&#xD;&#xA;&quot;SELECT 1&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;LE&quot;.equals(String.valueOf(row3.tipo))&#xD;&#xA;?&#xD;&#xA;&quot;UPDATE LECES SET &quot; +&#xD;&#xA;&quot;STATO = 'P', &quot; +&#xD;&#xA;&quot;DATA_PERFEZIONAMENTO = '&quot; + row3.data + &quot;' &quot; +&#xD;&#xA;&quot;WHERE ID = &quot; + row3.id&#xD;&#xA;:&#xD;&#xA;&quot;CO&quot;.equals(String.valueOf(row3.tipo))&#xD;&#xA;?&#xD;&#xA;&quot;UPDATE PLPRAT SET &quot; +&#xD;&#xA;&quot;STATO = 'P', &quot; +&#xD;&#xA;&quot;DATA_PERFEZIONAMENTO = '&quot; + row3.data + &quot;' &quot; +&#xD;&#xA;&quot;WHERE ID = &quot; + row3.id&#xD;&#xA;:&#xD;&#xA;&quot;SELECT 1&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -256,7 +256,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="200" posY="400">
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="200" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_2" show="false"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -281,7 +281,7 @@
       <column comment="" key="false" length="-1" name="authCredentials" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="0" posY="400">
+  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="-40" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="CallGateway_2"/>
     <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
@@ -304,7 +304,7 @@
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="0" posY="560" sizeX="40" sizeY="41">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-40" posY="640" sizeX="40" sizeY="41">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_2" show="false"/>
     <elementParameter field="MEMO_JAVA" name="CODE" value="String body = row2.Body.replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;).replaceAll(&quot;\\s+&quot;, &quot; &quot;).trim();                      &#xA;System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xA;System.out.println(body);&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -319,6 +319,13 @@
       <column comment="" key="false" length="-1" name="databaseTable" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="databaseQuery" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="520" posY="560">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - DATABASE [DB2] => Connessione Non Effettuata / Esecuzione Query Fallita ! Controllare la raggiungibilita' dei sistemi o le configurazioni&quot;);"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_1"/>
   </node>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="LogToFile_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
@@ -349,6 +356,9 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBRow_1" offsetLabelX="0" offsetLabelY="0" source="tDBRow_1" target="tFixedFlowInput_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk4" show="false"/>
   </connection>
+  <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBRow_1" offsetLabelX="0" offsetLabelY="0" source="tDBRow_1" target="tJava_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError1" show="false"/>
+  </connection>
   <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tFixedFlowInput_2" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_2" target="CallGateway_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
@@ -357,23 +367,28 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
   </connection>
-  <note opaque="false" posX="200" posY="40" sizeHeight="41" sizeWidth="521" text="Il servizio viene eseguito manualmente 4-5 volte l’anno ">
+  <note opaque="true" posX="280" posY="560" sizeHeight="80" sizeWidth="120" text="TODO: verificare la query dinamica in base ai campi ritornati dalla chiamata REST">
+    <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
+    <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
+    <elementParameter field="CHECK" name="FONT_ITALIC" value="true"/>
+  </note>
+  <note opaque="false" posX="240" posY="40" sizeHeight="41" sizeWidth="321" text="Execute Manually: 4-5 times per year">
+    <elementParameter field="COLOR" name="NOTE_COLOR" value="166;193;152"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
   </note>
-  <note opaque="false" posX="1000" posY="80" sizeHeight="80" sizeWidth="121" text="TODO: impostare parametri chiamata REST [FUNN::23]">
+  <note opaque="true" posX="1000" posY="80" sizeHeight="80" sizeWidth="120" text="TODO: impostare parametri chiamata REST [FUNN::23]">
+    <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_ITALIC" value="true"/>
   </note>
-  <note opaque="false" posX="720" posY="480" sizeHeight="81" sizeWidth="281" text="TODO: nel tJavaRow analizzare la response e determinare il tipo di pratica.&#xD;&#xA;E' necessario analizzare il campo: pro_chpro (valorizzato con LE oppure CO)&#xD;&#xA;">
-    <elementParameter field="COLOR" name="NOTE_COLOR" value="47;47;47"/>
+  <note opaque="true" posX="720" posY="560" sizeHeight="80" sizeWidth="120" text="TODO: nel tJavaRow analizzare la response e determinare il tipo di pratica.&#xD;&#xA;E' necessario analizzare il campo: pro_chpro (valorizzato con LE oppure CO)&#xD;&#xA;">
+    <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_ITALIC" value="true"/>
   </note>
-  <note opaque="true" posX="360" posY="480" sizeHeight="80" sizeWidth="120" text="TODO: verificare la query dinamica in base ai campi ritornati dalla chiamata REST">
-    <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
-  </note>
-  <note opaque="false" posX="-160" posY="360" sizeHeight="80" sizeWidth="121" text="TODO: impostare parametri chiamata REST [FUNN::24]">
+  <note opaque="true" posX="40" posY="360" sizeHeight="80" sizeWidth="120" text="TODO: impostare parametri chiamata REST [FUNN::24]">
+    <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_ITALIC" value="true"/>
   </note>
@@ -400,6 +415,11 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_2" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
   </subjob>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
   <TalendProperties:Project xmi:id="_P3D78UiHEfGqmJjvSJWrUA" label="TestLeone" description="" language="java" technicalLabel="TESTLEONE" author="_P3D78kiHEfGqmJjvSJWrUA" productVersion="Qlik Talend Cloud Enterprise Edition-8.0.1.20250218_0945-patch" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/leomiceli-87/testRepoToyota.git&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DQ" itemsRelationVersion="1.3" bigData="false">
+    <componentsSettings xmi:id="_spUJYE6oEfGtS6w3sirHZw" name="DI|tHashInput" family="Technical"/>
+    <componentsSettings xmi:id="_s6pJ8E6oEfGtS6w3sirHZw" name="DI|tHashOutput" family="Technical"/>
     <migrationTask xmi:id="_P3v4cEiHEfGqmJjvSJWrUA" id="org.talend.repository.model.migration.CheckProductVersionMigrationTask" breaks="7.1.0" version="7.1.1"/>
   </TalendProperties:Project>
   <TalendProperties:User xmi:id="_P3D78kiHEfGqmJjvSJWrUA" login="l.miceli@trial.c23lt5wn14j7equ.us.qlikcloud.com" firstName="Leone M" lastName="Leone M" type="DQ"/>
