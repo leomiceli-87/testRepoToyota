@@ -109,8 +109,8 @@
       <elementParameter field="PASSWORD" name="TOKEN" value="enc:system.encryption.key.v1:fiKCPulecCPRlBHY3EdU6NvK+nerRjTU9KUse4SZ6i69TaW6vYE=" show="false"/>
       <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
       <elementParameter field="CLOSED_LIST" name="TEXT_SUBTYPE" value="plain"/>
-      <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
-      <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+      <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;UTF-8&quot;"/>
+      <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="UTF-8"/>
       <elementParameter field="CHECK" name="SET_LOCALHOST" value="false"/>
       <elementParameter field="TEXT" name="LOCALHOST" value="&quot;localhost&quot;" show="false"/>
       <elementParameter field="CHECK" name="USE_TWO_LINE_TOKEN" value="false" show="false"/>

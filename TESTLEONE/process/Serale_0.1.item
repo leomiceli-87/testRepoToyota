@@ -150,7 +150,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
       <elementValue elementRef="VALUE" value="&quot;https://jsonplaceholder.typicode.com/posts&quot;" id="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
-      <elementValue elementRef="VALUE" value="&quot;[ { \&quot;userId\&quot;: 1, \&quot;id\&quot;: 1, \&quot;title\&quot;: \&quot;TEST\&quot;, \&quot;body\&quot;: \&quot;TEST\&quot; }]&quot;" id="3"/>
+      <elementValue elementRef="VALUE" value="&quot;FFUN=7&quot;" id="3"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="authCredentials" id="4"/>
       <elementValue elementRef="VALUE" value="&quot;Basic dXNlcjpwYXNz&quot;" id="5"/>
     </elementParameter>
@@ -223,11 +223,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
   </connection>
-  <note opaque="true" posX="1040" posY="80" sizeHeight="80" sizeWidth="121" text="TODO: impostare parametri chiamata REST [FUNN::7]">
-    <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
-    <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
-    <elementParameter field="CHECK" name="FONT_ITALIC" value="true"/>
-  </note>
   <note opaque="true" posX="760" posY="440" sizeHeight="80" sizeWidth="120" text="TODO: nel tJavaRow estrapolare ID delle pratiche chiuse e scrivere sul LOG">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>

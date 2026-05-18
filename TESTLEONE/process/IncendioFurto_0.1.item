@@ -387,7 +387,7 @@
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_ITALIC" value="true"/>
   </note>
-  <note opaque="true" posX="40" posY="360" sizeHeight="80" sizeWidth="120" text="TODO: impostare parametri chiamata REST [FUNN::24]">
+  <note opaque="false" posX="40" posY="360" sizeHeight="80" sizeWidth="120" text="TODO: impostare parametri chiamata REST [FUNN::24]">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_ITALIC" value="true"/>

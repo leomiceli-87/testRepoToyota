@@ -208,6 +208,7 @@
     <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
     <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
     <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" value="30" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBRow_1"/>
     <metadata connector="REJECT" name="REJECT">
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -243,7 +244,7 @@
       <column comment="" key="false" length="-1" name="authCredentials" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out1">
         <mapperTableEntries name="gatewayCallUrl" type="id_String" nullable="true"/>
@@ -252,31 +253,6 @@
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row3" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE"/>
     </nodeData>
-  </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="440">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
-    <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
-    <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
-    <elementParameter field="TABLE" name="VALUES">
-      <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
-      <elementValue elementRef="VALUE" value="&quot;https://jsonplaceholder.typicode.com/posts&quot;" id="1"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
-      <elementValue elementRef="VALUE" value="&quot;[ { \&quot;userId\&quot;: 1, \&quot;id\&quot;: 1, \&quot;title\&quot;: \&quot;TEST\&quot;, \&quot;body\&quot;: \&quot;TEST\&quot; }]&quot;" id="3"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="authCredentials" id="4"/>
-      <elementValue elementRef="VALUE" value="&quot;Basic dXNlcjpwYXNz&quot;" id="5"/>
-    </elementParameter>
-    <elementParameter field="RADIO" name="USE_INTABLE" value="false"/>
-    <elementParameter field="TABLE" name="INTABLE" show="false"/>
-    <elementParameter field="RADIO" name="USE_INLINECONTENT" value="false"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;" show="false"/>
-    <elementParameter field="MEMO" name="INLINECONTENT" value="" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFixedFlowInput_1">
-      <column comment="" key="false" length="-1" name="gatewayCallUrl" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="gatewayCallBody" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="authCredentials" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
   </node>
   <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="600" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="CallGateway_1"/>
@@ -299,6 +275,31 @@
     <metadata connector="OUTPUT_1" name="OUTPUT_1">
       <column defaultValue="" key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="520">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
+    <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
+    <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
+    <elementParameter field="TABLE" name="VALUES">
+      <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
+      <elementValue elementRef="VALUE" value="&quot;https://jsonplaceholder.typicode.com/posts&quot;" id="1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
+      <elementValue elementRef="VALUE" value="&quot;[ { \&quot;userId\&quot;: 1, \&quot;id\&quot;: 1, \&quot;title\&quot;: \&quot;TEST\&quot;, \&quot;body\&quot;: \&quot;TEST\&quot; }]&quot;" id="3"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="authCredentials" id="4"/>
+      <elementValue elementRef="VALUE" value="&quot;Basic dXNlcjpwYXNz&quot;" id="5"/>
+    </elementParameter>
+    <elementParameter field="RADIO" name="USE_INTABLE" value="false"/>
+    <elementParameter field="TABLE" name="INTABLE" show="false"/>
+    <elementParameter field="RADIO" name="USE_INLINECONTENT" value="false"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;" show="false"/>
+    <elementParameter field="MEMO" name="INLINECONTENT" value="" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFixedFlowInput_1">
+      <column comment="" key="false" length="-1" name="gatewayCallUrl" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="gatewayCallBody" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="authCredentials" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="LogToFile_1">
