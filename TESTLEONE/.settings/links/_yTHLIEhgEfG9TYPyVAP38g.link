@@ -38,5 +38,27 @@
       "id" : "_LVd9wUePEfGAEo5GTlyLcA",
       "name" : "databaseQuery"
     } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_Kin7YE9tEfGCKoAZMm_BYg",
+    "parameterList" : [ {
+      "id" : "_DROU4E9uEfGCKoAZMm_BYg",
+      "name" : "emailSenderFrom"
+    }, {
+      "id" : "_DROU4U9uEfGCKoAZMm_BYg",
+      "name" : "emailSenderTo"
+    }, {
+      "id" : "_DROU4k9uEfGCKoAZMm_BYg",
+      "name" : "emailSenderSubject"
+    }, {
+      "id" : "_DROU409uEfGCKoAZMm_BYg",
+      "name" : "emailSenderMessage"
+    }, {
+      "id" : "_AVPvQFLMEfG8Pbfzyc37CA",
+      "name" : "emailServerHost"
+    }, {
+      "id" : "_AVPvQVLMEfG8Pbfzyc37CA",
+      "name" : "emailServerPort"
+    } ]
   } ]
 }

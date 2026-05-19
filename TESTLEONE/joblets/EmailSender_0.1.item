@@ -2,6 +2,8 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties" xmlns:model="http://www.talend.com/joblet.ecore">
   <model:JobletProcess defaultContext="Default" jobType="Standard">
     <context confirmationNeeded="false" hide="false" name="Default">
+      <contextParameter comment="" name="emailServerHost" prompt="emailServerHost?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_AVPvQFLMEfG8Pbfzyc37CA"/>
+      <contextParameter comment="" name="emailServerPort" prompt="emailServerPort?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_AVPvQVLMEfG8Pbfzyc37CA"/>
       <contextParameter comment="" name="emailSenderFrom" prompt="emailSenderFrom?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_DROU4E9uEfGCKoAZMm_BYg"/>
       <contextParameter comment="" name="emailSenderTo" prompt="emailSenderTo?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_DROU4U9uEfGCKoAZMm_BYg"/>
       <contextParameter comment="" name="emailSenderSubject" prompt="emailSenderSubject?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_DROU4k9uEfGCKoAZMm_BYg"/>
@@ -75,10 +77,14 @@
     </parameters>
     <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="200" posY="160">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
-      <elementParameter field="MEMO_JAVA" name="CODE" value="context.emailSenderFrom = input_row.emailSenderFrom;&#xD;&#xA;context.emailSenderTo = input_row.emailSenderTo;&#xD;&#xA;context.emailSenderSubject = input_row.emailSenderSubject;&#xD;&#xA;context.emailSenderMessage = input_row.emailSenderMessage;&#xD;&#xA;System.out.println(&quot;===== SENDING EMAIL=====&quot;);&#xA;System.out.println(&quot;FROM => &quot; + input_row.emailSenderFrom);&#xA;System.out.println(&quot;TO => &quot; + input_row.emailSenderTo);&#xA;System.out.println(&quot;SUBJECT => &quot; + input_row.emailSenderSubject);&#xA;System.out.println(&quot;MESSAGE => &quot; + input_row.emailSenderMessage);&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+      <elementParameter field="MEMO_JAVA" name="CODE" value="context.emailServerHost = input_row.emailServerHost;&#xA;context.emailServerPort = input_row.emailServerPort;&#xA;context.emailServerUsername = input_row.emailServerUsername;&#xA;context.emailServerPassword = input_row.emailServerPassword;&#xA;context.emailSenderFrom = input_row.emailSenderFrom;&#xA;context.emailSenderTo = input_row.emailSenderTo;&#xA;context.emailSenderSubject = input_row.emailSenderSubject;&#xA;context.emailSenderMessage = input_row.emailSenderMessage;&#xA;System.out.println(&quot;===== SENDING EMAIL=====&quot;);&#xA;System.out.println(&quot;FROM => &quot; + input_row.emailSenderFrom);&#xA;System.out.println(&quot;TO => &quot; + input_row.emailSenderTo);&#xA;System.out.println(&quot;SUBJECT => &quot; + input_row.emailSenderSubject);&#xA;System.out.println(&quot;MESSAGE => &quot; + input_row.emailSenderMessage);&#xA;System.out.println(&quot;===== END =====&quot;);&#xA;"/>
       <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tJavaRow_1">
+        <column comment="" key="false" length="-1" name="emailServerHost" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="emailServerPort" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="emailServerUsername" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="emailServerPassword" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
         <column comment="" key="false" length="-1" name="emailSenderFrom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
         <column comment="" key="false" length="-1" name="emailSenderTo" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
         <column comment="" key="false" length="-1" name="emailSenderSubject" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -98,14 +104,14 @@
       <elementParameter field="CHECK" name="CHECK_ATTACHMENT" value="true"/>
       <elementParameter field="TABLE" name="ATTACHMENTS"/>
       <elementParameter field="TABLE" name="HEADERS"/>
-      <elementParameter field="TEXT" name="SMTP_HOST" value="&quot;smtp.provider.com&quot;"/>
-      <elementParameter field="TEXT" name="SMTP_PORT" value="25"/>
+      <elementParameter field="TEXT" name="SMTP_HOST" value="context.emailServerHost"/>
+      <elementParameter field="TEXT" name="SMTP_PORT" value="context.emailServerPort"/>
       <elementParameter field="CHECK" name="SSL" value="false"/>
       <elementParameter field="CHECK" name="STARTTLS" value="false"/>
       <elementParameter field="CLOSED_LIST" name="IMPORTANCE" value="Normal"/>
       <elementParameter field="CLOSED_LIST" name="AUTH_MODE" value="BASIC"/>
-      <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;"/>
-      <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:ucxJ5MXYQ/LIAQf3RDStG4K64c9Xi1g1sSJ0/tcT4DcgT0LH/ls="/>
+      <elementParameter field="TEXT" name="AUTH_USERNAME" value="context.emailServerUsername"/>
+      <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:SjGxbaCc40PFZfS+rVmLfvi0VkvDuIoqViBFlWM/HEN4VDMsBpcRQNoNwhbqPXqKo6wy+o93ig=="/>
       <elementParameter field="PASSWORD" name="TOKEN" value="enc:system.encryption.key.v1:fiKCPulecCPRlBHY3EdU6NvK+nerRjTU9KUse4SZ6i69TaW6vYE=" show="false"/>
       <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
       <elementParameter field="CLOSED_LIST" name="TEXT_SUBTYPE" value="plain"/>
@@ -117,6 +123,10 @@
       <elementParameter field="TABLE" name="CONFIGS"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tSendMail_1">
+        <column comment="" key="false" length="-1" name="emailServerHost" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="emailServerPort" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="emailServerUsername" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="emailServerPassword" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
         <column comment="" key="false" length="-1" name="emailSenderFrom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
         <column comment="" key="false" length="-1" name="emailSenderTo" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
         <column comment="" key="false" length="-1" name="emailSenderSubject" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -144,6 +154,18 @@
         <elementValue elementRef="TRACE_COLUMN" value="emailSenderSubject" id="9"/>
         <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="10"/>
         <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="11"/>
+        <elementValue elementRef="TRACE_COLUMN" value="emailServerHost" id="12"/>
+        <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="13"/>
+        <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="14"/>
+        <elementValue elementRef="TRACE_COLUMN" value="emailServerPort" id="15"/>
+        <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="16"/>
+        <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="17"/>
+        <elementValue elementRef="TRACE_COLUMN" value="emailServerPassword" id="18"/>
+        <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="19"/>
+        <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="20"/>
+        <elementValue elementRef="TRACE_COLUMN" value="emailServerUsername" id="21"/>
+        <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="22"/>
+        <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="23"/>
       </elementParameter>
       <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="row3" show="false"/>
@@ -183,6 +205,10 @@
       <elementParameter field="CHECK" name="INFORMATION" value="false"/>
       <elementParameter field="MEMO" name="COMMENT" value=""/>
       <metadata connector="FLOW" name="INPUT_1">
+        <column comment="" key="false" length="-1" name="emailServerHost" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="emailServerPort" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="emailServerUsername" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="emailServerPassword" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
         <column comment="" key="false" length="-1" name="emailSenderFrom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
         <column comment="" key="false" length="-1" name="emailSenderTo" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
         <column comment="" key="false" length="-1" name="emailSenderSubject" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
