@@ -151,8 +151,8 @@
       <elementValue elementRef="VALUE" value="&quot;https://jsonplaceholder.typicode.com/posts&quot;" id="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
       <elementValue elementRef="VALUE" value="&quot;FFUN=7&quot;" id="3"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="authCredentials" id="4"/>
-      <elementValue elementRef="VALUE" value="&quot;Basic dXNlcjpwYXNz&quot;" id="5"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="userAgent" id="4"/>
+      <elementValue elementRef="VALUE" value="&quot;overall&quot;" id="5"/>
     </elementParameter>
     <elementParameter field="RADIO" name="USE_INTABLE" value="false"/>
     <elementParameter field="TABLE" name="INTABLE" show="false"/>
@@ -164,7 +164,7 @@
     <metadata connector="FLOW" name="tFixedFlowInput_1">
       <column comment="" key="false" length="-1" name="gatewayCallUrl" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="gatewayCallBody" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="authCredentials" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="userAgent" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="360">
@@ -183,10 +183,10 @@
     <metadata connector="FLOW" name="CallGateway_1">
       <column comment="" key="false" length="-1" name="gatewayCallUrl" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="gatewayCallBody" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="authCredentials" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="userAgent" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <metadata connector="OUTPUT_1" name="OUTPUT_1">
-      <column key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
