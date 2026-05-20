@@ -3,7 +3,7 @@
   <model:JobletProcess defaultContext="Default" jobType="Standard">
     <context confirmationNeeded="false" hide="false" name="Default">
       <contextParameter comment="" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
-      <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
+      <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
       <contextParameter comment="" name="userAgent" prompt="userAgent?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
     </context>
     <parameters>

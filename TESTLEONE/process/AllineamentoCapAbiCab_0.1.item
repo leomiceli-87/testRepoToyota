@@ -5,7 +5,7 @@
     <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:/Users/Marco Marangon/Downloads/Talend-Studio-20250226_1030-V8.0.1/logs&quot;" internalId="_4R_g4U6hEfGtS6w3sirHZw"/>
     <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:\\Users\\Marco Marangon\\Downloads\\Talend-Studio-20250226_1030-V8.0.1\\application2.properties&quot;" internalId="_4R_g4k6hEfGtS6w3sirHZw"/>
     <contextParameter comment="" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
-    <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
+    <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
     <contextParameter comment="" name="userAgent" prompt="userAgent?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
   </context>
   <parameters>

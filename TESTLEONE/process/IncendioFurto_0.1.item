@@ -5,7 +5,7 @@
     <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:/Users/Marco Marangon/Downloads/Talend-Studio-20250226_1030-V8.0.1/logs&quot;" internalId="_Vw-nIE3hEfG1_a8QyPoyXQ"/>
     <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:\\Users\\Marco Marangon\\Downloads\\Talend-Studio-20250226_1030-V8.0.1\\application2.properties&quot;" internalId="_YVwRAE3hEfG1_a8QyPoyXQ"/>
     <contextParameter comment="" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
-    <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
+    <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
     <contextParameter comment="" name="userAgent" prompt="userAgent?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
     <contextParameter comment="" name="databaseType" prompt="databaseType?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTIESjEfGwUO8nDzfxDw"/>
     <contextParameter comment="" name="databaseHost" prompt="databaseHost?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTIUSjEfGwUO8nDzfxDw"/>
@@ -15,7 +15,6 @@
     <contextParameter comment="" name="databasePassword" prompt="databasePassword?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTJUSjEfGwUO8nDzfxDw"/>
     <contextParameter comment="" name="databaseTable" prompt="databaseTable?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_LVd9wEePEfGAEo5GTlyLcA"/>
     <contextParameter comment="" name="databaseQuery" prompt="databaseQuery?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_LVd9wUePEfGAEo5GTlyLcA"/>
-    <contextParameter comment="" name="userAgent" prompt="userAgent?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
