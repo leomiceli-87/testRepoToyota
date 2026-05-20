@@ -111,7 +111,7 @@
       <elementParameter field="CLOSED_LIST" name="IMPORTANCE" value="Normal"/>
       <elementParameter field="CLOSED_LIST" name="AUTH_MODE" value="BASIC"/>
       <elementParameter field="TEXT" name="AUTH_USERNAME" value="context.emailServerUsername"/>
-      <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:SjGxbaCc40PFZfS+rVmLfvi0VkvDuIoqViBFlWM/HEN4VDMsBpcRQNoNwhbqPXqKo6wy+o93ig=="/>
+      <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="context.emailServerPassword"/>
       <elementParameter field="PASSWORD" name="TOKEN" value="enc:system.encryption.key.v1:fiKCPulecCPRlBHY3EdU6NvK+nerRjTU9KUse4SZ6i69TaW6vYE=" show="false"/>
       <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true"/>
       <elementParameter field="CLOSED_LIST" name="TEXT_SUBTYPE" value="plain"/>

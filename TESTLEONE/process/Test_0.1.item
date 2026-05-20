@@ -5,8 +5,8 @@
     <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:/Users/Marco Marangon/Downloads/Talend-Studio-20250226_1030-V8.0.1/logs&quot;" internalId="_hNpr8EOzEfGBj7EpAX9f2Q"/>
     <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:\\Users\\Marco Marangon\\Downloads\\Talend-Studio-20250226_1030-V8.0.1\\application2.properties&quot;" internalId="_-Kn10ELoEfG7HqyOm3C_vw"/>
     <contextParameter comment="" name="authCredentials" prompt="authCredentials?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;Basic dXNlcjpwYXNz&quot;" internalId="_B3YVAEOlEfGBj7EpAX9f2Q"/>
-    <contextParameter comment="" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
-    <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
+    <contextParameter comment="" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
+    <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
     <contextParameter comment="" name="databaseType" prompt="databaseType?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTIESjEfGwUO8nDzfxDw"/>
     <contextParameter comment="" name="databaseHost" prompt="databaseHost?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTIUSjEfGwUO8nDzfxDw"/>
     <contextParameter comment="" name="databasePort" prompt="databasePort?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTIkSjEfGwUO8nDzfxDw"/>
@@ -21,7 +21,7 @@
     <contextParameter comment="" name="emailSenderMessage" prompt="emailSenderMessage?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_DROU409uEfGCKoAZMm_BYg"/>
     <contextParameter comment="" name="emailServerHost" prompt="emailServerHost?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_AVPvQFLMEfG8Pbfzyc37CA"/>
     <contextParameter comment="" name="emailServerPort" prompt="emailServerPort?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_AVPvQVLMEfG8Pbfzyc37CA"/>
-    <contextParameter comment="" name="userAgent" prompt="userAgent?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
+    <contextParameter comment="" name="userAgent" prompt="userAgent?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
@@ -209,8 +209,8 @@
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="280">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xA;System.out.println(row2.Body);&#xA;System.out.println(&quot;===== END =====&quot;);&#xA;&#xA;&#xA;System.out.println(&quot;===== CONFIGURING DATABASE METADATA =====&quot;);&#xA;output_row.databaseType = &quot;postgresql&quot;;&#xA;output_row.databaseHost = &quot;localhost&quot;;&#xA;output_row.databaseSchema = &quot;postgres&quot;;&#xA;output_row.databasePort = &quot;5432&quot;;&#xA;output_row.databaseUsername = &quot;postgres&quot;;&#xA;output_row.databasePassword = &quot;root&quot;;&#xA;System.out.println(&quot;===== END =====&quot;);&#xA;&#xA;System.out.println(&quot;===== SETUP DATABASE PARAMETERS =====&quot;);&#xA;output_row.databaseTable = &quot;donut&quot;;&#xA;output_row.databaseQuery = &quot;SELECT * FROM public.donut&quot;;&#xA;System.out.println(&quot;===== END =====&quot;);&#xA;"/>
-    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xA;System.out.println(row2.Body);&#xA;System.out.println(&quot;===== END =====&quot;);&#xA;&#xA;&#xA;System.out.println(&quot;===== CONFIGURING DATABASE METADATA =====&quot;);&#xA;output_row.databaseType = &quot;postgresql&quot;;&#xA;output_row.databaseHost = &quot;localhost&quot;;&#xA;output_row.databaseSchema = &quot;postgres&quot;;&#xA;output_row.databasePort = &quot;5432&quot;;&#xA;output_row.databaseUsername = &quot;postgres&quot;;&#xA;output_row.databasePassword = &quot;root&quot;;&#xA;System.out.println(&quot;===== END =====&quot;);&#xA;&#xA;System.out.println(&quot;===== SETUP DATABASE PARAMETERS =====&quot;);&#xA;output_row.databaseTable = &quot;donut&quot;;&#xA;output_row.databaseQuery = &quot;SELECT * FROM public.donut&quot;;&#xA;System.out.println(&quot;===== END =====&quot;);&#xA;"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_1">
       <column comment="" key="false" length="-1" name="databaseType" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -257,13 +257,13 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaFlex_1" show="false"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="DATA_AUTO_PROPAGATE" value="true"/>
-    <elementParameter field="MEMO_JAVA" name="CODE_START" value="java.util.ArrayList&lt;java.util.HashMap&lt;String, Object>> results = new java.util.ArrayList&lt;java.util.HashMap&lt;String, Object>>();"/>
-    <elementParameter field="MEMO_JAVA" name="CODE_MAIN" value="java.util.HashMap&lt;String, Object> map = new java.util.HashMap&lt;String, Object>();&#xA;map.put(&quot;Riga&quot;, row5.row_num);&#xA;map.put(&quot;Colonna&quot;, row5.column_name);&#xA;map.put(&quot;Valore&quot;, row5.column_value);&#xA;results.add(map);&#xA;"/>
-    <elementParameter field="MEMO_JAVA" name="CODE_END" value="System.out.println(&quot;===== RESPONSE DATABASE =====&quot;);&#xA;System.out.println(results.toString());&#xA;System.out.println(&quot;===== END =====&quot;);&#xA;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_START" value="java.util.ArrayList&lt;java.util.HashMap&lt;String, Object>> results = new java.util.ArrayList&lt;java.util.HashMap&lt;String, Object>>();"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_MAIN" value="java.util.HashMap&lt;String, Object> map = new java.util.HashMap&lt;String, Object>();&#xA;map.put(&quot;Riga&quot;, row5.row_num);&#xA;map.put(&quot;Colonna&quot;, row5.column_name);&#xA;map.put(&quot;Valore&quot;, row5.column_value);&#xA;results.add(map);&#xA;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_END" value="System.out.println(&quot;===== RESPONSE DATABASE =====&quot;);&#xA;System.out.println(results.toString());&#xA;System.out.println(&quot;===== END =====&quot;);&#xA;"/>
     <elementParameter field="CHECK" name="Version_V2_0" value="false" show="false"/>
     <elementParameter field="CHECK" name="Version_V3_2" value="false" show="false"/>
     <elementParameter field="CHECK" name="Version_V4.0" value="true" show="false"/>
-    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaFlex_1"/>
   </node>

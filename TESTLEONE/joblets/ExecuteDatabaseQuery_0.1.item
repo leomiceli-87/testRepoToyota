@@ -104,7 +104,7 @@
       <elementParameter field="TEXT" name="DBNAME" value="context.databaseSchema"/>
       <elementParameter field="TEXT" name="SCHEMA_DB" value="context.databaseSchema"/>
       <elementParameter field="TEXT" name="USER" value="context.databaseUsername"/>
-      <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:7aLovFHWHtcH48YzLp9tnkVAuk7HFnbEgYn87hE4s+//PNvBF24/ke2melqxyc8O/v303w=="/>
+      <elementParameter field="PASSWORD" name="PASS" value="context.databasePassword"/>
       <elementParameter field="DBTABLE" name="TABLE" value="context.databaseTable"/>
       <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
       <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -167,7 +167,7 @@
       <elementParameter field="TEXT" name="DBNAME" value="context.databaseSchema"/>
       <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
       <elementParameter field="TEXT" name="USER" value="context.databaseUsername"/>
-      <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:4zrK9vJCC7ic1CuvDUEemQzwp3/HrQ3MReICVhr+kMAuJOnvhfcvfaXTjI6CgBR7s0A2Rw=="/>
+      <elementParameter field="PASSWORD" name="PASS" value="context.databasePassword"/>
       <elementParameter field="DBTABLE" name="TABLE" value="context.databaseTable"/>
       <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
       <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -218,7 +218,7 @@
       <elementParameter field="TEXT" name="DBNAME" value="context.databaseSchema"/>
       <elementParameter field="TEXT" name="SCHEMA_DB" value="context.databaseSchema"/>
       <elementParameter field="TEXT" name="USER" value="context.databaseUsername"/>
-      <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:VJwfUSJKQUlCsKdTrSYPYkLEsjkPIcOD6VEzw9nPLQceOewl7HaF1ypHyZjDYRpxcIqpvQ=="/>
+      <elementParameter field="PASSWORD" name="PASS" value="context.databasePassword"/>
       <elementParameter field="DBTABLE" name="TABLE" value="context.databaseTable"/>
       <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
       <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -270,7 +270,7 @@
       <elementParameter field="TEXT" name="DB_SCHEMA" value="context.databaseSchema"/>
       <elementParameter field="TEXT" name="DBNAME" value="context.databaseSchema"/>
       <elementParameter field="TEXT" name="USER" value="context.databaseUsername"/>
-      <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:T0KYg6wnkw2TSbynd3jVCteQxB9HRTgnT/WM/1i0WhRM0n9yOg2ABEpL7K6PMEluUzm+8w=="/>
+      <elementParameter field="PASSWORD" name="PASS" value="context.databasePassword"/>
       <elementParameter field="DBTABLE" name="TABLE" value="context.databaseTable"/>
       <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
       <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>

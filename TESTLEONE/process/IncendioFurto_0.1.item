@@ -4,9 +4,9 @@
     <contextParameter comment="" name="jobName" prompt="jobName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;IncendioFurto&quot;" internalId="_SuYY0E3hEfG1_a8QyPoyXQ"/>
     <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:/Users/Marco Marangon/Downloads/Talend-Studio-20250226_1030-V8.0.1/logs&quot;" internalId="_Vw-nIE3hEfG1_a8QyPoyXQ"/>
     <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:\\Users\\Marco Marangon\\Downloads\\Talend-Studio-20250226_1030-V8.0.1\\application2.properties&quot;" internalId="_YVwRAE3hEfG1_a8QyPoyXQ"/>
-    <contextParameter comment="" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
-    <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
-    <contextParameter comment="" name="userAgent" prompt="userAgent?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
+    <contextParameter comment="" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
+    <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
+    <contextParameter comment="" name="userAgent" prompt="userAgent?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
     <contextParameter comment="" name="databaseType" prompt="databaseType?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTIESjEfGwUO8nDzfxDw"/>
     <contextParameter comment="" name="databaseHost" prompt="databaseHost?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTIUSjEfGwUO8nDzfxDw"/>
     <contextParameter comment="" name="databasePort" prompt="databasePort?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTIkSjEfGwUO8nDzfxDw"/>
@@ -200,8 +200,8 @@
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="760" posY="480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="String body = row2.Body.replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;).replaceAll(&quot;\\s+&quot;, &quot; &quot;).trim();                      &#xA;System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xA;System.out.println(body);&#xA;System.out.println(&quot;===== END =====&quot;);"/>
-    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String body = row2.Body.replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;).replaceAll(&quot;\\s+&quot;, &quot; &quot;).trim();                      &#xA;System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xA;System.out.println(body);&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_1">
       <column comment="" key="false" length="-1" name="databaseType" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -306,8 +306,8 @@
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-40" posY="640" sizeX="40" sizeY="41">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_2" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="String body = row2.Body.replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;).replaceAll(&quot;\\s+&quot;, &quot; &quot;).trim();                      &#xA;System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xA;System.out.println(body);&#xA;System.out.println(&quot;===== END =====&quot;);"/>
-    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String body = row2.Body.replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;).replaceAll(&quot;\\s+&quot;, &quot; &quot;).trim();                      &#xA;System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xA;System.out.println(body);&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_2">
       <column comment="" key="false" length="-1" name="databaseType" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -322,8 +322,8 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="520" posY="560">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - DATABASE [DB2] => Connessione Non Effettuata / Esecuzione Query Fallita ! Controllare la raggiungibilita' dei sistemi o le configurazioni&quot;);"/>
-    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - DATABASE [DB2] => Connessione Non Effettuata / Esecuzione Query Fallita ! Controllare la raggiungibilita' dei sistemi o le configurazioni&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_1"/>
   </node>
