@@ -6,7 +6,7 @@
       <contextParameter comment="" name="ftpPort" prompt="ftpPort?" promptNeeded="true" repositoryContextId="built-in" type="id_Integer" value="" internalId="_dKdq0VWwEfGR_sec_3d0vw"/>
       <contextParameter comment="" name="ftpUsername" prompt="ftpUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_dKdq0lWwEfGR_sec_3d0vw"/>
       <contextParameter comment="" name="ftpPassword" prompt="ftpPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_dKdq01WwEfGR_sec_3d0vw"/>
-      <contextParameter comment="" name="ftpRemoteDirectory" prompt="ftpRemoteDirectory?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_dKdq1FWwEfGR_sec_3d0vw"/>
+      <contextParameter comment="" name="ftpDownloadRemoteDirectory" prompt="ftpDownloadRemoteDirectory?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_dKdq1FWwEfGR_sec_3d0vw"/>
       <contextParameter comment="" name="ftpLocalDirectory" prompt="ftpLocalDirectory?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_dKdq1VWwEfGR_sec_3d0vw"/>
     </context>
     <parameters>
@@ -110,7 +110,7 @@
       <elementParameter field="TABLE" name="CLIENT_PARAMETERS" show="false"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     </node>
-    <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="319" posY="323">
+    <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="199" posY="363">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
       <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - FTP SERVER => Acquisizione dei file XML dal Server SFTP + [&quot; + context.ftpHost + &quot;] non riuscita. Controllare la raggiungibilita' dei sistemi o le configurazioni&quot;);"/>
       <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -119,24 +119,17 @@
     </node>
     <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-201" posY="160">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
-      <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== INVOKING FTP =====&quot;);&#xD;&#xA;System.out.println(&quot;HOST => &quot; + context.ftpHost);&#xD;&#xA;System.out.println(&quot;FROM-DIRECTORY => &quot; + context.ftpRemoteDirectory);&#xD;&#xA;System.out.println(&quot;TO-DIRECTORY => &quot; + context.ftpLocalDirectory);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+      <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== INVOKING FTP =====&quot;);&#xD;&#xA;System.out.println(&quot;HOST => &quot; + context.ftpHost);&#xD;&#xA;System.out.println(&quot;FROM-DIRECTORY => &quot; + context.ftpDownloadRemoteDirectory);&#xD;&#xA;System.out.println(&quot;TO-DIRECTORY => &quot; + context.ftpLocalDirectory);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
       <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tJava_2"/>
     </node>
-    <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="920" posY="160">
-      <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_3" show="false"/>
-      <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== LISTING FTP FILES =====&quot;);&#xD;&#xA;java.io.File dir = new java.io.File(context.ftpLocalDirectory);&#xD;&#xA;if(dir != null &amp;&amp; dir.list() != null) {&#xD;&#xA;&#x9;for (String fname : dir.list()) {&#xD;&#xA;&#x9;    System.out.println(fname);&#xD;&#xA;&#x9;}&#xD;&#xA;} else {&#xD;&#xA;&#x9;System.out.println(&quot;No file found...&quot;);&#xD;&#xA;}&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);&#xD;&#xA;"/>
-      <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
-      <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-      <metadata connector="FLOW" name="tJava_3"/>
-    </node>
-    <node componentName="tFTPClose" componentVersion="2.0" offsetLabelX="0" offsetLabelY="0" posX="680" posY="160">
+    <node componentName="tFTPClose" componentVersion="2.0" offsetLabelX="0" offsetLabelY="0" posX="560" posY="160">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFTPClose_1" show="false"/>
       <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tFTPConnection_1"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     </node>
-    <node componentName="tFTPGet" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="440" posY="160">
+    <node componentName="tFTPGet" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="160">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFTPGet_1" show="false"/>
       <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
       <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tFTPConnection_1"/>
@@ -155,7 +148,7 @@
       <elementParameter field="FILE" name="KEYSTORE_FILE" value="&quot;&quot;" show="false"/>
       <elementParameter field="PASSWORD" name="KEYSTORE_PASS" value="enc:system.encryption.key.v1:KZH8CvQourumkDA6sfLWgchrfdw+UYQqTcmzXF3zj/OWDgy/" show="false"/>
       <elementParameter field="DIRECTORY" name="LOCALDIR" value="context.ftpLocalDirectory"/>
-      <elementParameter field="TEXT" name="REMOTEDIR" value="context.ftpRemoteDirectory"/>
+      <elementParameter field="TEXT" name="REMOTEDIR" value="context.ftpDownloadRemoteDirectory"/>
       <elementParameter field="CHECK" name="MOVE_TO_THE_CURRENT_DIRECTORY" value="true" show="false"/>
       <elementParameter field="CLOSED_LIST" name="MODE" value="ascii" show="false"/>
       <elementParameter field="CLOSED_LIST" name="OVERWRITE" value="always" show="false"/>
@@ -177,7 +170,7 @@
       <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
       <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:xbItw5oLTrZxHZGgQl0YTDl/D5tWMwHCofOhHW7K" show="false"/>
       <elementParameter field="CHECK" name="IGNORE_FAILURE_AT_QUIT" value="false" show="false"/>
-      <elementParameter field="CHECK" name="PRINT_MESSAGE" value="false"/>
+      <elementParameter field="CHECK" name="PRINT_MESSAGE" value="true"/>
       <elementParameter field="OPENED_LIST" name="FTPS_PROT" value="&quot;P&quot;" show="false"/>
       <elementParameter field="TEXT" name="FTPS_PROTECTION_BUFF_SIZE" value="0" show="false"/>
       <elementParameter field="CHECK" name="REMOTE_VERIFICATION" value="true" show="false"/>
@@ -200,11 +193,8 @@
     <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_2" offsetLabelX="-9" offsetLabelY="1" source="tJava_2" target="tFTPConnection_1">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk3" show="false"/>
     </connection>
-    <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_3" offsetLabelX="-18" offsetLabelY="2" source="tJava_3" target="TRIGGER_OUTPUT_1">
+    <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tFTPClose_1" offsetLabelX="-22" offsetLabelY="2" source="tFTPClose_1" target="TRIGGER_OUTPUT_1">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk5" show="false"/>
-    </connection>
-    <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFTPClose_1" offsetLabelX="0" offsetLabelY="0" source="tFTPClose_1" target="tJava_3">
-      <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" show="false"/>
     </connection>
     <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tFTPGet_1" offsetLabelX="0" offsetLabelY="0" source="tFTPGet_1" target="tJava_1">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError3" show="false"/>
@@ -238,11 +228,6 @@
       <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
     </subjob>
     <subjob>
-      <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_3" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
-    </subjob>
-    <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFTPClose_1" show="false"/>
       <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
       <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
@@ -252,7 +237,7 @@
       <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
       <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
     </subjob>
-    <jobletNodes componentName="TRIGGER_OUTPUT" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1200" posY="160" trigger="true">
+    <jobletNodes componentName="TRIGGER_OUTPUT" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="840" posY="160" trigger="true">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="TRIGGER_OUTPUT_1"/>
       <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
       <elementParameter field="CHECK" name="START" value="false" show="false"/>

@@ -17,10 +17,17 @@
       "name" : "ftpPassword"
     }, {
       "id" : "_dKdq1FWwEfGR_sec_3d0vw",
-      "name" : "ftpRemoteDirectory"
+      "name" : "ftpDownloadRemoteDirectory"
     }, {
       "id" : "_dKdq1VWwEfGR_sec_3d0vw",
       "name" : "ftpLocalDirectory"
+    } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_OcNs4FXgEfGyau0Siu7XRg",
+    "parameterList" : [ {
+      "id" : "_2XWhgFXmEfGyau0Siu7XRg",
+      "name" : "ftpUploadRemoteDirectory"
     } ]
   } ]
 }
