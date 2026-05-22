@@ -1,0 +1,26 @@
+{
+  "itemId" : "_q_7pQFUVEfGDrJEx5oRz0Q",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_utG3oFWvEfGR_sec_3d0vw",
+    "parameterList" : [ {
+      "id" : "_dKdq0FWwEfGR_sec_3d0vw",
+      "name" : "ftpHost"
+    }, {
+      "id" : "_dKdq0VWwEfGR_sec_3d0vw",
+      "name" : "ftpPort"
+    }, {
+      "id" : "_dKdq0lWwEfGR_sec_3d0vw",
+      "name" : "ftpUsername"
+    }, {
+      "id" : "_dKdq01WwEfGR_sec_3d0vw",
+      "name" : "ftpPassword"
+    }, {
+      "id" : "_dKdq1FWwEfGR_sec_3d0vw",
+      "name" : "ftpRemoteDirectory"
+    }, {
+      "id" : "_dKdq1VWwEfGR_sec_3d0vw",
+      "name" : "ftpLocalDirectory"
+    } ]
+  } ]
+}
