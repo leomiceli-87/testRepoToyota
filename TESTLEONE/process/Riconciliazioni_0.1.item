@@ -2,8 +2,8 @@
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendXMLMap="http://www.talend.org/xmlmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" hide="false" name="Default">
     <contextParameter comment="" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;Riconciliazioni&quot;" internalId="_-OcskFUVEfGDrJEx5oRz0Q"/>
-    <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;C:\Talend\Jobs\Riconciliazioni\logs&quot;" internalId="_-OcskVUVEfGDrJEx5oRz0Q"/>
-    <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;C:\Talend\Jobs\Riconciliazioni\Config.ini&quot;" internalId="_CK-MgFUWEfGDrJEx5oRz0Q"/>
+    <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;C:/Talend/Jobs/Riconciliazioni/logs&quot;" internalId="_-OcskVUVEfGDrJEx5oRz0Q"/>
+    <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;C:/Talend/Jobs/Riconciliazioni/Config.ini&quot;" internalId="_CK-MgFUWEfGDrJEx5oRz0Q"/>
     <contextParameter comment="" name="ftpHost" prompt="ftpHost?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_String" value="" internalId="_dKdq0FWwEfGR_sec_3d0vw"/>
     <contextParameter comment="" name="ftpPort" prompt="ftpPort?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_Integer" value="" internalId="_dKdq0VWwEfGR_sec_3d0vw"/>
     <contextParameter comment="" name="ftpUsername" prompt="ftpUsername?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_String" value="" internalId="_dKdq0lWwEfGR_sec_3d0vw"/>
@@ -17,19 +17,18 @@
     <contextParameter comment="" name="databaseMSqlServerDatabase" prompt="databaseMSqlServerDatabase?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_W_Pj41gPEfGTROAWDDO9Dw"/>
     <contextParameter comment="" name="databaseMSqlServerUsername" prompt="databaseMSqlServerUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_W_Pj5FgPEfGTROAWDDO9Dw"/>
     <contextParameter comment="" name="databaseMSqlServerPassword" prompt="databaseMSqlServerPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_W_Pj5VgPEfGTROAWDDO9Dw"/>
-    <contextParameter comment="" name="databaseMSqlServerTable" prompt="databaseMSqlServerTable?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_W_Pj5lgPEfGTROAWDDO9Dw"/>
     <contextParameter comment="" name="databaseOcsHost" prompt="databaseOcsHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_yAewQFhJEfG7F-yxBSgQog"/>
     <contextParameter comment="" name="databaseOcsDatabase" prompt="databaseOcsDatabase?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_yAewQVhJEfG7F-yxBSgQog"/>
     <contextParameter comment="" name="databaseOcsUsername" prompt="databaseOcsUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_yAewQlhJEfG7F-yxBSgQog"/>
     <contextParameter comment="" name="databaseOcsPassword" prompt="databaseOcsPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_yAewQ1hJEfG7F-yxBSgQog"/>
     <contextParameter comment="" name="emailServerHost" prompt="emailServerHost?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_AVPvQFLMEfG8Pbfzyc37CA"/>
     <contextParameter comment="" name="emailServerPort" prompt="emailServerPort?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_Integer" value="" internalId="_AVPvQVLMEfG8Pbfzyc37CA"/>
+    <contextParameter comment="" name="emailServerUsername" prompt="emailServerUsername?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_3PUNYFjdEfGSzsBYJrUhXQ"/>
+    <contextParameter comment="" name="emailServerPassword" prompt="emailServerPassword?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_3PUNYVjdEfGSzsBYJrUhXQ"/>
     <contextParameter comment="" name="emailSenderFrom" prompt="emailSenderFrom?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_DROU4E9uEfGCKoAZMm_BYg"/>
     <contextParameter comment="" name="emailSenderTo" prompt="emailSenderTo?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_DROU4U9uEfGCKoAZMm_BYg"/>
     <contextParameter comment="" name="emailSenderSubject" prompt="emailSenderSubject?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="&quot;Default Oggetto&quot;" internalId="_DROU4k9uEfGCKoAZMm_BYg"/>
     <contextParameter comment="" name="emailSenderMessage" prompt="emailSenderMessage?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="&quot;Default Messaggio&quot;" internalId="_DROU409uEfGCKoAZMm_BYg"/>
-    <contextParameter comment="" name="emailServerUsername" prompt="emailServerUsername?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_3PUNYFjdEfGSzsBYJrUhXQ"/>
-    <contextParameter comment="" name="emailServerPassword" prompt="emailServerPassword?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_3PUNYVjdEfGSzsBYJrUhXQ"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>

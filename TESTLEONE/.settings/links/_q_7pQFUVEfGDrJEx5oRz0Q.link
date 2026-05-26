@@ -39,6 +39,12 @@
       "id" : "_AVPvQVLMEfG8Pbfzyc37CA",
       "name" : "emailServerPort"
     }, {
+      "id" : "_3PUNYFjdEfGSzsBYJrUhXQ",
+      "name" : "emailServerUsername"
+    }, {
+      "id" : "_3PUNYVjdEfGSzsBYJrUhXQ",
+      "name" : "emailServerPassword"
+    }, {
       "id" : "_DROU4E9uEfGCKoAZMm_BYg",
       "name" : "emailSenderFrom"
     }, {
@@ -50,12 +56,6 @@
     }, {
       "id" : "_DROU409uEfGCKoAZMm_BYg",
       "name" : "emailSenderMessage"
-    }, {
-      "id" : "_3PUNYFjdEfGSzsBYJrUhXQ",
-      "name" : "emailServerUsername"
-    }, {
-      "id" : "_3PUNYVjdEfGSzsBYJrUhXQ",
-      "name" : "emailServerPassword"
     } ]
   } ]
 }

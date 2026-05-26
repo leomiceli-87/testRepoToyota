@@ -2,8 +2,8 @@
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" hide="false" name="Default">
     <contextParameter comment="" name="jobName" prompt="jobName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;AllineamentoCapAbiCab&quot;" internalId="_4R_g4E6hEfGtS6w3sirHZw"/>
-    <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:/Users/Marco Marangon/Downloads/Talend-Studio-20250226_1030-V8.0.1/logs&quot;" internalId="_4R_g4U6hEfGtS6w3sirHZw"/>
-    <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:\\Users\\Marco Marangon\\Downloads\\Talend-Studio-20250226_1030-V8.0.1\\application2.properties&quot;" internalId="_4R_g4k6hEfGtS6w3sirHZw"/>
+    <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:/Talend/Jobs/AllineamentoCapAbiCab/logs&quot;" internalId="_4R_g4U6hEfGtS6w3sirHZw"/>
+    <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:/Talend/Jobs/AllineamentoCapAbiCab/Config.ini&quot;" internalId="_4R_g4k6hEfGtS6w3sirHZw"/>
     <contextParameter comment="" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
     <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
     <contextParameter comment="" name="userAgent" prompt="userAgent?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
@@ -344,39 +344,39 @@
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
   </note>
   <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="LoadConfigFileToContext_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBRow_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tHashInput_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
 </talendfile:ProcessType>
