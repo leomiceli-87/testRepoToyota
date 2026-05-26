@@ -2,12 +2,14 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties" xmlns:model="http://www.talend.com/joblet.ecore">
   <model:JobletProcess defaultContext="Default" jobType="Standard">
     <context confirmationNeeded="false" hide="false" name="Default">
-      <contextParameter comment="" name="emailServerHost" prompt="emailServerHost?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_AVPvQFLMEfG8Pbfzyc37CA"/>
-      <contextParameter comment="" name="emailServerPort" prompt="emailServerPort?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_AVPvQVLMEfG8Pbfzyc37CA"/>
-      <contextParameter comment="" name="emailSenderFrom" prompt="emailSenderFrom?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_DROU4E9uEfGCKoAZMm_BYg"/>
-      <contextParameter comment="" name="emailSenderTo" prompt="emailSenderTo?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_DROU4U9uEfGCKoAZMm_BYg"/>
-      <contextParameter comment="" name="emailSenderSubject" prompt="emailSenderSubject?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_DROU4k9uEfGCKoAZMm_BYg"/>
-      <contextParameter comment="" name="emailSenderMessage" prompt="emailSenderMessage?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="" internalId="_DROU409uEfGCKoAZMm_BYg"/>
+      <contextParameter comment="" name="emailServerHost" prompt="emailServerHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_AVPvQFLMEfG8Pbfzyc37CA"/>
+      <contextParameter comment="" name="emailServerPort" prompt="emailServerPort?" promptNeeded="true" repositoryContextId="built-in" type="id_Integer" value="" internalId="_AVPvQVLMEfG8Pbfzyc37CA"/>
+      <contextParameter comment="" name="emailServerUsername" prompt="emailServerUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_3PUNYFjdEfGSzsBYJrUhXQ"/>
+      <contextParameter comment="" name="emailServerPassword" prompt="emailServerPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_3PUNYVjdEfGSzsBYJrUhXQ"/>
+      <contextParameter comment="" name="emailSenderFrom" prompt="emailSenderFrom?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_DROU4E9uEfGCKoAZMm_BYg"/>
+      <contextParameter comment="" name="emailSenderTo" prompt="emailSenderTo?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_DROU4U9uEfGCKoAZMm_BYg"/>
+      <contextParameter comment="" name="emailSenderSubject" prompt="emailSenderSubject?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;Default Oggetto&quot;" internalId="_DROU4k9uEfGCKoAZMm_BYg"/>
+      <contextParameter comment="" name="emailSenderMessage" prompt="emailSenderMessage?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;Default Messaggio&quot;" internalId="_DROU409uEfGCKoAZMm_BYg"/>
     </context>
     <parameters>
       <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
@@ -77,8 +79,8 @@
     </parameters>
     <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="200" posY="160">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
-      <elementParameter field="MEMO_JAVA" name="CODE" value="context.emailServerHost = input_row.emailServerHost;&#xA;context.emailServerPort = input_row.emailServerPort;&#xA;context.emailServerUsername = input_row.emailServerUsername;&#xA;context.emailServerPassword = input_row.emailServerPassword;&#xA;context.emailSenderFrom = input_row.emailSenderFrom;&#xA;context.emailSenderTo = input_row.emailSenderTo;&#xA;context.emailSenderSubject = input_row.emailSenderSubject;&#xA;context.emailSenderMessage = input_row.emailSenderMessage;&#xA;System.out.println(&quot;===== SENDING EMAIL=====&quot;);&#xA;System.out.println(&quot;FROM => &quot; + input_row.emailSenderFrom);&#xA;System.out.println(&quot;TO => &quot; + input_row.emailSenderTo);&#xA;System.out.println(&quot;SUBJECT => &quot; + input_row.emailSenderSubject);&#xA;System.out.println(&quot;MESSAGE => &quot; + input_row.emailSenderMessage);&#xA;System.out.println(&quot;===== END =====&quot;);&#xA;"/>
-      <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+      <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="context.emailServerHost = input_row.emailServerHost;&#xA;context.emailServerPort = input_row.emailServerPort;&#xA;context.emailServerUsername = input_row.emailServerUsername;&#xA;context.emailServerPassword = input_row.emailServerPassword;&#xA;context.emailSenderFrom = input_row.emailSenderFrom;&#xA;context.emailSenderTo = input_row.emailSenderTo;&#xA;context.emailSenderSubject = input_row.emailSenderSubject;&#xA;context.emailSenderMessage = input_row.emailSenderMessage;&#xA;System.out.println(&quot;===== SENDING EMAIL=====&quot;);&#xA;System.out.println(&quot;FROM => &quot; + input_row.emailSenderFrom);&#xA;System.out.println(&quot;TO => &quot; + input_row.emailSenderTo);&#xA;System.out.println(&quot;SUBJECT => &quot; + input_row.emailSenderSubject);&#xA;System.out.println(&quot;MESSAGE => &quot; + input_row.emailSenderMessage);&#xA;System.out.println(&quot;===== END =====&quot;);&#xA;"/>
+      <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tJavaRow_1">
         <column comment="" key="false" length="-1" name="emailServerHost" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -135,8 +137,8 @@
     </node>
     <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="400" posY="320">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
-      <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - EMAIL SENDER => Invio della Email verso + [&quot; + context.emailSenderTo + &quot;] non riuscita. Controllare la raggiungibilita' dei sistemi o le configurazioni&quot;);"/>
-      <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+      <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - EMAIL SENDER => Invio della Email verso + [&quot; + context.emailSenderTo + &quot;] non riuscita. Controllare la raggiungibilita' dei sistemi o le configurazioni&quot;);"/>
+      <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tJava_2"/>
     </node>
@@ -182,18 +184,18 @@
     </connection>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="INPUT_1" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
     </subjob>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="TRIGGER_OUTPUT_1" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
     </subjob>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
     </subjob>
     <jobletNodes componentName="INPUT" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="0" posY="160" input="true">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="INPUT_1"/>
@@ -206,7 +208,7 @@
       <elementParameter field="MEMO" name="COMMENT" value=""/>
       <metadata connector="FLOW" name="INPUT_1">
         <column comment="" key="false" length="-1" name="emailServerHost" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-        <column comment="" key="false" length="-1" name="emailServerPort" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="emailServerPort" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
         <column comment="" key="false" length="-1" name="emailServerUsername" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
         <column comment="" key="false" length="-1" name="emailServerPassword" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
         <column comment="" key="false" length="-1" name="emailSenderFrom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>

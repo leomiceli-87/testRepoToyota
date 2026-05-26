@@ -15,13 +15,15 @@
     <contextParameter comment="" name="databasePassword" prompt="databasePassword?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTJUSjEfGwUO8nDzfxDw"/>
     <contextParameter comment="" name="databaseTable" prompt="databaseTable?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_LVd9wEePEfGAEo5GTlyLcA"/>
     <contextParameter comment="" name="databaseQuery" prompt="databaseQuery?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_LVd9wUePEfGAEo5GTlyLcA"/>
-    <contextParameter comment="" name="emailSenderFrom" prompt="emailSenderFrom?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_DROU4E9uEfGCKoAZMm_BYg"/>
-    <contextParameter comment="" name="emailSenderTo" prompt="emailSenderTo?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_DROU4U9uEfGCKoAZMm_BYg"/>
-    <contextParameter comment="" name="emailSenderSubject" prompt="emailSenderSubject?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_DROU4k9uEfGCKoAZMm_BYg"/>
-    <contextParameter comment="" name="emailSenderMessage" prompt="emailSenderMessage?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_DROU409uEfGCKoAZMm_BYg"/>
-    <contextParameter comment="" name="emailServerHost" prompt="emailServerHost?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_AVPvQFLMEfG8Pbfzyc37CA"/>
-    <contextParameter comment="" name="emailServerPort" prompt="emailServerPort?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_AVPvQVLMEfG8Pbfzyc37CA"/>
+    <contextParameter comment="" name="emailSenderFrom" prompt="emailSenderFrom?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_DROU4E9uEfGCKoAZMm_BYg"/>
+    <contextParameter comment="" name="emailSenderTo" prompt="emailSenderTo?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_DROU4U9uEfGCKoAZMm_BYg"/>
+    <contextParameter comment="" name="emailSenderSubject" prompt="emailSenderSubject?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="&quot;Default Oggetto&quot;" internalId="_DROU4k9uEfGCKoAZMm_BYg"/>
+    <contextParameter comment="" name="emailSenderMessage" prompt="emailSenderMessage?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="&quot;Default Messaggio&quot;" internalId="_DROU409uEfGCKoAZMm_BYg"/>
+    <contextParameter comment="" name="emailServerHost" prompt="emailServerHost?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_AVPvQFLMEfG8Pbfzyc37CA"/>
+    <contextParameter comment="" name="emailServerPort" prompt="emailServerPort?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_Integer" value="" internalId="_AVPvQVLMEfG8Pbfzyc37CA"/>
     <contextParameter comment="" name="userAgent" prompt="userAgent?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
+    <contextParameter comment="" name="emailServerUsername" prompt="emailServerUsername?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_3PUNYFjdEfGSzsBYJrUhXQ"/>
+    <contextParameter comment="" name="emailServerPassword" prompt="emailServerPassword?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_3PUNYVjdEfGSzsBYJrUhXQ"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
@@ -339,7 +341,7 @@
     <elementParameter field="MEMO" name="COMMENT" value=""/>
     <metadata connector="FLOW" name="EmailSender_1">
       <column comment="" key="false" length="-1" name="emailServerHost" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="emailServerPort" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="emailServerPort" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="emailServerUsername" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="emailServerPassword" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="emailSenderFrom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -604,6 +606,7 @@
     <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
     <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
     <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" value="30" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="out1" name="tDBOutput_1">
       <column comment="" key="false" length="-1" name="mode" nullable="false" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="tfs_contractnumber" nullable="false" pattern="" precision="-1" sourceType="BIGINT" type="id_Long" originalLength="-1" usefulColumn="true"/>
@@ -730,7 +733,7 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
