@@ -226,7 +226,7 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_3" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== RIMOZIONE [&quot; + ((Integer)globalMap.get(&quot;tDBInput_1_NB_LINE&quot;)) + &quot;] RECORDS DALLA TABELLA [CTF_CAP] =====&quot;);&#xD;&#xA;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="int rows = ((Integer)globalMap.get(&quot;tDBInput_1_NB_LINE&quot;));&#xD;&#xA;if (rows > 0) {&#xD;&#xA;&#x9;System.out.println(&quot;===== RIMOZIONE [&quot; + rows + &quot;] RECORDS DALLA TABELLA [CTF_CAP] =====&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;System.out.println(&quot;===== RIMOZIONE RECODS DALLA TABELLA [CTF_CAP] NON NECESSARIA =====&quot;);&#xD;&#xA;}"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_3">
@@ -315,7 +315,7 @@
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String GW_FIELD_SEP = &quot;|F|&quot;;&#xD;&#xA;java.util.Base64.Encoder encoder = java.util.Base64.getEncoder();&#xD;&#xA;String field1 = &quot;cap_chsigpro=&quot; + input_row.cap_chsigpro;&#xD;&#xA;String field2 = &quot;cap_incap=&quot; + input_row.cap_incap;&#xD;&#xA;String field3 = &quot;cap_chcodbel=&quot; + input_row.cap_chcodbel;&#xD;&#xA;String encField1 = encoder.encodeToString(field1.getBytes());&#xD;&#xA;String encField2 = encoder.encodeToString(field2.getBytes());&#xD;&#xA;String encField3 = encoder.encodeToString(field3.getBytes());&#xD;&#xA;String formattedRow = &quot;cap|&quot; + encField1 + GW_FIELD_SEP + encField2 + GW_FIELD_SEP + encField3;&#xD;&#xA;@SuppressWarnings(&quot;unchecked&quot;)&#xD;&#xA;java.util.List&lt;String> rowsList = (java.util.List&lt;String>) globalMap.get(&quot;tHashOutput_1_rowsList&quot;);&#xD;&#xA;if (rowsList == null) {&#xD;&#xA;    rowsList = new java.util.ArrayList&lt;String>();&#xD;&#xA;    globalMap.put(&quot;tHashOutput_1_rowsList&quot;, rowsList);&#xD;&#xA;}&#xD;&#xA;rowsList.add(formattedRow);"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String GW_FIELD_SEP = &quot;|F|&quot;;&#xD;&#xA;java.util.Base64.Encoder encoder = java.util.Base64.getEncoder();&#xD;&#xA;String field1 = &quot;cap_chsigpro=&quot; + input_row.cap_chsigpro;&#xD;&#xA;String field2 = &quot;cap_incap=&quot; + input_row.cap_incap;&#xD;&#xA;String field3 = &quot;cap_chcodbel=&quot; + input_row.cap_chcodbel;&#xD;&#xA;String encField1 = encoder.encodeToString(field1.getBytes());&#xD;&#xA;String encField2 = encoder.encodeToString(field2.getBytes());&#xD;&#xA;String encField3 = encoder.encodeToString(field3.getBytes());&#xD;&#xA;String formattedRow = &quot;ctf_cap|&quot; + encField1 + GW_FIELD_SEP + encField2 + GW_FIELD_SEP + encField3;&#xD;&#xA;java.util.List&lt;String> rowsList = (java.util.List&lt;String>) globalMap.get(&quot;tHashOutput_1_rowsList&quot;);&#xD;&#xA;if (rowsList == null) {&#xD;&#xA;    rowsList = new java.util.ArrayList&lt;String>();&#xD;&#xA;    globalMap.put(&quot;tHashOutput_1_rowsList&quot;, rowsList);&#xD;&#xA;}&#xD;&#xA;rowsList.add(formattedRow);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_1">
@@ -331,7 +331,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_5"/>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="520">
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1240" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_2" show="false"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -356,7 +356,7 @@
       <column comment="" key="false" length="-1" name="userAgent" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="680">
+  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1240" posY="680">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="CallGateway_2"/>
     <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
@@ -379,7 +379,7 @@
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="839" posY="680">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="999" posY="680">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_6" show="false"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xD;&#xA;String body = row6.Body&#xD;&#xA;    .replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;)&#xD;&#xA;    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)       &#xD;&#xA;    .trim();     &#xD;&#xA;System.out.println(body);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);&#xD;&#xA;System.out.println(&quot;***** JOB ENDED *****&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
