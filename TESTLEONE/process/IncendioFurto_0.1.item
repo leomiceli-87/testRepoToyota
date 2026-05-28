@@ -386,7 +386,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
   </connection>
-  <note opaque="false" posX="240" posY="40" sizeHeight="41" sizeWidth="321" text="Execute Manually: 4-5 times per year">
+  <note opaque="true" posX="240" posY="40" sizeHeight="41" sizeWidth="321" text="Execute Manually: 4-5 times per year">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="166;193;152"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>

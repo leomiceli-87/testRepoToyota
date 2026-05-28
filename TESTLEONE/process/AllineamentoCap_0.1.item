@@ -451,7 +451,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row6" show="false"/>
   </connection>
-  <note opaque="false" posX="440" posY="80" sizeHeight="41" sizeWidth="241" text="Execute: Every Day at 21">
+  <note opaque="true" posX="440" posY="80" sizeHeight="41" sizeWidth="241" text="Execute: Every Day at 21">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="166;193;152"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>

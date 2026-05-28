@@ -880,6 +880,11 @@
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
     <elementParameter field="CHECK" name="FONT_ITALIC" value="true"/>
   </note>
+  <note opaque="true" posX="320" posY="40" sizeHeight="41" sizeWidth="241" text="Execute: Every Hour">
+    <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
+    <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
+    <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
+  </note>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileList_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
