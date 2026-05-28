@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" hide="false" name="Default">
-    <contextParameter comment="" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;AllineamentoCap&quot;" internalId="_Ew_6kFmrEfGJlP4M-eV0GA"/>
-    <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;C:/Talend/Jobs/AllineamentoCap/logs&quot;" internalId="_MjlGEFmrEfGJlP4M-eV0GA"/>
-    <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;C:/Talend/Jobs/AllineamentoCap/Config.ini&quot;" internalId="_MjlGEVmrEfGJlP4M-eV0GA"/>
+    <contextParameter comment="" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;AllineamentoAbiCab&quot;" internalId="_Ew_6kFmrEfGJlP4M-eV0GA"/>
+    <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;C:/Talend/Jobs/AllineamentoAbiCab/logs&quot;" internalId="_MjlGEFmrEfGJlP4M-eV0GA"/>
+    <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;C:/Talend/Jobs/AllineamentoAbiCab/Config.ini&quot;" internalId="_MjlGEVmrEfGJlP4M-eV0GA"/>
     <contextParameter comment="" name="databaseOcsHost" prompt="databaseOcsHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_KsLl8FmzEfGJlP4M-eV0GA"/>
     <contextParameter comment="" name="databaseOcsDatabase" prompt="databaseOcsDatabase?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_KsLl8VmzEfGJlP4M-eV0GA"/>
     <contextParameter comment="" name="databaseOcsUsername" prompt="databaseOcsUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_KsLl8lmzEfGJlP4M-eV0GA"/>
@@ -179,32 +179,29 @@
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:pm8nJBhMFpOg/zi9ShFhKhcI6YqlSwAYcTfwt7JL" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;CCCOMUNI&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;CCNEWCAB&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xD;&#xA;    COMU_PROVINCIA AS cap_chsigpro, &#xD;&#xA;    COMU_CAP AS cap_incap, &#xD;&#xA;    COMU_CODICE_FISCALE AS cap_chcodbel &#xD;&#xA;FROM CCCOMUNI &#xD;&#xA;WHERE COMU_CAP NOT IN (SELECT ANATCG_CAP_GENERICO FROM CCANATCG) &#xD;&#xA;    AND COMU_CAP &lt;> 0 &#xD;&#xA;    AND COMU_CODICE_FISCALE &lt;> '' &#xD;&#xA;    AND COMU_PROVINCIA &lt;> '' &#xD;&#xA;UNION &#xD;&#xA;SELECT &#xD;&#xA;    COMU_PROVINCIA AS cap_chsigpro, &#xD;&#xA;    ANATCG_CAP_SPECIFICO AS cap_incap, &#xD;&#xA;    COMU_CODICE_FISCALE AS cap_chcodbel &#xD;&#xA;FROM CCANATCG, CCCOMUNI &#xD;&#xA;WHERE ANATCG_CAP_GENERICO = COMU_CAP &#xD;&#xA;    AND COMU_CAP &lt;> 0 &#xD;&#xA;    AND COMU_CODICE_FISCALE &lt;> '' &#xD;&#xA;    AND COMU_PROVINCIA &lt;> ''&#xD;&#xA;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xD;&#xA;    CAB_ABI AS rac_inabi, &#xD;&#xA;    CAB_CAB AS rac_incab  &#xD;&#xA;FROM CCNEWCAB &#xD;&#xA;WHERE TRIM(CAB_FLAG) &lt;> 'I' &#xD;&#xA;    AND CAB_ABI IN (&#xD;&#xA;        SELECT DISTINCT ABI_ABI &#xD;&#xA;        FROM CCNEWABI &#xD;&#xA;        WHERE TRIM(ABI_FLAG) &lt;> 'I'&#xD;&#xA;    )&#xD;&#xA;&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;prompt=false&quot;" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="cap_chsigpro" id="0"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="rac_inabi" id="0"/>
       <elementValue elementRef="TRIM" value="false" id="1"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="cap_incap" id="2"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="rac_incab" id="2"/>
       <elementValue elementRef="TRIM" value="false" id="3"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="cap_chcodbel" id="4"/>
-      <elementValue elementRef="TRIM" value="false" id="5"/>
     </elementParameter>
     <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
     <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" value="30" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_1">
-      <column comment="" key="false" length="-1" name="cap_chsigpro" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="cap_incap" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="cap_chcodbel" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="rac_inabi" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="rac_incab" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="880" posY="360">
@@ -219,20 +216,18 @@
     <elementParameter field="CHECK" name="HASH_KEY_FROM_INPUT_CONNECTOR" value="false" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tHashOutput_1">
-      <column comment="" key="false" length="-1" name="cap_chsigpro" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="cap_incap" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="cap_chcodbel" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="rac_inabi" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="rac_incab" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_3" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="int rows = ((Integer)globalMap.get(&quot;tDBInput_1_NB_LINE&quot;));&#xD;&#xA;if (rows > 0) {&#xD;&#xA;&#x9;System.out.println(&quot;===== RIMOZIONE [&quot; + rows + &quot;] RECORDS DALLA TABELLA [CTF_CAP] =====&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;System.out.println(&quot;===== RIMOZIONE RECODS DALLA TABELLA [CTF_CAP] NON NECESSARIA =====&quot;);&#xD;&#xA;}"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="int rows = ((Integer)globalMap.get(&quot;tDBInput_1_NB_LINE&quot;));&#xD;&#xA;if (rows > 0) {&#xD;&#xA;&#x9;System.out.println(&quot;===== RIMOZIONE [&quot; + rows + &quot;] RECORDS DALLA TABELLA [CTF_RAC] =====&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;System.out.println(&quot;===== RIMOZIONE RECORDS DALLA TABELLA [CTF_RAC] NON NECESSARIA =====&quot;);&#xD;&#xA;}"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_3">
-      <column comment="" key="false" length="-1" name="cap_chsigpro" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="cap_incap" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="cap_chcodbel" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="rac_inabi" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="rac_incab" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1360" posY="280">
@@ -250,7 +245,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
       <elementValue elementRef="VALUE" value="context.gatewayCallUrl" id="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
-      <elementValue elementRef="VALUE" value="&quot;FFun=12, FTableName=ctf_cap&quot;" id="3"/>
+      <elementValue elementRef="VALUE" value="&quot;FFun=12, FTableName=ctf_rac&quot;" id="3"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="userAgent" id="4"/>
       <elementValue elementRef="VALUE" value="context.userAgent" id="5"/>
     </elementParameter>
@@ -308,14 +303,13 @@
     <elementParameter field="CHECK" name="RELEASE_CACHE" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tHashInput_1">
-      <column comment="" key="false" length="-1" name="cap_chsigpro" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="cap_incap" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="cap_chcodbel" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="rac_inabi" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="rac_incab" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String GW_FIELD_SEP = &quot;|F|&quot;;&#xD;&#xA;java.util.Base64.Encoder encoder = java.util.Base64.getEncoder();&#xD;&#xA;String field1 = &quot;cap_chsigpro=&quot; + input_row.cap_chsigpro;&#xD;&#xA;String field2 = &quot;cap_incap=&quot; + input_row.cap_incap;&#xD;&#xA;String field3 = &quot;cap_chcodbel=&quot; + input_row.cap_chcodbel;&#xD;&#xA;String encField1 = encoder.encodeToString(field1.getBytes());&#xD;&#xA;String encField2 = encoder.encodeToString(field2.getBytes());&#xD;&#xA;String encField3 = encoder.encodeToString(field3.getBytes());&#xD;&#xA;String formattedRow = &quot;ctf_cap|&quot; + encField1 + GW_FIELD_SEP + encField2 + GW_FIELD_SEP + encField3;&#xD;&#xA;java.util.List&lt;String> rowsList = (java.util.List&lt;String>) globalMap.get(&quot;tHashOutput_1_rowsList&quot;);&#xD;&#xA;if (rowsList == null) {&#xD;&#xA;    rowsList = new java.util.ArrayList&lt;String>();&#xD;&#xA;    globalMap.put(&quot;tHashOutput_1_rowsList&quot;, rowsList);&#xD;&#xA;}&#xD;&#xA;rowsList.add(formattedRow);"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String GW_FIELD_SEP = &quot;|F|&quot;;&#xD;&#xA;java.util.Base64.Encoder encoder = java.util.Base64.getEncoder();&#xD;&#xA;String field1 = &quot;rac_inabi=&quot; + input_row.rac_inabi;&#xD;&#xA;String field2 = &quot;rac_incab=&quot; + input_row.rac_incab;&#xD;&#xA;String encField1 = encoder.encodeToString(field1.getBytes());&#xD;&#xA;String encField2 = encoder.encodeToString(field2.getBytes());&#xD;&#xA;String formattedRow = &quot;ctf_rac|&quot; + encField1 + GW_FIELD_SEP + encField2;&#xD;&#xA;java.util.List&lt;String> rowsList = (java.util.List&lt;String>) globalMap.get(&quot;tHashOutput_1_rowsList&quot;);&#xD;&#xA;if (rowsList == null) {&#xD;&#xA;    rowsList = new java.util.ArrayList&lt;String>();&#xD;&#xA;    globalMap.put(&quot;tHashOutput_1_rowsList&quot;, rowsList);&#xD;&#xA;}&#xD;&#xA;rowsList.add(formattedRow);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_1">
@@ -326,7 +320,7 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="880" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_5" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="java.util.List&lt;String> rowsList = (List&lt;String>) globalMap.get(&quot;tHashOutput_1_rowsList&quot;);&#xD;&#xA;StringBuilder jsonBuilder = new StringBuilder();&#xD;&#xA;jsonBuilder.append(&quot;[\n&quot;);&#xD;&#xA;if (rowsList != null &amp;&amp; !rowsList.isEmpty()) {&#xD;&#xA; for (int i = 0; i &lt; rowsList.size(); i++) {&#xD;&#xA;     String row = rowsList.get(i);&#xD;&#xA;     if (i > 0) {&#xD;&#xA;         jsonBuilder.append(&quot;,\n&quot;);&#xD;&#xA;     }&#xD;&#xA;     jsonBuilder.append(&quot;    \&quot;&quot;).append(row.replace(&quot;\&quot;&quot;, &quot;\\\&quot;&quot;)).append(&quot;\&quot;&quot;);&#xD;&#xA; }&#xD;&#xA; jsonBuilder.append(&quot;\n&quot;);&#xD;&#xA;}&#xD;&#xA;jsonBuilder.append(&quot;  ]&quot;);&#xD;&#xA;String finalJson = jsonBuilder.toString();&#xD;&#xA;globalMap.put(&quot;restPayload&quot;, finalJson);&#xD;&#xA;System.out.println(&quot;Payload generato: &quot; + finalJson);&#xD;&#xA;System.out.println(&quot;Numero di righe: &quot; + (rowsList != null ? rowsList.size() : 0));"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="java.util.List&lt;String> rowsList = (java.util.List&lt;String>) globalMap.get(&quot;tHashOutput_1_rowsList&quot;);&#xD;&#xA;StringBuilder jsonBuilder = new StringBuilder();&#xD;&#xA;jsonBuilder.append(&quot;[\n&quot;);&#xD;&#xA;if (rowsList != null &amp;&amp; !rowsList.isEmpty()) {&#xD;&#xA; for (int i = 0; i &lt; rowsList.size(); i++) {&#xD;&#xA;     String row = rowsList.get(i);&#xD;&#xA;     if (i > 0) {&#xD;&#xA;         jsonBuilder.append(&quot;,\n&quot;);&#xD;&#xA;     }&#xD;&#xA;     jsonBuilder.append(&quot;    \&quot;&quot;).append(row.replace(&quot;\&quot;&quot;, &quot;\\\&quot;&quot;)).append(&quot;\&quot;&quot;);&#xD;&#xA; }&#xD;&#xA; jsonBuilder.append(&quot;\n&quot;);&#xD;&#xA;}&#xD;&#xA;jsonBuilder.append(&quot;]&quot;);&#xD;&#xA;String finalJson = jsonBuilder.toString().trim();&#xD;&#xA;globalMap.put(&quot;restPayload&quot;, finalJson);&#xD;&#xA;System.out.println(&quot;Payload generato: &quot; + finalJson);&#xD;&#xA;System.out.println(&quot;Numero di righe: &quot; + (rowsList != null ? rowsList.size() : 0));"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_5"/>
@@ -455,10 +449,6 @@
     <elementParameter field="COLOR" name="NOTE_COLOR" value="166;193;152"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
-  </note>
-  <note opaque="true" posX="1160" posY="80" sizeHeight="80" sizeWidth="120" text="TODO: sistemare query e nomi colonne">
-    <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
-    <elementParameter field="CHECK" name="FONT_ITALIC" value="true"/>
   </note>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
