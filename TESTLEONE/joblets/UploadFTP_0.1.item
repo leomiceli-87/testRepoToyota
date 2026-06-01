@@ -2,12 +2,12 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties" xmlns:model="http://www.talend.com/joblet.ecore">
   <model:JobletProcess defaultContext="Default" jobType="Standard">
     <context confirmationNeeded="false" hide="false" name="Default">
-      <contextParameter comment="" name="ftpHost" prompt="ftpHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_ICi_oFXhEfGyau0Siu7XRg"/>
-      <contextParameter comment="" name="ftpPort" prompt="ftpPort?" promptNeeded="true" repositoryContextId="built-in" type="id_Integer" value="" internalId="_ICi_oVXhEfGyau0Siu7XRg"/>
-      <contextParameter comment="" name="ftpUsername" prompt="ftpUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_ICi_olXhEfGyau0Siu7XRg"/>
-      <contextParameter comment="" name="ftpPassword" prompt="ftpPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_ICi_o1XhEfGyau0Siu7XRg"/>
-      <contextParameter comment="" name="ftpUploadRemoteDirectory" prompt="ftpUploadRemoteDirectory?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_2XWhgFXmEfGyau0Siu7XRg"/>
-      <contextParameter comment="" name="ftpLocalDirectory" prompt="ftpLocalDirectory?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_ICi_pVXhEfGyau0Siu7XRg"/>
+      <contextParameter comment="&quot;Nominativo del server FTP&quot;" name="ftpHost" prompt="ftpHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_ICi_oFXhEfGyau0Siu7XRg"/>
+      <contextParameter comment="&quot;Porta del server FTP&quot;" name="ftpPort" prompt="ftpPort?" promptNeeded="true" repositoryContextId="built-in" type="id_Integer" value="" internalId="_ICi_oVXhEfGyau0Siu7XRg"/>
+      <contextParameter comment="&quot;Identificativo account di accesso al server FTP&quot;" name="ftpUsername" prompt="ftpUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_ICi_olXhEfGyau0Siu7XRg"/>
+      <contextParameter comment="&quot;Password account di accesso al server FTP&quot;" name="ftpPassword" prompt="ftpPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_ICi_o1XhEfGyau0Siu7XRg"/>
+      <contextParameter comment="&quot;Percoso completo della cartella remota nel server FTP verso cui caricare i files&quot;" name="ftpUploadRemoteDirectory" prompt="ftpUploadRemoteDirectory?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_2XWhgFXmEfGyau0Siu7XRg"/>
+      <contextParameter comment="&quot;Percoso completo della cartella locale da cui prelevare i files da caricare sul server FTP&quot;" name="ftpLocalDirectory" prompt="ftpLocalDirectory?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_ICi_pVXhEfGyau0Siu7XRg"/>
     </context>
     <parameters>
       <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>

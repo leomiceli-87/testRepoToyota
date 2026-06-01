@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" hide="false" name="Default">
-    <contextParameter comment="" name="jobName" prompt="jobName?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;Serale&quot;" internalId="__0WMoEOsEfGBj7EpAX9f2Q"/>
-    <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:/Users/Marco Marangon/Downloads/Talend-Studio-20250226_1030-V8.0.1/logs&quot;" internalId="_hNpr8EOzEfGBj7EpAX9f2Q"/>
-    <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;C:\\Users\\Marco Marangon\\Downloads\\Talend-Studio-20250226_1030-V8.0.1\\application2.properties&quot;" internalId="_-Kn10ELoEfG7HqyOm3C_vw"/>
-    <contextParameter comment="" name="authCredentials" prompt="authCredentials?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="&quot;Basic dXNlcjpwYXNz&quot;" internalId="_B3YVAEOlEfGBj7EpAX9f2Q"/>
-    <contextParameter comment="" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
-    <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
-    <contextParameter comment="" name="userAgent" prompt="userAgent?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
+    <contextParameter comment="&quot;Indirizzo completo del Gatway PHP da invocare&quot;" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
+    <contextParameter comment="&quot;Funzione da richiamare e contenuto da inviare al Gatway PHP&quot;" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
+    <contextParameter comment="&quot;Identificativo di autorizzazione chiamata al Gateway&quot;" name="userAgent" prompt="userAgent?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
     <contextParameter comment="" name="databaseType" prompt="databaseType?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTIESjEfGwUO8nDzfxDw"/>
     <contextParameter comment="" name="databaseHost" prompt="databaseHost?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTIUSjEfGwUO8nDzfxDw"/>
     <contextParameter comment="" name="databasePort" prompt="databasePort?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTIkSjEfGwUO8nDzfxDw"/>
@@ -16,6 +12,9 @@
     <contextParameter comment="" name="databasePassword" prompt="databasePassword?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_nnsTJUSjEfGwUO8nDzfxDw"/>
     <contextParameter comment="" name="databaseTable" prompt="databaseTable?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_LVd9wEePEfGAEo5GTlyLcA"/>
     <contextParameter comment="" name="databaseQuery" prompt="databaseQuery?" promptNeeded="false" repositoryContextId="_Xqs-8EPHEfGf-Y5EppSWeA" type="id_String" value="" internalId="_LVd9wUePEfGAEo5GTlyLcA"/>
+    <contextParameter comment="&quot;Percoso e identificativo completo del file di configurazione del Job&quot;" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="_32Lo0ELTEfG7HqyOm3C_vw" type="id_String" value="" internalId="_A0KZAELrEfG7HqyOm3C_vw"/>
+    <contextParameter comment="&quot;Identificativo univoco del Job&quot;" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_y-CsoF2XEfGMmseW008dDg"/>
+    <contextParameter comment="&quot;Percoso completo della cartella per la memorizzazione dei logs relativi alle esecuzioni&quot;" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_wQW-YF2XEfGMmseW008dDg"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
@@ -126,22 +125,6 @@
     <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="COMPONENT_OK"/>
     <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="LogToFile_1"/>
     <elementParameter field="TEXT" name="LABEL" value="LoadConfigFileToContext"/>
-    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value=""/>
-  </node>
-  <node componentName="LogToFile" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="480" posY="120">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1"/>
-    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
-    <elementParameter field="CHECK" name="DUMMY" value="false" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
-    <elementParameter field="CHECK" name="START" value="false" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
-    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="COMPONENT_OK"/>
-    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tPrejob_1"/>
-    <elementParameter field="TEXT" name="LABEL" value="LogToFile"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <elementParameter field="CHECK" name="INFORMATION" value="false"/>
@@ -325,12 +308,23 @@
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaFlex" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1200" posY="240">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1160" posY="240">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(row6.Body);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_1">
+      <column key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJavaFlex" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1040" posY="240">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaFlex_2" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="DATA_AUTO_PROPAGATE" value="true"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_START" value="// start part of your Java code&#xA;"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_MAIN" value="String response = input_row.Body;&#xD;&#xA;&#xD;&#xA;System.out.println(&quot;ERROR_CODE = &quot; + input_row.ERROR_CODE);&#xD;&#xA;System.out.println(&quot;BODY = &quot; + response);&#xD;&#xA; &#xD;&#xA;if (response == null || response.trim().isEmpty()) {&#xD;&#xA;    System.out.println(&quot;Body vuoto&quot;);&#xD;&#xA;} else {&#xD;&#xA; &#xD;&#xA;    response = response&#xD;&#xA;            .replace(&quot;\r\n&quot;, &quot;\n&quot;)&#xD;&#xA;            .replace(&quot;\r&quot;, &quot;\n&quot;);&#xD;&#xA; &#xD;&#xA;    String[] parts = response.split(&quot;\\|R\\|&quot;, -1);&#xD;&#xA; &#xD;&#xA;    System.out.println(&quot;parts.length = &quot; + parts.length);&#xD;&#xA; &#xD;&#xA;    if (parts.length &lt; 3) {&#xD;&#xA;        System.out.println(&quot;Risposta non valida: &quot; + response);&#xD;&#xA;    } else {&#xD;&#xA; &#xD;&#xA;        String[] header = parts[0].split(&quot;\\|F\\|&quot;, -1);&#xD;&#xA; &#xD;&#xA;        String codice = header.length > 0 ? header[0].trim() : &quot;&quot;;&#xD;&#xA;        String messaggio = header.length > 1 ? header[1].trim() : &quot;&quot;;&#xD;&#xA; &#xD;&#xA;        int righeAttese = Integer.parseInt(parts[1].trim());&#xD;&#xA; &#xD;&#xA;        String dataBlock = parts[2];&#xD;&#xA; &#xD;&#xA;        String[] righe = dataBlock.split(&quot;\\|F\\|&quot;, -1);&#xD;&#xA; &#xD;&#xA;        System.out.println(&quot;Righe attese = &quot; + righeAttese);&#xD;&#xA;        System.out.println(&quot;Righe split = &quot; + righe.length);&#xD;&#xA; &#xD;&#xA;        for (String riga : righe) {&#xD;&#xA; &#xD;&#xA;            riga = riga&#xD;&#xA;                    .replace(&quot;\n&quot;, &quot; &quot;)&#xD;&#xA;                    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xD;&#xA;                    .trim();&#xD;&#xA; &#xD;&#xA;            if (riga.isEmpty()) {&#xD;&#xA;                continue;&#xD;&#xA;            }&#xD;&#xA; &#xD;&#xA;            String[] campi = riga.split(&quot;\\|\\|&quot;, -1);&#xD;&#xA; &#xD;&#xA;            for (int i = 0; i &lt; campi.length; i++) {&#xD;&#xA;                campi[i] = campi[i]&#xD;&#xA;                        .replace(&quot;\n&quot;, &quot; &quot;)&#xD;&#xA;                        .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xD;&#xA;                        .trim();&#xD;&#xA;            }&#xD;&#xA; &#xD;&#xA;            output_row.id_proposta = campi.length > 0 ? campi[0] : &quot;&quot;;&#xD;&#xA;            output_row.num_pratica_ocs = campi.length > 1 ? campi[1] : &quot;&quot;;&#xD;&#xA;            output_row.stato_ocs = campi.length > 2 ? campi[2] : &quot;&quot;;&#xD;&#xA;            output_row.procedura = campi.length > 6 ? campi[6] : &quot;&quot;;"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_END" value="}&#xD;&#xA;}&#xD;&#xA;}"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_START" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xD;&#xA;String response = row6.Body;&#xD;&#xA;if (response == null || response.trim().isEmpty()) {&#xD;&#xA;    System.out.println(&quot;Nessuna response ricevuta dal Gateway...&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;response = response.trim();&#xD;&#xA;&#x9;System.out.println(response);&#xD;&#xA;}"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_MAIN" value="if (response != null &amp;&amp; !response.trim().isEmpty()) {&#xD;&#xA;    response = response&#xD;&#xA;            .replace(&quot;\r\n&quot;, &quot;\n&quot;)&#xD;&#xA;            .replace(&quot;\r&quot;, &quot;\n&quot;);&#xD;&#xA;    String[] parts = response.split(&quot;\\|R\\|&quot;, -1);&#xD;&#xA;    if (parts.length &lt; 3) {&#xD;&#xA;        System.out.println(&quot;Risposta non valida: &quot; + response);&#xD;&#xA;    } else {&#xD;&#xA;        String[] header = parts[0].split(&quot;\\|F\\|&quot;, -1);&#xD;&#xA;        String codice = header.length > 0 ? header[0].trim() : &quot;&quot;;&#xD;&#xA;        String messaggio = header.length > 1 ? header[1].trim() : &quot;&quot;;&#xD;&#xA;        int righeAttese = Integer.parseInt(parts[1].trim());&#xD;&#xA;        String dataBlock = parts[2];&#xD;&#xA;        String[] righe = dataBlock.split(&quot;\\|F\\|&quot;, -1);&#xD;&#xA;        System.out.println(&quot;Righe attese = &quot; + righeAttese);&#xD;&#xA;        System.out.println(&quot;Righe split = &quot; + righe.length);&#xD;&#xA;        for (String riga : righe) {&#xD;&#xA;            riga = riga&#xD;&#xA;                    .replace(&quot;\n&quot;, &quot; &quot;)&#xD;&#xA;                    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xD;&#xA;                    .trim();&#xD;&#xA;            if (riga.isEmpty()) {&#xD;&#xA;                continue;&#xD;&#xA;            }&#xD;&#xA;            String[] campi = riga.split(&quot;\\|\\|&quot;, -1);&#xD;&#xA;            for (int i = 0; i &lt; campi.length; i++) {&#xD;&#xA;                campi[i] = campi[i]&#xD;&#xA;                        .replace(&quot;\n&quot;, &quot; &quot;)&#xD;&#xA;                        .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xD;&#xA;                        .trim();&#xD;&#xA;            }&#xD;&#xA;            output_row.id_proposta = campi.length > 0 ? campi[0] : &quot;&quot;;&#xD;&#xA;            output_row.num_pratica_ocs = campi.length > 1 ? campi[1] : &quot;&quot;;&#xD;&#xA;            output_row.stato_ocs = campi.length > 2 ? campi[2] : &quot;&quot;;&#xD;&#xA;            output_row.procedura = campi.length > 6 ? campi[6] : &quot;&quot;;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_END" value="}&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="CHECK" name="Version_V2_0" value="false" show="false"/>
     <elementParameter field="CHECK" name="Version_V3_2" value="false" show="false"/>
     <elementParameter field="CHECK" name="Version_V4.0" value="true" show="false"/>
@@ -338,28 +332,40 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaFlex_2">
       <column key="false" length="0" name="id_proposta" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column key="false" length="0" name="num_pratica_ocs" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="stato_ocs" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="num_pratica_ocs" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="procedura" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="stato_ocs" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1000" posY="240">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="840" posY="240">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_2" show="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(input_row.id_proposta);&#xD;&#xA;System.out.println(input_row.num_pratica_ocs);&#xD;&#xA;System.out.println(input_row.stato_ocs);&#xD;&#xA;System.out.println(input_row.procedura);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_2">
-      <column key="false" length="0" name="id_proposta" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column key="false" length="0" name="num_pratica_ocs" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="stato_ocs" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="procedura" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
+  </node>
+  <node componentName="LogToFile" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="440" posY="120">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1"/>
+    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter field="CHECK" name="DUMMY" value="false" show="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
+    <elementParameter field="CHECK" name="START" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="COMPONENT_OK"/>
+    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tPrejob_1"/>
+    <elementParameter field="TEXT" name="LABEL" value="LogToFile"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter field="MEMO" name="COMMENT" value=""/>
   </node>
   <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LoadConfigFileToContext_1" offsetLabelX="0" offsetLabelY="0" source="LoadConfigFileToContext_1" target="tFixedFlowInput_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk6" show="false"/>
-  </connection>
-  <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LogToFile_1" offsetLabelX="0" offsetLabelY="0" source="LogToFile_1" target="LoadConfigFileToContext_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="CallGateway_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -386,27 +392,37 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk5" show="false"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="LogToFile_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk3" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFixedFlowInput_2" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_2" target="CallGateway_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
   </connection>
-  <connection connectorName="OUTPUT_1" label="row6" lineStyle="0" metaname="OUTPUT_1" offsetLabelX="0" offsetLabelY="0" source="CallGateway_2" target="tJavaFlex_2">
+  <connection connectorName="OUTPUT_1" label="row6" lineStyle="0" metaname="OUTPUT_1" offsetLabelX="0" offsetLabelY="0" source="CallGateway_2" target="tJava_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row6" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row7" lineStyle="0" metaname="tJavaFlex_2" offsetLabelX="0" offsetLabelY="0" source="tJavaFlex_2" target="tJavaRow_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="stato_ocs" id="0"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="1"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="2"/>
+      <elementValue elementRef="TRACE_COLUMN" value="procedura" id="3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="4"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="5"/>
+      <elementValue elementRef="TRACE_COLUMN" value="num_pratica_ocs" id="6"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="7"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="8"/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row7" show="false"/>
+  </connection>
+  <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LogToFile_1" offsetLabelX="0" offsetLabelY="0" source="LogToFile_1" target="LoadConfigFileToContext_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk3" show="false"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="LoadConfigFileToContext_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
@@ -421,13 +437,23 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
-    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_2" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaFlex_2" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>

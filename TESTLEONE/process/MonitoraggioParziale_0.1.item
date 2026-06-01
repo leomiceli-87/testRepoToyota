@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" hide="false" name="Default">
-    <contextParameter comment="" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;MonitoraggioParziale&quot;" internalId="_lnHNMFp1EfGI8KVSWQGFUw"/>
-    <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;C:/Talend/Jobs/MonitoraggioParziale/logs&quot;" internalId="_lnHNMVp1EfGI8KVSWQGFUw"/>
-    <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;C:/Talend/Jobs/MonitoraggioParziale/Config.ini&quot;" internalId="_lnHNMlp1EfGI8KVSWQGFUw"/>
     <contextParameter comment="" name="databaseOcsHost" prompt="databaseOcsHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_7RPXUFp1EfGI8KVSWQGFUw"/>
     <contextParameter comment="" name="databaseOcsDatabase" prompt="databaseOcsDatabase?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_7RPXUVp1EfGI8KVSWQGFUw"/>
     <contextParameter comment="" name="databaseOcsUsername" prompt="databaseOcsUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_7RPXUlp1EfGI8KVSWQGFUw"/>
     <contextParameter comment="" name="databaseOcsPassword" prompt="databaseOcsPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_7RPXU1p1EfGI8KVSWQGFUw"/>
-    <contextParameter comment="" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
-    <contextParameter comment="" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
-    <contextParameter comment="" name="userAgent" prompt="userAgent?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
+    <contextParameter comment="&quot;Indirizzo completo del Gatway PHP da invocare&quot;" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
+    <contextParameter comment="&quot;Funzione da richiamare e contenuto da inviare al Gatway PHP&quot;" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
+    <contextParameter comment="&quot;Identificativo di autorizzazione chiamata al Gateway&quot;" name="userAgent" prompt="userAgent?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
+    <contextParameter comment="&quot;Percoso e identificativo completo del file di configurazione del Job&quot;" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="_32Lo0ELTEfG7HqyOm3C_vw" type="id_String" value="" internalId="_A0KZAELrEfG7HqyOm3C_vw"/>
+    <contextParameter comment="&quot;Identificativo univoco del Job&quot;" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_y-CsoF2XEfGMmseW008dDg"/>
+    <contextParameter comment="&quot;Percoso completo della cartella per la memorizzazione dei logs relativi alle esecuzioni&quot;" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_wQW-YF2XEfGMmseW008dDg"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
@@ -121,22 +121,6 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="LogToFile" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="280" posY="200">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1"/>
-    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
-    <elementParameter field="CHECK" name="DUMMY" value="false" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
-    <elementParameter field="CHECK" name="START" value="false" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
-    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="COMPONENT_OK"/>
-    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tJava_1"/>
-    <elementParameter field="TEXT" name="LABEL" value="LogToFile"/>
-    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value=""/>
-  </node>
   <node componentName="LoadConfigFileToContext" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="680" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="LoadConfigFileToContext_1"/>
     <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
@@ -160,7 +144,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_2"/>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="200">
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1200" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -185,7 +169,7 @@
       <column comment="" key="false" length="-1" name="userAgent" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="360">
+  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1200" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="CallGateway_1"/>
     <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
@@ -208,12 +192,12 @@
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaFlex" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="880" posY="360">
+  <node componentName="tJavaFlex" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1000" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaFlex_1" show="false"/>
     <elementParameter field="CHECK" name="DATA_AUTO_PROPAGATE" value="true"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_START" value="// start part of your Java code&#xA;"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_MAIN" value="String response = input_row.Body;&#xD;&#xA;&#xD;&#xA;System.out.println(&quot;ERROR_CODE = &quot; + input_row.ERROR_CODE);&#xD;&#xA;System.out.println(&quot;BODY = &quot; + response);&#xD;&#xA; &#xD;&#xA;if (response == null || response.trim().isEmpty()) {&#xD;&#xA;    System.out.println(&quot;Body vuoto&quot;);&#xD;&#xA;} else {&#xD;&#xA; &#xD;&#xA;    response = response&#xD;&#xA;            .replace(&quot;\r\n&quot;, &quot;\n&quot;)&#xD;&#xA;            .replace(&quot;\r&quot;, &quot;\n&quot;);&#xD;&#xA; &#xD;&#xA;    String[] parts = response.split(&quot;\\|R\\|&quot;, -1);&#xD;&#xA; &#xD;&#xA;    System.out.println(&quot;parts.length = &quot; + parts.length);&#xD;&#xA; &#xD;&#xA;    if (parts.length &lt; 3) {&#xD;&#xA;        System.out.println(&quot;Risposta non valida: &quot; + response);&#xD;&#xA;    } else {&#xD;&#xA; &#xD;&#xA;        String[] header = parts[0].split(&quot;\\|F\\|&quot;, -1);&#xD;&#xA; &#xD;&#xA;        String codice = header.length > 0 ? header[0].trim() : &quot;&quot;;&#xD;&#xA;        String messaggio = header.length > 1 ? header[1].trim() : &quot;&quot;;&#xD;&#xA; &#xD;&#xA;        int righeAttese = Integer.parseInt(parts[1].trim());&#xD;&#xA; &#xD;&#xA;        String dataBlock = parts[2];&#xD;&#xA; &#xD;&#xA;        String[] righe = dataBlock.split(&quot;\\|F\\|&quot;, -1);&#xD;&#xA; &#xD;&#xA;        System.out.println(&quot;Righe attese = &quot; + righeAttese);&#xD;&#xA;        System.out.println(&quot;Righe split = &quot; + righe.length);&#xD;&#xA; &#xD;&#xA;        for (String riga : righe) {&#xD;&#xA; &#xD;&#xA;            riga = riga&#xD;&#xA;                    .replace(&quot;\n&quot;, &quot; &quot;)&#xD;&#xA;                    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xD;&#xA;                    .trim();&#xD;&#xA; &#xD;&#xA;            if (riga.isEmpty()) {&#xD;&#xA;                continue;&#xD;&#xA;            }&#xD;&#xA; &#xD;&#xA;            String[] campi = riga.split(&quot;\\|\\|&quot;, -1);&#xD;&#xA; &#xD;&#xA;            for (int i = 0; i &lt; campi.length; i++) {&#xD;&#xA;                campi[i] = campi[i]&#xD;&#xA;                        .replace(&quot;\n&quot;, &quot; &quot;)&#xD;&#xA;                        .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xD;&#xA;                        .trim();&#xD;&#xA;            }&#xD;&#xA; &#xD;&#xA;            output_row.id_proposta = campi.length > 0 ? campi[0] : &quot;&quot;;&#xD;&#xA;            output_row.num_pratica_ocs = campi.length > 1 ? campi[1] : &quot;&quot;;&#xD;&#xA;            output_row.stato_ocs = campi.length > 2 ? campi[2] : &quot;&quot;;&#xD;&#xA;            output_row.procedura = campi.length > 6 ? campi[6] : &quot;&quot;;"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_END" value="}&#xD;&#xA;}&#xD;&#xA;}"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_START" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xD;&#xA;String response = row2.Body;&#xD;&#xA;if (response == null || response.trim().isEmpty()) {&#xD;&#xA;    System.out.println(&quot;Body vuoto&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;response = response.trim();&#xD;&#xA;&#x9;System.out.println(response);&#xD;&#xA;}"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_MAIN" value="if (response != null &amp;&amp; !response.trim().isEmpty()) {&#xD;&#xA;    response = response&#xD;&#xA;            .replace(&quot;\r\n&quot;, &quot;\n&quot;)&#xD;&#xA;            .replace(&quot;\r&quot;, &quot;\n&quot;);&#xD;&#xA;    String[] parts = response.split(&quot;\\|R\\|&quot;, -1);&#xD;&#xA;    if (parts.length &lt; 3) {&#xD;&#xA;        System.out.println(&quot;Risposta non valida: &quot; + response);&#xD;&#xA;    } else {&#xD;&#xA;        String[] header = parts[0].split(&quot;\\|F\\|&quot;, -1);&#xD;&#xA;        String codice = header.length > 0 ? header[0].trim() : &quot;&quot;;&#xD;&#xA;        String messaggio = header.length > 1 ? header[1].trim() : &quot;&quot;;&#xD;&#xA;        int righeAttese = Integer.parseInt(parts[1].trim());&#xD;&#xA;        String dataBlock = parts[2];&#xD;&#xA;        String[] righe = dataBlock.split(&quot;\\|F\\|&quot;, -1);&#xD;&#xA;        System.out.println(&quot;Righe attese = &quot; + righeAttese);&#xD;&#xA;        System.out.println(&quot;Righe split = &quot; + righe.length);&#xD;&#xA;        for (String riga : righe) {&#xD;&#xA;            riga = riga&#xD;&#xA;                    .replace(&quot;\n&quot;, &quot; &quot;)&#xD;&#xA;                    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xD;&#xA;                    .trim();&#xD;&#xA;            if (riga.isEmpty()) {&#xD;&#xA;                continue;&#xD;&#xA;            }&#xD;&#xA;            String[] campi = riga.split(&quot;\\|\\|&quot;, -1);&#xD;&#xA;            for (int i = 0; i &lt; campi.length; i++) {&#xD;&#xA;                campi[i] = campi[i]&#xD;&#xA;                        .replace(&quot;\n&quot;, &quot; &quot;)&#xD;&#xA;                        .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xD;&#xA;                        .trim();&#xD;&#xA;            }&#xD;&#xA;            output_row.id_proposta = campi.length > 0 ? campi[0] : &quot;&quot;;&#xD;&#xA;            output_row.num_pratica_ocs = campi.length > 1 ? campi[1] : &quot;&quot;;&#xD;&#xA;            output_row.stato_ocs = campi.length > 2 ? campi[2] : &quot;&quot;;&#xD;&#xA;            output_row.procedura = campi.length > 6 ? campi[6] : &quot;&quot;;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_END" value="}&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="CHECK" name="Version_V2_0" value="false" show="false"/>
     <elementParameter field="CHECK" name="Version_V3_2" value="false" show="false"/>
     <elementParameter field="CHECK" name="Version_V4.0" value="true" show="false"/>
@@ -226,7 +210,7 @@
       <column comment="" key="false" length="-1" name="procedura" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="720" posY="360">
+  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="840" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tHashOutput_1" show="false"/>
     <elementParameter field="CHECK" name="LINK_WITH" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="LIST" value="" show="false"/>
@@ -259,7 +243,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="WITH PARAMETRI AS (&#xD;&#xA;    SELECT&#xD;&#xA;        VARCHAR_FORMAT(CURRENT DATE, 'YYYYMMDD') AS DATA_ODIERNA,&#xD;&#xA;        INTEGER(VARCHAR_FORMAT(CURRENT TIMESTAMP - 30 MINUTES, 'HH24MISS')) AS ORA_LIMITE&#xD;&#xA;    FROM SYSIBM.SYSDUMMY1&#xD;&#xA;)&#xD;&#xA;SELECT &#xD;&#xA;    'CO' AS PROCEDURA, &#xD;&#xA;    PLPRATST.PLPRA_NUM_PRATICA AS NUM_PRATICA, &#xD;&#xA;    PLPRATST.PLPRA_STATO AS STATO, &#xD;&#xA;    PLPRATST.PLPRA_ATTRIBUTO AS ATTRIBUTO, &#xD;&#xA;    PLPRATST.PLPRA_DATA AS DATA_VAR, &#xD;&#xA;    PLPRATST.PLPRA_TIME AS ORA_VAR, &#xD;&#xA;    PLPRATST.PLPRA_UTENTE AS UTENTE, &#xD;&#xA;    YEAR(DATE('1899-12-30') + PLC_DATA_DECORRENZA DAY) ||&#xD;&#xA;    RIGHT('0' || MONTH(DATE('1899-12-30') + PLC_DATA_DECORRENZA DAY), 2) ||&#xD;&#xA;    RIGHT('0' || DAY(DATE('1899-12-30') + PLC_DATA_DECORRENZA DAY), 2) &#xD;&#xA;        AS DATA_DECORRENZA&#xD;&#xA;FROM PLPRATST&#xD;&#xA;LEFT OUTER JOIN PLPRAT &#xD;&#xA;    ON PLPRAT.PLC_NUM_PRATICA = PLPRA_NUM_PRATICA&#xD;&#xA;CROSS JOIN PARAMETRI&#xD;&#xA;WHERE PLPRATST.PLPRA_DATA = PARAMETRI.DATA_ODIERNA&#xD;&#xA;AND PLPRATST.PLPRA_TIME >= PARAMETRI.ORA_LIMITE&#xD;&#xA;UNION ALL&#xD;&#xA;SELECT &#xD;&#xA;    'LE' AS PROCEDURA, &#xD;&#xA;    LEPRALOGST.LPCST_NUM_PRATICA AS NUM_PRATICA, &#xD;&#xA;    LEPRALOGST.LPCST_STATO AS STATO, &#xD;&#xA;    LEPRALOGST.LPCST_ATTRIBUTO AS ATTRIBUTO, &#xD;&#xA;    LEPRALOGST.LPCST_DATA_SYS AS DATA_VAR, &#xD;&#xA;    LEPRALOGST.LPCST_ORA_SYS AS ORA_VAR, &#xD;&#xA;    LEPRALOGST.LPCST_OPERATORE AS UTENTE, &#xD;&#xA;    YEAR(DATE('1899-12-30') + LPC_DATA_DECORRENZA DAY) ||&#xD;&#xA;    RIGHT('0' || MONTH(DATE('1899-12-30') + LPC_DATA_DECORRENZA DAY), 2) ||&#xD;&#xA;    RIGHT('0' || DAY(DATE('1899-12-30') + LPC_DATA_DECORRENZA DAY), 2)&#xD;&#xA;        AS DATA_DECORRENZA&#xD;&#xA;FROM LEPRALOGST&#xD;&#xA;LEFT OUTER JOIN LEPRA &#xD;&#xA;    ON LEPRA.LPC_NUM_PRATICA = LEPRALOGST.LPCST_NUM_PRATICA&#xD;&#xA;CROSS JOIN PARAMETRI&#xD;&#xA;WHERE LEPRALOGST.LPCST_DATA_SYS = PARAMETRI.DATA_ODIERNA&#xD;&#xA;AND LEPRALOGST.LPCST_ORA_SYS >= PARAMETRI.ORA_LIMITE"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;WITH PARAMETRI AS (&#xD;&#xA;    SELECT&#xD;&#xA;        VARCHAR_FORMAT(CURRENT DATE, 'YYYYMMDD') AS DATA_ODIERNA,&#xD;&#xA;        INTEGER(VARCHAR_FORMAT(CURRENT TIMESTAMP - 30 MINUTES, 'HH24MISS')) AS ORA_LIMITE&#xD;&#xA;    FROM SYSIBM.SYSDUMMY1&#xD;&#xA;)&#xD;&#xA;SELECT &#xD;&#xA;    'CO' AS PROCEDURA, &#xD;&#xA;    PLPRATST.PLPRA_NUM_PRATICA AS NUM_PRATICA, &#xD;&#xA;    PLPRATST.PLPRA_STATO AS STATO, &#xD;&#xA;    PLPRATST.PLPRA_ATTRIBUTO AS ATTRIBUTO, &#xD;&#xA;    PLPRATST.PLPRA_DATA AS DATA_VAR, &#xD;&#xA;    PLPRATST.PLPRA_TIME AS ORA_VAR, &#xD;&#xA;    PLPRATST.PLPRA_UTENTE AS UTENTE, &#xD;&#xA;    YEAR(DATE('1899-12-30') + PLC_DATA_DECORRENZA DAY) ||&#xD;&#xA;    RIGHT('0' || MONTH(DATE('1899-12-30') + PLC_DATA_DECORRENZA DAY), 2) ||&#xD;&#xA;    RIGHT('0' || DAY(DATE('1899-12-30') + PLC_DATA_DECORRENZA DAY), 2) &#xD;&#xA;        AS DATA_DECORRENZA&#xD;&#xA;FROM PLPRATST&#xD;&#xA;LEFT OUTER JOIN PLPRAT &#xD;&#xA;    ON PLPRAT.PLC_NUM_PRATICA = PLPRA_NUM_PRATICA&#xD;&#xA;CROSS JOIN PARAMETRI&#xD;&#xA;WHERE PLPRATST.PLPRA_DATA = PARAMETRI.DATA_ODIERNA&#xD;&#xA;AND PLPRATST.PLPRA_TIME >= PARAMETRI.ORA_LIMITE&#xD;&#xA;UNION ALL&#xD;&#xA;SELECT &#xD;&#xA;    'LE' AS PROCEDURA, &#xD;&#xA;    LEPRALOGST.LPCST_NUM_PRATICA AS NUM_PRATICA, &#xD;&#xA;    LEPRALOGST.LPCST_STATO AS STATO, &#xD;&#xA;    LEPRALOGST.LPCST_ATTRIBUTO AS ATTRIBUTO, &#xD;&#xA;    LEPRALOGST.LPCST_DATA_SYS AS DATA_VAR, &#xD;&#xA;    LEPRALOGST.LPCST_ORA_SYS AS ORA_VAR, &#xD;&#xA;    LEPRALOGST.LPCST_OPERATORE AS UTENTE, &#xD;&#xA;    YEAR(DATE('1899-12-30') + LPC_DATA_DECORRENZA DAY) ||&#xD;&#xA;    RIGHT('0' || MONTH(DATE('1899-12-30') + LPC_DATA_DECORRENZA DAY), 2) ||&#xD;&#xA;    RIGHT('0' || DAY(DATE('1899-12-30') + LPC_DATA_DECORRENZA DAY), 2)&#xD;&#xA;        AS DATA_DECORRENZA&#xD;&#xA;FROM LEPRALOGST&#xD;&#xA;LEFT OUTER JOIN LEPRA &#xD;&#xA;    ON LEPRA.LPC_NUM_PRATICA = LEPRALOGST.LPCST_NUM_PRATICA&#xD;&#xA;CROSS JOIN PARAMETRI&#xD;&#xA;WHERE LEPRALOGST.LPCST_DATA_SYS = PARAMETRI.DATA_ODIERNA&#xD;&#xA;AND LEPRALOGST.LPCST_ORA_SYS >= PARAMETRI.ORA_LIMITE&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;prompt=false&quot;" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
@@ -337,14 +321,27 @@
     <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
+  <node componentName="LogToFile" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="280" posY="200">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1"/>
+    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter field="CHECK" name="DUMMY" value="false" show="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
+    <elementParameter field="CHECK" name="START" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="COMPONENT_OK"/>
+    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tJava_1"/>
+    <elementParameter field="TEXT" name="LABEL" value="LogToFile"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter field="MEMO" name="COMMENT" value=""/>
+  </node>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" source="tJava_1" target="LogToFile_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tJava_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
-  </connection>
-  <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LogToFile_1" offsetLabelX="-15" offsetLabelY="-22" source="LogToFile_1" target="LoadConfigFileToContext_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk3" show="false"/>
   </connection>
   <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LoadConfigFileToContext_1" offsetLabelX="22" offsetLabelY="3" source="LoadConfigFileToContext_1" target="tFixedFlowInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk4" show="false"/>
@@ -398,6 +395,9 @@
   <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tJava_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError1" show="false"/>
   </connection>
+  <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LogToFile_1" offsetLabelX="0" offsetLabelY="0" source="LogToFile_1" target="LoadConfigFileToContext_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk3" show="false"/>
+  </connection>
   <note opaque="true" posX="400" posY="40" sizeHeight="41" sizeWidth="241" text="Execute: Every 30 Seconds">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
@@ -416,11 +416,6 @@
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
@@ -445,6 +440,11 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBConnection_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>

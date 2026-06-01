@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendXMLMap="http://www.talend.org/xmlmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" hide="false" name="Default">
-    <contextParameter comment="" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;Riconciliazioni&quot;" internalId="_-OcskFUVEfGDrJEx5oRz0Q"/>
-    <contextParameter comment="" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;C:/Talend/Jobs/Riconciliazioni/logs&quot;" internalId="_-OcskVUVEfGDrJEx5oRz0Q"/>
-    <contextParameter comment="" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="&quot;C:/Talend/Jobs/Riconciliazioni/Config.ini&quot;" internalId="_CK-MgFUWEfGDrJEx5oRz0Q"/>
-    <contextParameter comment="" name="ftpHost" prompt="ftpHost?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_String" value="" internalId="_dKdq0FWwEfGR_sec_3d0vw"/>
-    <contextParameter comment="" name="ftpPort" prompt="ftpPort?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_Integer" value="" internalId="_dKdq0VWwEfGR_sec_3d0vw"/>
-    <contextParameter comment="" name="ftpUsername" prompt="ftpUsername?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_String" value="" internalId="_dKdq0lWwEfGR_sec_3d0vw"/>
-    <contextParameter comment="" name="ftpPassword" prompt="ftpPassword?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_String" value="" internalId="_dKdq01WwEfGR_sec_3d0vw"/>
-    <contextParameter comment="" name="ftpDownloadRemoteDirectory" prompt="ftpDownloadRemoteDirectory?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_String" value="" internalId="_dKdq1FWwEfGR_sec_3d0vw"/>
-    <contextParameter comment="" name="ftpLocalDirectory" prompt="ftpLocalDirectory?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_String" value="" internalId="_dKdq1VWwEfGR_sec_3d0vw"/>
-    <contextParameter comment="" name="ftpUploadRemoteDirectory" prompt="ftpUploadRemoteDirectory?" promptNeeded="true" repositoryContextId="_OcNs4FXgEfGyau0Siu7XRg" type="id_String" value="" internalId="_2XWhgFXmEfGyau0Siu7XRg"/>
+    <contextParameter comment="&quot;Nominativo del server FTP&quot;" name="ftpHost" prompt="ftpHost?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_String" value="" internalId="_dKdq0FWwEfGR_sec_3d0vw"/>
+    <contextParameter comment="&quot;Porta del server FTP&quot;" name="ftpPort" prompt="ftpPort?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_Integer" value="" internalId="_dKdq0VWwEfGR_sec_3d0vw"/>
+    <contextParameter comment="&quot;Identificativo account di accesso al server FTP&quot;" name="ftpUsername" prompt="ftpUsername?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_String" value="" internalId="_dKdq0lWwEfGR_sec_3d0vw"/>
+    <contextParameter comment="&quot;Password account di accesso al server FTP&quot;" name="ftpPassword" prompt="ftpPassword?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_String" value="" internalId="_dKdq01WwEfGR_sec_3d0vw"/>
+    <contextParameter comment="&quot;Percoso completo della cartella remota nel server FTP da cui scaricare i files&quot;" name="ftpDownloadRemoteDirectory" prompt="ftpDownloadRemoteDirectory?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_String" value="" internalId="_dKdq1FWwEfGR_sec_3d0vw"/>
+    <contextParameter comment="&quot;Percoso completo della cartella locale in cui salvare i files scaricati dal server FTP&quot;" name="ftpLocalDirectory" prompt="ftpLocalDirectory?" promptNeeded="true" repositoryContextId="_utG3oFWvEfGR_sec_3d0vw" type="id_String" value="" internalId="_dKdq1VWwEfGR_sec_3d0vw"/>
+    <contextParameter comment="&quot;Percoso completo della cartella remota nel server FTP verso cui caricare i files&quot;" name="ftpUploadRemoteDirectory" prompt="ftpUploadRemoteDirectory?" promptNeeded="true" repositoryContextId="_OcNs4FXgEfGyau0Siu7XRg" type="id_String" value="" internalId="_2XWhgFXmEfGyau0Siu7XRg"/>
     <contextParameter comment="" name="databaseMSqlServerHost" prompt="databaseMSqlServerHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_W_Pj4FgPEfGTROAWDDO9Dw"/>
-    <contextParameter comment="" name="databaseMSqlServerPort" prompt="databaseMSqlServerPort?" promptNeeded="true" repositoryContextId="built-in" type="id_Integer" value="" internalId="_W_Pj4VgPEfGTROAWDDO9Dw"/>
+    <contextParameter comment="" name="databaseMSqlServerPort" prompt="databaseMSqlServerPort?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_W_Pj4VgPEfGTROAWDDO9Dw"/>
     <contextParameter comment="" name="databaseMSqlServerSchema" prompt="databaseMSqlServerSchema?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_W_Pj4lgPEfGTROAWDDO9Dw"/>
     <contextParameter comment="" name="databaseMSqlServerDatabase" prompt="databaseMSqlServerDatabase?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_W_Pj41gPEfGTROAWDDO9Dw"/>
     <contextParameter comment="" name="databaseMSqlServerUsername" prompt="databaseMSqlServerUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_W_Pj5FgPEfGTROAWDDO9Dw"/>
@@ -22,13 +19,16 @@
     <contextParameter comment="" name="databaseOcsUsername" prompt="databaseOcsUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_yAewQlhJEfG7F-yxBSgQog"/>
     <contextParameter comment="" name="databaseOcsPassword" prompt="databaseOcsPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_yAewQ1hJEfG7F-yxBSgQog"/>
     <contextParameter comment="" name="emailServerHost" prompt="emailServerHost?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_AVPvQFLMEfG8Pbfzyc37CA"/>
-    <contextParameter comment="" name="emailServerPort" prompt="emailServerPort?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_Integer" value="" internalId="_AVPvQVLMEfG8Pbfzyc37CA"/>
+    <contextParameter comment="" name="emailServerPort" prompt="emailServerPort?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_AVPvQVLMEfG8Pbfzyc37CA"/>
     <contextParameter comment="" name="emailServerUsername" prompt="emailServerUsername?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_3PUNYFjdEfGSzsBYJrUhXQ"/>
     <contextParameter comment="" name="emailServerPassword" prompt="emailServerPassword?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_3PUNYVjdEfGSzsBYJrUhXQ"/>
     <contextParameter comment="" name="emailSenderFrom" prompt="emailSenderFrom?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_DROU4E9uEfGCKoAZMm_BYg"/>
     <contextParameter comment="" name="emailSenderTo" prompt="emailSenderTo?" promptNeeded="true" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="" internalId="_DROU4U9uEfGCKoAZMm_BYg"/>
-    <contextParameter comment="" name="emailSenderSubject" prompt="emailSenderSubject?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="&quot;Default Oggetto&quot;" internalId="_DROU4k9uEfGCKoAZMm_BYg"/>
-    <contextParameter comment="" name="emailSenderMessage" prompt="emailSenderMessage?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="&quot;Default Messaggio&quot;" internalId="_DROU409uEfGCKoAZMm_BYg"/>
+    <contextParameter comment="" name="emailSenderSubject" prompt="emailSenderSubject?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="&quot;Nessun oggetto specificato&quot;" internalId="_DROU4k9uEfGCKoAZMm_BYg"/>
+    <contextParameter comment="" name="emailSenderMessage" prompt="emailSenderMessage?" promptNeeded="false" repositoryContextId="_Kin7YE9tEfGCKoAZMm_BYg" type="id_String" value="&quot;Nessun messaggio specificato&quot;" internalId="_DROU409uEfGCKoAZMm_BYg"/>
+    <contextParameter comment="&quot;Percoso e identificativo completo del file di configurazione del Job&quot;" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="_32Lo0ELTEfG7HqyOm3C_vw" type="id_String" value="" internalId="_A0KZAELrEfG7HqyOm3C_vw"/>
+    <contextParameter comment="&quot;Identificativo univoco del Job&quot;" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_y-CsoF2XEfGMmseW008dDg"/>
+    <contextParameter comment="&quot;Percoso completo della cartella per la memorizzazione dei logs relativi alle esecuzioni&quot;" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_wQW-YF2XEfGMmseW008dDg"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
@@ -251,16 +251,16 @@
     </metadata>
     <nodeData xsi:type="TalendXMLMap:XmlMapData">
       <inputTrees name="row1" matchingMode="ALL_ROWS" lookupMode="LOAD_ONCE">
-        <nodes name="mode" type="id_String" xpath="row1/mode" objID="n14658019"/>
-        <nodes name="tfs_contractnumber" type="id_String" xpath="row1/tfs_contractnumber" objID="n1995591753"/>
-        <nodes name="aioi_contractnumber" type="id_String" xpath="row1/aioi_contractnumber" objID="n1959643516"/>
-        <nodes name="branch" type="id_String" xpath="row1/branch" objID="n1185217259"/>
-        <nodes name="branch_text" type="id_String" xpath="row1/branch_text" objID="n1049476594"/>
-        <nodes name="net_premium" type="id_String" xpath="row1/net_premium" objID="n1396178348"/>
-        <nodes name="tax_insurance" type="id_String" xpath="row1/tax_insurance" objID="n1841855366"/>
-        <nodes name="gross_premium" type="id_String" xpath="row1/gross_premium" objID="n1098187587"/>
-        <nodes name="commission" type="id_String" xpath="row1/commission" objID="n357311458"/>
-        <nodes name="tax_commission" type="id_String" xpath="row1/tax_commission" objID="n1955102245"/>
+        <nodes name="mode" type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.10" xpath="row1/mode" objID="n14658019"/>
+        <nodes name="tfs_contractnumber" type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.11" xpath="row1/tfs_contractnumber" objID="n1995591753"/>
+        <nodes name="aioi_contractnumber" type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.12" xpath="row1/aioi_contractnumber" objID="n1959643516"/>
+        <nodes name="branch" type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.13" xpath="row1/branch" objID="n1185217259"/>
+        <nodes name="branch_text" type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.14" xpath="row1/branch_text" objID="n1049476594"/>
+        <nodes name="net_premium" type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.15" xpath="row1/net_premium" objID="n1396178348"/>
+        <nodes name="tax_insurance" type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.16" xpath="row1/tax_insurance" objID="n1841855366"/>
+        <nodes name="gross_premium" type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.17" xpath="row1/gross_premium" objID="n1098187587"/>
+        <nodes name="commission" type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.18" xpath="row1/commission" objID="n357311458"/>
+        <nodes name="tax_commission" type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.19" xpath="row1/tax_commission" objID="n1955102245"/>
       </inputTrees>
       <outputTrees name="out1">
         <nodes name="mode" expression=" Var.mode" type="id_String" incomingConnections="//@node.2/@nodeData/@connections.0" xpath="out1/mode" nullable="false" objID="n744568339"/>
@@ -275,16 +275,16 @@
         <nodes name="tax_commission" expression="Var.tax_commission" type="id_Long" incomingConnections="//@node.2/@nodeData/@connections.9" xpath="out1/tax_commission" nullable="false" objID="n1632180060"/>
       </outputTrees>
       <varTables name="Var">
-        <nodes name="mode" expression="(row6.mode == null || row6.mode.trim().isEmpty()) ? &quot;&quot; : row6.mode " type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.0"/>
-        <nodes name="tfs_contractnumber" expression="(row6.tfs_contractnumber == null || row6.tfs_contractnumber.trim().isEmpty()) ? 0 : Long.valueOf(row6.tfs_contractnumber.trim()) " type="id_Long" outgoingConnections="//@node.2/@nodeData/@connections.1"/>
-        <nodes name="aioi_contractnumber" expression="(row6.aioi_contractnumber== null || row6.aioi_contractnumber.trim().isEmpty()) ? &quot;&quot; : row6.aioi_contractnumber " type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.2"/>
-        <nodes name="branch" expression="(row6.branch== null || row6.branch.trim().isEmpty()) ? &quot;&quot; : row6.branch " type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.3"/>
-        <nodes name="branch_text" expression="(row6.branch_text== null || row6.branch_text.trim().isEmpty()) ? &quot;&quot; : row6.branch_text " type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.4"/>
-        <nodes name="net_premium" expression="(row6.net_premium == null || row6.net_premium.trim().isEmpty()) ? 0 : Long.valueOf(row6.net_premium.trim()) " type="id_Long" outgoingConnections="//@node.2/@nodeData/@connections.5"/>
-        <nodes name="tax_insurance" expression="(row6.tax_insurance == null || row6.tax_insurance.trim().isEmpty()) ? 0 : Long.valueOf(row6.tax_insurance.trim()) " type="id_Long" outgoingConnections="//@node.2/@nodeData/@connections.6"/>
-        <nodes name="gross_premium" expression="(row6.gross_premium == null || row6.gross_premium.trim().isEmpty()) ? 0 : Long.valueOf(row6.gross_premium.trim()) " type="id_Long" outgoingConnections="//@node.2/@nodeData/@connections.7"/>
-        <nodes name="commission" expression="(row6.commission == null || row6.commission.trim().isEmpty()) ? 0 : Long.valueOf(row6.commission.trim()) " type="id_Long" outgoingConnections="//@node.2/@nodeData/@connections.8"/>
-        <nodes name="tax_commission" expression="(row6.tax_commission == null || row6.tax_commission.trim().isEmpty()) ? 0 : Long.valueOf(row6.tax_commission.trim()) " type="id_Long" outgoingConnections="//@node.2/@nodeData/@connections.9"/>
+        <nodes name="mode" expression="(row1.mode == null || row1.mode.trim().isEmpty()) ? &quot;&quot; : row1.mode " type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.0" incomingConnections="//@node.2/@nodeData/@connections.10"/>
+        <nodes name="tfs_contractnumber" expression="(row1.tfs_contractnumber == null || row1.tfs_contractnumber.trim().isEmpty()) ? 0 : Long.valueOf(row1.tfs_contractnumber.trim()) " type="id_Long" outgoingConnections="//@node.2/@nodeData/@connections.1" incomingConnections="//@node.2/@nodeData/@connections.11"/>
+        <nodes name="aioi_contractnumber" expression="(row1.aioi_contractnumber== null || row1.aioi_contractnumber.trim().isEmpty()) ? &quot;&quot; : row1.aioi_contractnumber " type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.2" incomingConnections="//@node.2/@nodeData/@connections.12"/>
+        <nodes name="branch" expression="(row1.branch== null || row1.branch.trim().isEmpty()) ? &quot;&quot; : row1.branch " type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.3" incomingConnections="//@node.2/@nodeData/@connections.13"/>
+        <nodes name="branch_text" expression="(row1.branch_text== null || row1.branch_text.trim().isEmpty()) ? &quot;&quot; : row1.branch_text " type="id_String" outgoingConnections="//@node.2/@nodeData/@connections.4" incomingConnections="//@node.2/@nodeData/@connections.14"/>
+        <nodes name="net_premium" expression="(row1.net_premium == null || row1.net_premium.trim().isEmpty()) ? 0 : Long.valueOf(row1.net_premium.trim()) " type="id_Long" outgoingConnections="//@node.2/@nodeData/@connections.5" incomingConnections="//@node.2/@nodeData/@connections.15"/>
+        <nodes name="tax_insurance" expression="(row1.tax_insurance == null || row1.tax_insurance.trim().isEmpty()) ? 0 : Long.valueOf(row1.tax_insurance.trim()) " type="id_Long" outgoingConnections="//@node.2/@nodeData/@connections.6" incomingConnections="//@node.2/@nodeData/@connections.16"/>
+        <nodes name="gross_premium" expression="(row1.gross_premium == null || row1.gross_premium.trim().isEmpty()) ? 0 : Long.valueOf(row1.gross_premium.trim()) " type="id_Long" outgoingConnections="//@node.2/@nodeData/@connections.7" incomingConnections="//@node.2/@nodeData/@connections.17"/>
+        <nodes name="commission" expression="(row1.commission == null || row1.commission.trim().isEmpty()) ? 0 : Long.valueOf(row1.commission.trim()) " type="id_Long" outgoingConnections="//@node.2/@nodeData/@connections.8" incomingConnections="//@node.2/@nodeData/@connections.18"/>
+        <nodes name="tax_commission" expression="(row1.tax_commission == null || row1.tax_commission.trim().isEmpty()) ? 0 : Long.valueOf(row1.tax_commission.trim()) " type="id_Long" outgoingConnections="//@node.2/@nodeData/@connections.9" incomingConnections="//@node.2/@nodeData/@connections.19"/>
       </varTables>
       <connections xsi:type="TalendXMLMap:Connection" source="//@node.2/@nodeData/@varTables.0/@nodes.0" target="n744568339"/>
       <connections xsi:type="TalendXMLMap:Connection" source="//@node.2/@nodeData/@varTables.0/@nodes.1" target="n1017954063"/>
@@ -296,6 +296,16 @@
       <connections xsi:type="TalendXMLMap:Connection" source="//@node.2/@nodeData/@varTables.0/@nodes.7" target="n763896922"/>
       <connections xsi:type="TalendXMLMap:Connection" source="//@node.2/@nodeData/@varTables.0/@nodes.8" target="n1850476780"/>
       <connections xsi:type="TalendXMLMap:Connection" source="//@node.2/@nodeData/@varTables.0/@nodes.9" target="n1632180060"/>
+      <connections xsi:type="TalendXMLMap:Connection" source="n14658019" target="//@node.2/@nodeData/@varTables.0/@nodes.0"/>
+      <connections xsi:type="TalendXMLMap:Connection" source="n1995591753" target="//@node.2/@nodeData/@varTables.0/@nodes.1"/>
+      <connections xsi:type="TalendXMLMap:Connection" source="n1959643516" target="//@node.2/@nodeData/@varTables.0/@nodes.2"/>
+      <connections xsi:type="TalendXMLMap:Connection" source="n1185217259" target="//@node.2/@nodeData/@varTables.0/@nodes.3"/>
+      <connections xsi:type="TalendXMLMap:Connection" source="n1049476594" target="//@node.2/@nodeData/@varTables.0/@nodes.4"/>
+      <connections xsi:type="TalendXMLMap:Connection" source="n1396178348" target="//@node.2/@nodeData/@varTables.0/@nodes.5"/>
+      <connections xsi:type="TalendXMLMap:Connection" source="n1841855366" target="//@node.2/@nodeData/@varTables.0/@nodes.6"/>
+      <connections xsi:type="TalendXMLMap:Connection" source="n1098187587" target="//@node.2/@nodeData/@varTables.0/@nodes.7"/>
+      <connections xsi:type="TalendXMLMap:Connection" source="n357311458" target="//@node.2/@nodeData/@varTables.0/@nodes.8"/>
+      <connections xsi:type="TalendXMLMap:Connection" source="n1955102245" target="//@node.2/@nodeData/@varTables.0/@nodes.9"/>
     </nodeData>
   </node>
   <node componentName="tMSSqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="520" posY="640">
@@ -427,22 +437,6 @@
   <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="40" posY="40">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-  </node>
-  <node componentName="LogToFile" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="280" posY="200">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1"/>
-    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
-    <elementParameter field="CHECK" name="DUMMY" value="false" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
-    <elementParameter field="CHECK" name="START" value="false" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
-    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="COMPONENT_OK"/>
-    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tJava_5"/>
-    <elementParameter field="TEXT" name="LABEL" value="LogToFile"/>
-    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value=""/>
   </node>
   <node componentName="LoadConfigFileToContext" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="680" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="LoadConfigFileToContext_1"/>
@@ -759,7 +753,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tFixedFlowInput_1">
       <column comment="" key="false" length="-1" name="emailServerHost" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="emailServerPort" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="emailServerPort" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="emailServerUsername" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="emailServerPassword" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="emailSenderFrom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -783,7 +777,7 @@
     <elementParameter field="MEMO" name="COMMENT" value=""/>
     <metadata connector="FLOW" name="EmailSender_1">
       <column comment="" key="false" length="-1" name="emailServerHost" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="emailServerPort" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="emailServerPort" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="emailServerUsername" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="emailServerPassword" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="emailSenderFrom" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
@@ -806,6 +800,22 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_6"/>
   </node>
+  <node componentName="LogToFile" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="280" posY="200">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1"/>
+    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter field="CHECK" name="DUMMY" value="false" show="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
+    <elementParameter field="CHECK" name="START" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="COMPONENT_OK"/>
+    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tJava_5"/>
+    <elementParameter field="TEXT" name="LABEL" value="LogToFile"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter field="MEMO" name="COMMENT" value=""/>
+  </node>
   <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFileList_1" offsetLabelX="0" offsetLabelY="0" source="tFileList_1" target="tFileInputXML_1">
     <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
     <elementParameter field="TEXT" name="NUMBER_PARALLEL" value="2" show="false"/>
@@ -827,9 +837,6 @@
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tJava_5">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
-  </connection>
-  <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LogToFile_1" offsetLabelX="-17" offsetLabelY="1" source="LogToFile_1" target="LoadConfigFileToContext_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
   </connection>
   <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LoadConfigFileToContext_1" offsetLabelX="19" offsetLabelY="0" source="LoadConfigFileToContext_1" target="tJava_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk3" show="false"/>
@@ -890,6 +897,9 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk13" show="false"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_5" offsetLabelX="0" offsetLabelY="0" source="tJava_5" target="LogToFile_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
+  </connection>
+  <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LogToFile_1" offsetLabelX="0" offsetLabelY="0" source="LogToFile_1" target="LoadConfigFileToContext_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk12" show="false"/>
   </connection>
   <note opaque="true" posX="280" posY="520" sizeHeight="80" sizeWidth="120" text="TODO: mapping INSERT SQLSERVER">
@@ -914,11 +924,6 @@
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
@@ -993,6 +998,11 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_6" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>

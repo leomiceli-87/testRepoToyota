@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties" xmlns:model="http://www.talend.com/joblet.ecore">
   <model:JobletProcess defaultContext="Default" jobType="Standard">
-    <context confirmationNeeded="false" hide="false" name="Default"/>
+    <context confirmationNeeded="false" hide="false" name="Default">
+      <contextParameter comment="&quot;Identificativo univoco del Job&quot;" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_y-CsoF2XEfGMmseW008dDg"/>
+      <contextParameter comment="&quot;Percoso completo della cartella per la memorizzazione dei logs relativi alle esecuzioni&quot;" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_wQW-YF2XEfGMmseW008dDg"/>
+      <contextParameter comment="&quot;Percoso e identificativo completo del file di configurazione del Job&quot;" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_wQW-YV2XEfGMmseW008dDg"/>
+    </context>
     <parameters>
       <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
       <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
@@ -70,31 +74,46 @@
     </parameters>
     <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="400" posY="240">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
-      <elementParameter field="MEMO_JAVA" name="CODE" value="String timestamp = java.time.LocalDateTime.now()&#xA;    .format(java.time.format.DateTimeFormatter.ofPattern(&quot;yyyyMMdd_HHmmss&quot;));&#xA;new java.io.File(context.logsDirectoryPath).mkdirs();&#xA;String logFile = context.logsDirectoryPath + &quot;/Job_&quot; + context.jobName + &quot;_&quot; + timestamp + &quot;.log&quot;;&#xA;// Salvo il nome del File.log nel contesto cosi lo posso riutilizzare altrove&#xA;globalMap.put(context.jobName + &quot;_CURRENT_LOG_FILE&quot;, logFile);&#xA;if (globalMap.get(&quot;stdout_redirected&quot;) == null) {&#xA;    try {&#xA;        java.io.PrintStream console = System.out;&#xA;        java.io.FileOutputStream fos = new java.io.FileOutputStream(logFile, true);&#xA;        class TeePrintStream extends java.io.PrintStream {&#xA;            private java.io.PrintStream second;&#xA;            public TeePrintStream(java.io.OutputStream main, java.io.PrintStream second) throws Exception {&#xA;                super(main, true, &quot;UTF-8&quot;);&#xA;                this.second = second;&#xA;            }&#xA;            private String format(String level, String msg) {&#xA;                String ts = java.time.LocalDateTime.now()&#xA;                    .format(java.time.format.DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;));&#xA;                return ts + &quot; [&quot; + level + &quot;] [&quot; + jobName + &quot;] &quot; + msg;&#xA;            }&#xA;            @Override&#xA;            public void println(String x) {&#xA;                String level = &quot;INFO&quot;;&#xA;                if (x.startsWith(&quot;[ERROR]&quot;)) {&#xA;                    level = &quot;ERROR&quot;;&#xA;                    x = x.replaceFirst(&quot;\\[ERROR\\]\\s*&quot;, &quot;&quot;);&#xA;                } else if (x.startsWith(&quot;[WARN]&quot;)) {&#xA;                    level = &quot;WARN&quot;;&#xA;                    x = x.replaceFirst(&quot;\\[WARN\\]\\s*&quot;, &quot;&quot;);&#xA;                }&#xA;                String formatted = format(level, x);&#xA;                super.println(formatted);&#xA;                second.println(formatted);&#xA;            }&#xA;        }&#xA;        TeePrintStream tee = new TeePrintStream(fos, console);&#xA;        System.setOut(tee);&#xA;        System.setErr(tee);&#xA;        globalMap.put(&quot;stdout_redirected&quot;, true);&#xA;    } catch (Exception e) {&#xA;        e.printStackTrace();&#xA;    }&#xA;}"/>
-      <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+      <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String timestamp = java.time.LocalDateTime.now().format(java.time.format.DateTimeFormatter.ofPattern(&quot;yyyyMMdd_HHmmss&quot;));&#xA;new java.io.File(context.logsDirectoryPath).mkdirs();&#xA;String logFile = context.logsDirectoryPath + &quot;/Job_&quot; + context.jobName + &quot;_&quot; + timestamp + &quot;.log&quot;;&#xA;globalMap.put(context.jobName + &quot;_CURRENT_LOG_FILE&quot;, logFile);&#xA;if (globalMap.get(&quot;stdout_redirected&quot;) == null) {&#xA;    try {&#xA;        java.io.PrintStream console = System.out;&#xA;        java.io.FileOutputStream fos = new java.io.FileOutputStream(logFile, true);&#xA;        class TeePrintStream extends java.io.PrintStream {&#xA;            private java.io.PrintStream second;&#xA;            public TeePrintStream(java.io.OutputStream main, java.io.PrintStream second) throws Exception {&#xA;                super(main, true, &quot;UTF-8&quot;);&#xA;                this.second = second;&#xA;            }&#xA;            private String format(String level, String msg) {&#xD;&#xA;            &#x9;msg = (msg != null) ? msg : &quot;&quot;;&#xA;                String ts = java.time.LocalDateTime.now()&#xA;                    .format(java.time.format.DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;));&#xA;                return ts + &quot; [&quot; + level + &quot;] [&quot; + jobName + &quot;] &quot; + msg;&#xA;            }&#xA;            @Override&#xA;            public void println(String x) {&#xA;                String level = &quot;INFO&quot;;&#xD;&#xA;                x = (x != null) ? x : &quot;&quot;;&#xD;&#xA;                if (x.startsWith(&quot;[ERROR]&quot;)) {&#xA;                    level = &quot;ERROR&quot;;&#xA;                    x = x.replaceFirst(&quot;\\[ERROR\\]\\s*&quot;, &quot;&quot;);&#xA;                } else if (x.startsWith(&quot;[WARN]&quot;)) {&#xA;                    level = &quot;WARN&quot;;&#xA;                    x = x.replaceFirst(&quot;\\[WARN\\]\\s*&quot;, &quot;&quot;);&#xA;                }&#xA;                String formatted = format(level, x);&#xA;                super.println(formatted);&#xA;                second.println(formatted);&#xA;            }&#xA;        }&#xA;        TeePrintStream tee = new TeePrintStream(fos, console);&#xA;        System.setOut(tee);&#xA;        System.setErr(tee);&#xA;        globalMap.put(&quot;stdout_redirected&quot;, true);&#xA;    } catch (Exception e) {&#xA;        e.printStackTrace();&#xA;    }&#xA;}"/>
+      <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tJava_1"/>
     </node>
+    <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="400" posY="400">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
+      <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - LogToFile=> Non e' stato possibile scrivere i logs su File. Lettura percorso [&quot; + context.configFilePath + &quot;] non riuscita. Controllare le configurazioni&quot;);"/>
+      <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+      <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+      <metadata connector="FLOW" name="tJava_2"/>
+    </node>
     <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" source="tJava_1" target="TRIGGER_OUTPUT_1">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
+    </connection>
+    <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" source="tJava_1" target="tJava_2">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError1" show="false"/>
     </connection>
     <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="TRIGGER_INPUT_1" offsetLabelX="0" offsetLabelY="0" source="TRIGGER_INPUT_1" target="tJava_1">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
     </connection>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
     </subjob>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="TRIGGER_OUTPUT_1" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
     </subjob>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="TRIGGER_INPUT_1" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="255;255;255" show="false"/>
-      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="47;47;47"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+    </subjob>
+    <subjob>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
     </subjob>
     <jobletNodes componentName="TRIGGER_OUTPUT" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="680" posY="240" trigger="true">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="TRIGGER_OUTPUT_1"/>

@@ -41,5 +41,22 @@
       "id" : "_LVd9wUePEfGAEo5GTlyLcA",
       "name" : "databaseQuery"
     } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_32Lo0ELTEfG7HqyOm3C_vw",
+    "parameterList" : [ {
+      "id" : "_A0KZAELrEfG7HqyOm3C_vw",
+      "name" : "configFilePath"
+    } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_A3m9gEMKEfG7HqyOm3C_vw",
+    "parameterList" : [ {
+      "id" : "_y-CsoF2XEfGMmseW008dDg",
+      "name" : "jobName"
+    }, {
+      "id" : "_wQW-YF2XEfGMmseW008dDg",
+      "name" : "logsDirectoryPath"
+    } ]
   } ]
 }
