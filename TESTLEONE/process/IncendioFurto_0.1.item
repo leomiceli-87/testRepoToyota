@@ -264,7 +264,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
       <elementValue elementRef="VALUE" value="context.gatewayCallUrl" id="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
-      <elementValue elementRef="VALUE" value="&quot;FFun=24, FIdPro=((Integer) globalMap.get(\&quot;row3.num_pratica\&quot;))&quot;" id="3"/>
+      <elementValue elementRef="VALUE" value="&quot;FFun=24&amp;FIdPro=((Integer) globalMap.get(\&quot;row3.num_pratica\&quot;))&quot;" id="3"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="userAgent" id="4"/>
       <elementValue elementRef="VALUE" value="context.userAgent" id="5"/>
     </elementParameter>
