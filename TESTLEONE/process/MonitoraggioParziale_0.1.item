@@ -459,21 +459,14 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_3"/>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="760" posY="960">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_4" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - DATABASE [AS400] => Esecuzione Query sulla tabella [LECES / LEPRA / LEPAM] Fallita&quot;);"/>
-    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tJava_4"/>
-  </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="600" posY="960">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="440" posY="1160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_5" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - DATABASE [AS400] => Esecuzione Query sulla tabella [PLPRATAS / PLPRAT / OXCTFPAFD] Fallita&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - DATABASE [AS400] => Esecuzione Query [LOAN / LEASING] Fallita&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_5"/>
   </node>
-  <node componentName="tAS400Input" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="520" posY="1120">
+  <node componentName="tAS400Input" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="680" posY="1160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_4" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
@@ -483,12 +476,12 @@
     <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:TuOgj95wrGcoPvL1UWvhGdorKvQfD76cKSlcmr+4" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;PLPRATAS&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="((String) globalMap.get(&quot;tableName&quot;))"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xD;&#xA;    PLPRATAS.PLCAS_DATA_DEST AS DATA_DESTINAZIONE_PAGAMENTO,&#xD;&#xA;    PLPRATAS.PLCAS_DEST_IMP_VALUTA AS IMPORTO_LIQUIDAZIONE,&#xD;&#xA;    PLPRATAS.PAGAMENTO AS TIPO_PAGAMENTO,&#xD;&#xA;    PLPRATAS.ABI AS ABI_BANCA,&#xD;&#xA;    PLPRATAS.CAB AS CAB_BANCA,&#xD;&#xA;    PLPRATAS.NUMERO_CC AS NUMERO_CONTO_CORRENTE_BANCA,&#xD;&#xA;    CCNEWABI.ABI_DENOMINAZIONE AS NOME_BANCA,&#xD;&#xA;    CCNEWCAB.CAB_AGENZIA AS AGENZIA_BANCA,&#xD;&#xA;    CCNEWCAB.CAB_INDIRIZZO AS INDIRIZZO_BANCA,&#xD;&#xA;    CCNEWCAB.CAB_LOCALITA AS LOCALITA_BANCA,&#xD;&#xA;    PLPRAT.PLC_VENDITORE AS CODICE_VENDITORE,&#xD;&#xA;    CCANAGR.AC_NOME AS NOME_VENDITORE,&#xD;&#xA;    CCANAGR.AC_COGNOME AS COGNOME_VENDITORE,&#xD;&#xA;    PLPRAT.PLC_AUTO_TARGA AS TARGA_VEICOLO,&#xD;&#xA;    PLPRAT.PLC_AUTO_TELAIO AS TELAIO_VEICOLO,&#xD;&#xA;    OXCTFPAFD.OXCTPAFD_DATA_SCADENZA AS DATA_SCADENZA_RATA&#xD;&#xA;FROM PLPRATAS&#xD;&#xA;INNER JOIN PLPRAT ON PLPRATAS.PLCAS_NUM_PRATICA = PLPRAT.PLC_NUM_PRATICA&#xD;&#xA;LEFT JOIN CCNEWABI ON PLPRATAS.ABI = CCNEWABI.ABI_ABI&#xD;&#xA;LEFT JOIN CCNEWCAB ON PLPRATAS.ABI = CCNEWCAB.CAB_ABI &#xD;&#xA;    AND PLPRATAS.CAB = CCNEWCAB.CAB_CAB&#xD;&#xA;LEFT JOIN CCANAGR ON PLPRAT.PLC_VENDITORE = CCANAGR.AC_CODICE&#xD;&#xA;LEFT JOIN OXCTFPAFD ON PLPRAT.PLC_NUM_PRATICA = OXCTFPAFD.OXCTPAFD_NUM_PRATICA&#xD;&#xA;    AND OXCTFPAFD.OXCTPAFD_PROCEDURA =  '&quot; + (String) globalMap.get(&quot;procedura&quot;) + &quot;'&#xD;&#xA;    AND OXCTFPAFD.OXCTPAFD_TIPO_RATA = 'R'&#xD;&#xA;    AND OXCTFPAFD.OXCTPAFD_NUMERO_RATA = 1&#xD;&#xA;WHERE PLPRATAS.PLCAS_NUM_PRATICA = '&quot; + (String) globalMap.get(&quot;num_pratica_ocs&quot;) + &quot;'&#xD;&#xA;AND PLPRATAS.PLCAS_TIPO_LIQUIDAZIONE = 'S';&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="((String) globalMap.get(&quot;query&quot;))"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;prompt=false&quot;" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
@@ -550,108 +543,9 @@
       <column comment="" key="false" length="-1" name="DATA_SCADENZA_RATA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tUnite" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="1280">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUnite_1" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tUnite_1">
-      <column comment="" key="false" length="-1" name="DATA_DESTINAZIONE_PAGAMENTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IMPORTO_LIQUIDAZIONE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TIPO_PAGAMENTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ABI_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CAB_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="NUMERO_CONTO_CORRENTE_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="NOME_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AGENZIA_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="INDIRIZZO_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LOCALITA_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CODICE_VENDITORE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="NOME_VENDITORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="COGNOME_VENDITORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TARGA_VEICOLO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TELAIO_VEICOLO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATA_SCADENZA_RATA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tAS400Input" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="840" posY="1120">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_3" show="false"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="jt400-20.0.7.jar" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Yjule9wyTnEnT9Eb11HOXYNLTmS8zkz+qL3/J1Pu" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;LECES&quot;"/>
-    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xD;&#xA;    LECES.LCE_DATA_PAGAMENTO AS DATA_DESTINAZIONE_PAGAMENTO,    &#xD;&#xA;    LECES.LCE_VALUTA AS IMPORTO_LIQUIDAZIONE, &#xD;&#xA;    NULL AS TIPO_PAGAMENTO,&#xD;&#xA;    LECES.LCE_ABI AS ABI_BANCA,&#xD;&#xA;    LECES.LCE_CAB AS CAB_BANCA,&#xD;&#xA;    LECES.LCE_CC AS NUMERO_CONTO_CORRENTE_BANCA,&#xD;&#xA;    CCNEWABI.ABI_DENOMINAZIONE AS NOME_BANCA,&#xD;&#xA;    CCNEWCAB.CAB_AGENZIA AS AGENZIA_BANCA,&#xD;&#xA;    CCNEWCAB.CAB_INDIRIZZO AS INDIRIZZO_BANCA,&#xD;&#xA;    CCNEWCAB.CAB_LOCALITA AS LOCALITA_BANCA,&#xD;&#xA;    LEPRA.LPC_CODICE_VENDITORE AS CODICE_VENDITORE,&#xD;&#xA;    CCANAGR.AC_NOME AS NOME_VENDITORE,&#xD;&#xA;    CCANAGR.AC_COGNOME AS COGNOME_VENDITORE,&#xD;&#xA;    LECES.LCE_TARGA AS TARGA_VEICOLO,&#xD;&#xA;    LECES.LCE_TELAIO AS TELAIO_VEICOLO,&#xD;&#xA;    LEPAM.LRA_DATA_SCADENZA AS DATA_SCADENZA_RATA&#xD;&#xA;FROM LECES&#xD;&#xA;INNER JOIN LEPRA ON LECES.LCE_NUM_PRATICA = LEPRA.LPC_NUM_PRATICA&#xD;&#xA;LEFT JOIN CCNEWABI ON LECES.LCE_ABI = CCNEWABI.ABI_ABI&#xD;&#xA;LEFT JOIN CCNEWCAB ON LECES.LCE_ABI = CCNEWCAB.CAB_ABI &#xD;&#xA;    AND LECES.LCE_CAB = CCNEWCAB.CAB_CAB&#xD;&#xA;LEFT JOIN CCANAGR ON LEPRA.LPC_CODICE_VENDITORE = CCANAGR.AC_CODICE&#xD;&#xA;INNER JOIN LEPAM ON LECES.LCE_NUM_PRATICA = LEPAM.LRA_NUM_PRATICA&#xD;&#xA;    AND LEPAM.LRA_NUMERO_RATA = 1&#xD;&#xA;WHERE LECES.LCE_NUM_PRATICA = '&quot; + (String) globalMap.get(&quot;num_pratica_ocs&quot;) + &quot;'&#xD;&#xA;AND LECES.LCE_CESPITE = 1;&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;prompt=false&quot;" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
-    <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="DATA_DESTINAZIONE_PAGAMENTO" id="0"/>
-      <elementValue elementRef="TRIM" value="false" id="1"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="IMPORTO_LIQUIDAZIONE" id="2"/>
-      <elementValue elementRef="TRIM" value="false" id="3"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TIPO_PAGAMENTO" id="4"/>
-      <elementValue elementRef="TRIM" value="false" id="5"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ABI_BANCA" id="6"/>
-      <elementValue elementRef="TRIM" value="false" id="7"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CAB_BANCA" id="8"/>
-      <elementValue elementRef="TRIM" value="false" id="9"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NUMERO_CONTO_CORRENTE_BANCA" id="10"/>
-      <elementValue elementRef="TRIM" value="false" id="11"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NOME_BANCA" id="12"/>
-      <elementValue elementRef="TRIM" value="false" id="13"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AGENZIA_BANCA" id="14"/>
-      <elementValue elementRef="TRIM" value="false" id="15"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="INDIRIZZO_BANCA" id="16"/>
-      <elementValue elementRef="TRIM" value="false" id="17"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LOCALITA_BANCA" id="18"/>
-      <elementValue elementRef="TRIM" value="false" id="19"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CODICE_VENDITORE" id="20"/>
-      <elementValue elementRef="TRIM" value="false" id="21"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NOME_VENDITORE" id="22"/>
-      <elementValue elementRef="TRIM" value="false" id="23"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="COGNOME_VENDITORE" id="24"/>
-      <elementValue elementRef="TRIM" value="false" id="25"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TARGA_VEICOLO" id="26"/>
-      <elementValue elementRef="TRIM" value="false" id="27"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TELAIO_VEICOLO" id="28"/>
-      <elementValue elementRef="TRIM" value="false" id="29"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DATA_SCADENZA_RATA" id="30"/>
-      <elementValue elementRef="TRIM" value="false" id="31"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
-    <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" value="30" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBInput_3">
-      <column comment="" key="false" length="-1" name="DATA_DESTINAZIONE_PAGAMENTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="IMPORTO_LIQUIDAZIONE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TIPO_PAGAMENTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ABI_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CAB_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="NUMERO_CONTO_CORRENTE_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="NOME_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AGENZIA_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="INDIRIZZO_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LOCALITA_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CODICE_VENDITORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="NOME_VENDITORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="COGNOME_VENDITORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TARGA_VEICOLO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TELAIO_VEICOLO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATA_SCADENZA_RATA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="1400">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="1320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_6" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;==== SYNCRONIZING DATA ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + globalMap.get(&quot;procedura&quot;));&#xD;&#xA;System.out.println(&quot;=================================================&quot;);&#xD;&#xA;String body = new StringBuilder(&quot;&amp;&quot;)&#xD;&#xA;.append(&quot;FIdPro=%s&amp;&quot;.formatted((String) globalMap.get(&quot;id_proposta&quot;)))&#xD;&#xA;.append(&quot;FStaOCS=%s&amp;&quot;.formatted((String) globalMap.get(&quot;stato&quot;)))&#xD;&#xA;.append(&quot;FAttOCS=%s&amp;&quot;.formatted((String) globalMap.get(&quot;attributo&quot;)))&#xD;&#xA;.append(&quot;FNumPra=%s&amp;&quot;.formatted((String) globalMap.get(&quot;num_pratica_ocs&quot;)))&#xD;&#xA;.append(&quot;FStaBDP=%s&amp;&quot;.formatted(&quot;2&quot;)) // constant &#xD;&#xA;.append(&quot;FIndCarBDP=%s&amp;&quot;.formatted(&quot;0&quot;)) // constant&#xD;&#xA;.append(&quot;FDontChangeProStatus=%s&amp;&quot;.formatted(&quot;1&quot;)) // constant&#xD;&#xA;.append(&quot;FDate=%s&amp;&quot;.formatted((String) globalMap.get(&quot;data&quot;)))&#xD;&#xA;.append(&quot;FTime=%s&amp;&quot;.formatted((String) globalMap.get(&quot;ora&quot;)))&#xD;&#xA;.append(&quot;FACCodice=%s&amp;&quot;.formatted(row12.CODICE_VENDITORE))&#xD;&#xA;.toString();&#xD;&#xA;globalMap.put(&quot;restPayload&quot;, body);"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;==== SYNCRONIZING DATA ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + globalMap.get(&quot;procedura&quot;));&#xD;&#xA;System.out.println(&quot;=================================================&quot;);&#xD;&#xA;String body = new StringBuilder(&quot;&amp;&quot;)&#xD;&#xA;.append(&quot;FIdPro=%s&amp;&quot;.formatted((String) globalMap.get(&quot;id_proposta&quot;)))&#xD;&#xA;.append(&quot;FStaOCS=%s&amp;&quot;.formatted((String) globalMap.get(&quot;stato&quot;)))&#xD;&#xA;.append(&quot;FAttOCS=%s&amp;&quot;.formatted((String) globalMap.get(&quot;attributo&quot;)))&#xD;&#xA;.append(&quot;FNumPra=%s&amp;&quot;.formatted((String) globalMap.get(&quot;num_pratica_ocs&quot;)))&#xD;&#xA;.append(&quot;FStaBDP=%s&amp;&quot;.formatted(&quot;2&quot;)) // constant &#xD;&#xA;.append(&quot;FIndCarBDP=%s&amp;&quot;.formatted(&quot;0&quot;)) // constant&#xD;&#xA;.append(&quot;FDontChangeProStatus=%s&amp;&quot;.formatted(&quot;1&quot;)) // constant&#xD;&#xA;.append(&quot;FDate=%s&amp;&quot;.formatted((String) globalMap.get(&quot;data&quot;)))&#xD;&#xA;.append(&quot;FTime=%s&amp;&quot;.formatted((String) globalMap.get(&quot;ora&quot;)))&#xD;&#xA;.append(&quot;FACCodice=%s&amp;&quot;.formatted(row10.CODICE_VENDITORE))&#xD;&#xA;.toString();&#xD;&#xA;globalMap.put(&quot;restPayload&quot;, body);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_6">
@@ -673,7 +567,7 @@
       <column comment="" key="false" length="-1" name="DATA_SCADENZA_RATA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="680" posY="1520">
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="680" posY="1480">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_2" show="false"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -681,7 +575,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
       <elementValue elementRef="VALUE" value="context.gatewayCallUrl" id="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
-      <elementValue elementRef="VALUE" value="&quot;FFun=4&quot;&amp;((String) globalMap.get(\&quot;restPayload\&quot;))" id="3"/>
+      <elementValue elementRef="VALUE" value="&quot;FFun=4&amp;((String) globalMap.get(\&quot;restPayload\&quot;))&quot;" id="3"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="userAgent" id="4"/>
       <elementValue elementRef="VALUE" value="context.userAgent" id="5"/>
     </elementParameter>
@@ -698,7 +592,7 @@
       <column comment="" key="false" length="-1" name="userAgent" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="680" posY="1680">
+  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="680" posY="1640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="CallGateway_2"/>
     <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
@@ -721,7 +615,7 @@
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="440" posY="1680">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="440" posY="1640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_2" show="false"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xD;&#xA;String body = row14.Body;&#xD;&#xA;if (body == null || body.trim().isEmpty()) {&#xD;&#xA;    System.out.println(&quot;Nessuna response dal Gateway ricevuta...&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;body.replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;).replaceAll(&quot;\\s+&quot;, &quot; &quot;).trim();     &#xD;&#xA;&#x9;System.out.println(body);&#xD;&#xA;}&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -737,12 +631,19 @@
       <column comment="" key="false" length="-1" name="databaseQuery" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="240" posY="1680">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="240" posY="1640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_7" show="false"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;***** JOB ENDED *****&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_7"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="1000">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_8" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String state = ((String) globalMap.get(&quot;stato&quot;)),&#xD;&#xA;&#x9;   type = null, &#xD;&#xA;&#x9;   query = null,&#xD;&#xA;&#x9;   tableName = null;&#xD;&#xA;if (state.equals(&quot;40&quot;)) {&#xD;&#xA;&#x9;type = &quot;LOAN&quot;;&#xD;&#xA;&#x9;tableName = &quot;PLPRATAS&quot;;&#xD;&#xA;&#x9;query = &quot;&quot;&quot;&#xD;&#xA;&#x9;&#x9;&#x9;SELECT &#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.PLCAS_DATA_DEST AS DATA_DESTINAZIONE_PAGAMENTO,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.PLCAS_DEST_IMP_VALUTA AS IMPORTO_LIQUIDAZIONE,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.PAGAMENTO AS TIPO_PAGAMENTO,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.ABI AS ABI_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.CAB AS CAB_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.NUMERO_CC AS NUMERO_CONTO_CORRENTE_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWABI.ABI_DENOMINAZIONE AS NOME_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_AGENZIA AS AGENZIA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_INDIRIZZO AS INDIRIZZO_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_LOCALITA AS LOCALITA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRAT.PLC_VENDITORE AS CODICE_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_NOME AS NOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_COGNOME AS COGNOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRAT.PLC_AUTO_TARGA AS TARGA_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRAT.PLC_AUTO_TELAIO AS TELAIO_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    OXCTFPAFD.OXCTPAFD_DATA_SCADENZA AS DATA_SCADENZA_RATA&#xD;&#xA;&#x9;&#x9;&#x9;FROM PLPRATAS&#xD;&#xA;&#x9;&#x9;&#x9;INNER JOIN PLPRAT ON PLPRATAS.PLCAS_NUM_PRATICA = PLPRAT.PLC_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWABI ON PLPRATAS.ABI = CCNEWABI.ABI_ABI&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWCAB ON PLPRATAS.ABI = CCNEWCAB.CAB_ABI &#xD;&#xA;&#x9;&#x9;&#x9;    AND PLPRATAS.CAB = CCNEWCAB.CAB_CAB&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCANAGR ON PLPRAT.PLC_VENDITORE = CCANAGR.AC_CODICE&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN OXCTFPAFD ON PLPRAT.PLC_NUM_PRATICA = OXCTFPAFD.OXCTPAFD_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;    AND OXCTFPAFD.OXCTPAFD_PROCEDURA =  '[%s]'&#xD;&#xA;&#x9;&#x9;&#x9;    AND OXCTFPAFD.OXCTPAFD_TIPO_RATA = 'R'&#xD;&#xA;&#x9;&#x9;&#x9;    AND OXCTFPAFD.OXCTPAFD_NUMERO_RATA = 1&#xD;&#xA;&#x9;&#x9;&#x9;WHERE PLPRATAS.PLCAS_NUM_PRATICA = '[%s]'&#xD;&#xA;&#x9;&#x9;&#x9;AND PLPRATAS.PLCAS_TIPO_LIQUIDAZIONE = 'S';&#xD;&#xA;&#x9;&#x9;&quot;&quot;&quot;.formatted(&#xD;&#xA;&#x9;&#x9;(String) globalMap.get(&quot;procedura&quot;),&#xD;&#xA;&#x9;&#x9;(String) globalMap.get(&quot;num_pratica_ocs&quot;))&#xD;&#xA;&#x9;&#x9;.trim();&#xD;&#xA;} else if (state.equals(&quot;25&quot;)) {&#xD;&#xA;&#x9;type = &quot;LEASING&quot;;&#xD;&#xA;&#x9;tableName = &quot;LECES&quot;;&#xD;&#xA;&#x9;query = &quot;&quot;&quot;&#xD;&#xA;&#x9;&#x9;&#x9;SELECT &#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_DATA_PAGAMENTO AS DATA_DESTINAZIONE_PAGAMENTO,    &#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_VALUTA AS IMPORTO_LIQUIDAZIONE, &#xD;&#xA;&#x9;&#x9;&#x9;    NULL AS TIPO_PAGAMENTO,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_ABI AS ABI_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_CAB AS CAB_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_CC AS NUMERO_CONTO_CORRENTE_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWABI.ABI_DENOMINAZIONE AS NOME_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_AGENZIA AS AGENZIA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_INDIRIZZO AS INDIRIZZO_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_LOCALITA AS LOCALITA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    LEPRA.LPC_CODICE_VENDITORE AS CODICE_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_NOME AS NOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_COGNOME AS COGNOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_TARGA AS TARGA_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_TELAIO AS TELAIO_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    LEPAM.LRA_DATA_SCADENZA AS DATA_SCADENZA_RATA&#xD;&#xA;&#x9;&#x9;&#x9;FROM LECES&#xD;&#xA;&#x9;&#x9;&#x9;INNER JOIN LEPRA ON LECES.LCE_NUM_PRATICA = LEPRA.LPC_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWABI ON LECES.LCE_ABI = CCNEWABI.ABI_ABI&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWCAB ON LECES.LCE_ABI = CCNEWCAB.CAB_ABI &#xD;&#xA;&#x9;&#x9;&#x9;    AND LECES.LCE_CAB = CCNEWCAB.CAB_CAB&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCANAGR ON LEPRA.LPC_CODICE_VENDITORE = CCANAGR.AC_CODICE&#xD;&#xA;&#x9;&#x9;&#x9;INNER JOIN LEPAM ON LECES.LCE_NUM_PRATICA = LEPAM.LRA_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;    AND LEPAM.LRA_NUMERO_RATA = 1&#xD;&#xA;&#x9;&#x9;&#x9;WHERE LECES.LCE_NUM_PRATICA = '[%s]'&#xD;&#xA;&#x9;&#x9;&#x9;AND LECES.LCE_CESPITE = 1;&#xD;&#xA;&#x9;&#x9;&quot;&quot;&quot;.formatted((String) globalMap.get(&quot;num_pratica_ocs&quot;))&#xD;&#xA;&#x9;&#x9;.trim();&#xD;&#xA;} else {&#xD;&#xA;&#x9;throw new IllegalStateException(&quot;The State of Dossier [%s] is not valid !&quot;.formatted(globalMap.get(&quot;id_proposta&quot;)));&#xD;&#xA;}&#xD;&#xA;globalMap.put(&quot;tableName&quot;, tableName);&#xD;&#xA;globalMap.put(&quot;query&quot;, query);&#xD;&#xA;System.out.println(&quot;==== INQUIRING the DATABASE ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + type);&#xD;&#xA;System.out.println(&quot;TABLE => &quot; + tableName);&#xD;&#xA;System.out.println(&quot;===============================&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_8"/>
   </node>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" source="tJava_1" target="LogToFile_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
@@ -857,131 +758,16 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row9" show="false"/>
   </connection>
-  <connection connectorName="RUN_IF" label="LEASING" lineStyle="6" metaname="tJavaRow_3" offsetLabelX="50" offsetLabelY="2" outputId="1" source="tJavaRow_3" target="tDBInput_3">
-    <elementParameter field="MEMO_JAVA" name="CONDITION" value="((String) globalMap.get(&quot;stato&quot;)).equals(&quot;25&quot;)"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LEASING" show="false"/>
+  <connection connectorName="RUN_IF" label="LoanLeasing" lineStyle="6" metaname="tJavaRow_3" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_3" target="tJava_8">
+    <elementParameter field="MEMO_JAVA" name="CONDITION" value="((String) globalMap.get(&quot;stato&quot;)).equals(&quot;40&quot;) || ((String) globalMap.get(&quot;stato&quot;)).equals(&quot;25&quot;)"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LoanLeasing" show="false"/>
   </connection>
-  <connection connectorName="RUN_IF" label="LOAN" lineStyle="6" metaname="tJavaRow_3" offsetLabelX="-50" offsetLabelY="3" outputId="2" source="tJavaRow_3" target="tDBInput_4">
-    <elementParameter field="MEMO_JAVA" name="CONDITION" value="((String) globalMap.get(&quot;stato&quot;)).equals(&quot;40&quot;)"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LOAN" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row10" lineStyle="10" mergeOrder="1" metaname="tDBInput_4" offsetLabelX="0" offsetLabelY="0" source="tDBInput_4" target="tUnite_1">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="NOME_BANCA" id="0"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="1"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="2"/>
-      <elementValue elementRef="TRACE_COLUMN" value="LOCALITA_BANCA" id="3"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="4"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="5"/>
-      <elementValue elementRef="TRACE_COLUMN" value="ABI_BANCA" id="6"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="7"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="8"/>
-      <elementValue elementRef="TRACE_COLUMN" value="NUMERO_CONTO_CORRENTE_BANCA" id="9"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="10"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="11"/>
-      <elementValue elementRef="TRACE_COLUMN" value="TELAIO_VEICOLO" id="12"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="13"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="14"/>
-      <elementValue elementRef="TRACE_COLUMN" value="TARGA_VEICOLO" id="15"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="16"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="17"/>
-      <elementValue elementRef="TRACE_COLUMN" value="NOME_VENDITORE" id="18"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="19"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="20"/>
-      <elementValue elementRef="TRACE_COLUMN" value="DATA_DESTINAZIONE_PAGAMENTO" id="21"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="22"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="23"/>
-      <elementValue elementRef="TRACE_COLUMN" value="INDIRIZZO_BANCA" id="24"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="25"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="26"/>
-      <elementValue elementRef="TRACE_COLUMN" value="AGENZIA_BANCA" id="27"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="28"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="29"/>
-      <elementValue elementRef="TRACE_COLUMN" value="COGNOME_VENDITORE" id="30"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="31"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="32"/>
-      <elementValue elementRef="TRACE_COLUMN" value="TIPO_PAGAMENTO" id="33"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="34"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="35"/>
-      <elementValue elementRef="TRACE_COLUMN" value="DATA_SCADENZA_RATA" id="36"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="37"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="38"/>
-      <elementValue elementRef="TRACE_COLUMN" value="IMPORTO_LIQUIDAZIONE" id="39"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="40"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="41"/>
-      <elementValue elementRef="TRACE_COLUMN" value="CAB_BANCA" id="42"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="43"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="44"/>
-      <elementValue elementRef="TRACE_COLUMN" value="CODICE_VENDITORE" id="45"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="46"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="47"/>
-    </elementParameter>
+  <connection connectorName="FLOW" label="row10" lineStyle="0" metaname="tDBInput_4" offsetLabelX="0" offsetLabelY="0" source="tDBInput_4" target="tJava_6">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row10" show="false"/>
   </connection>
   <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBInput_4" offsetLabelX="0" offsetLabelY="0" source="tDBInput_4" target="tJava_5">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError6" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row12" lineStyle="0" metaname="tUnite_1" offsetLabelX="0" offsetLabelY="0" source="tUnite_1" target="tJava_6">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row12" show="false"/>
-  </connection>
-  <connection connectorName="FLOW" label="row11" lineStyle="10" mergeOrder="2" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tUnite_1">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="NOME_BANCA" id="0"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="1"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="2"/>
-      <elementValue elementRef="TRACE_COLUMN" value="LOCALITA_BANCA" id="3"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="4"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="5"/>
-      <elementValue elementRef="TRACE_COLUMN" value="ABI_BANCA" id="6"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="7"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="8"/>
-      <elementValue elementRef="TRACE_COLUMN" value="NUMERO_CONTO_CORRENTE_BANCA" id="9"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="10"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="11"/>
-      <elementValue elementRef="TRACE_COLUMN" value="TELAIO_VEICOLO" id="12"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="13"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="14"/>
-      <elementValue elementRef="TRACE_COLUMN" value="TARGA_VEICOLO" id="15"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="16"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="17"/>
-      <elementValue elementRef="TRACE_COLUMN" value="NOME_VENDITORE" id="18"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="19"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="20"/>
-      <elementValue elementRef="TRACE_COLUMN" value="DATA_DESTINAZIONE_PAGAMENTO" id="21"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="22"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="23"/>
-      <elementValue elementRef="TRACE_COLUMN" value="INDIRIZZO_BANCA" id="24"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="25"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="26"/>
-      <elementValue elementRef="TRACE_COLUMN" value="AGENZIA_BANCA" id="27"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="28"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="29"/>
-      <elementValue elementRef="TRACE_COLUMN" value="COGNOME_VENDITORE" id="30"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="31"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="32"/>
-      <elementValue elementRef="TRACE_COLUMN" value="TIPO_PAGAMENTO" id="33"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="34"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="35"/>
-      <elementValue elementRef="TRACE_COLUMN" value="DATA_SCADENZA_RATA" id="36"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="37"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="38"/>
-      <elementValue elementRef="TRACE_COLUMN" value="IMPORTO_LIQUIDAZIONE" id="39"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="40"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="41"/>
-      <elementValue elementRef="TRACE_COLUMN" value="CAB_BANCA" id="42"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="43"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="44"/>
-      <elementValue elementRef="TRACE_COLUMN" value="CODICE_VENDITORE" id="45"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="46"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="47"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row11" show="false"/>
-  </connection>
-  <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tJava_4">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError5" show="false"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_6" offsetLabelX="0" offsetLabelY="0" source="tJava_6" target="tFixedFlowInput_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk8" show="false"/>
@@ -997,10 +783,17 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJavaRow_2" offsetLabelX="4" offsetLabelY="5" source="tJavaRow_2" target="tJava_7">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk9" show="false"/>
   </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_8" offsetLabelX="0" offsetLabelY="0" source="tJava_8" target="tDBInput_4">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
+  </connection>
   <note opaque="true" posX="400" posY="40" sizeHeight="41" sizeWidth="241" text="Execute: Every 30 Seconds">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
+  </note>
+  <note opaque="true" posX="800" posY="1320" sizeHeight="80" sizeWidth="120" text="TODO: check campi che estraggo e invio :/">
+    <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
+    <elementParameter field="CHECK" name="FONT_ITALIC" value="true"/>
   </note>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
@@ -1054,11 +847,6 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_4" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
-  </subjob>
-  <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_5" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
@@ -1075,6 +863,11 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_7" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_8" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
