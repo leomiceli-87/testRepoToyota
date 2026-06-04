@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" hide="false" name="Default">
-    <contextParameter comment="&quot;Percoso e identificativo completo del file di configurazione del Job&quot;" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="_32Lo0ELTEfG7HqyOm3C_vw" type="id_String" value="" internalId="_A0KZAELrEfG7HqyOm3C_vw"/>
+    <contextParameter comment="" name="databaseOcsHost" prompt="databaseOcsHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_7RPXUFp1EfGI8KVSWQGFUw"/>
+    <contextParameter comment="" name="databaseOcsDatabase" prompt="databaseOcsDatabase?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_7RPXUVp1EfGI8KVSWQGFUw"/>
+    <contextParameter comment="" name="databaseOcsUsername" prompt="databaseOcsUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_7RPXUlp1EfGI8KVSWQGFUw"/>
+    <contextParameter comment="" name="databaseOcsPassword" prompt="databaseOcsPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_7RPXU1p1EfGI8KVSWQGFUw"/>
     <contextParameter comment="&quot;Indirizzo completo del Gatway PHP da invocare&quot;" name="gatewayCallUrl" prompt="gatewayCallUrl?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_MJa_EEMBEfG7HqyOm3C_vw"/>
     <contextParameter comment="&quot;Funzione da richiamare e contenuto da inviare al Gatway PHP&quot;" name="gatewayCallBody" prompt="gatewayCallBody?" promptNeeded="false" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Tvk4IEMBEfG7HqyOm3C_vw"/>
     <contextParameter comment="&quot;Identificativo di autorizzazione chiamata al Gateway&quot;" name="userAgent" prompt="userAgent?" promptNeeded="true" repositoryContextId="_bO1PEELtEfG7HqyOm3C_vw" type="id_String" value="" internalId="_Ig18UEOlEfGBj7EpAX9f2Q"/>
+    <contextParameter comment="&quot;Percoso e identificativo completo del file di configurazione del Job&quot;" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="_32Lo0ELTEfG7HqyOm3C_vw" type="id_String" value="" internalId="_A0KZAELrEfG7HqyOm3C_vw"/>
     <contextParameter comment="&quot;Identificativo univoco del Job&quot;" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_y-CsoF2XEfGMmseW008dDg"/>
     <contextParameter comment="&quot;Percoso completo della cartella per la memorizzazione dei logs relativi alle esecuzioni&quot;" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_wQW-YF2XEfGMmseW008dDg"/>
   </context>
@@ -106,6 +110,17 @@
     <elementParameter field="TEXT" name="FOOTER_CODE" value="" show="false"/>
     <elementParameter field="TEXT" name="FOOTER_IMPORT" value="" show="false"/>
   </parameters>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="280" posY="40">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;***** JOB STARTED *****&quot;);&#xD;&#xA;"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_1"/>
+  </node>
+  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="40" posY="40">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
   <node componentName="LoadConfigFileToContext" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="680" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="LoadConfigFileToContext_1"/>
     <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
@@ -122,34 +137,14 @@
     <elementParameter field="CHECK" name="INFORMATION" value="false"/>
     <elementParameter field="MEMO" name="COMMENT" value=""/>
   </node>
-  <node componentName="LogToFile" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="280" posY="200">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1"/>
-    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
-    <elementParameter field="CHECK" name="DUMMY" value="false" show="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
-    <elementParameter field="CHECK" name="START" value="false" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
-    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="COMPONENT_OK"/>
-    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tJava_1"/>
-    <elementParameter field="TEXT" name="LABEL" value="LogToFile"/>
-    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value=""/>
-  </node>
-  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="40" posY="40">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-  </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="280" posY="40">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;***** JOB STARTED *****&quot;);&#xD;&#xA;"/>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="40">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - DATABASE [AS400] => Connessione Non Effettuata ! Controllare la raggiungibilita' dei sistemi o le configurazioni&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tJava_1"/>
+    <metadata connector="FLOW" name="tJava_2"/>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1160" posY="200">
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1320" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -174,7 +169,7 @@
       <column comment="" key="false" length="-1" name="userAgent" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1160" posY="320">
+  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="1320" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="CallGateway_1"/>
     <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
@@ -197,11 +192,11 @@
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJavaFlex" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="920" posY="320">
+  <node componentName="tJavaFlex" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaFlex_1" show="false"/>
     <elementParameter field="CHECK" name="DATA_AUTO_PROPAGATE" value="true"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_START" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xD;&#xA;String response = row2.Body;&#xD;&#xA;if (response == null || response.trim().isEmpty()) {&#xD;&#xA;    System.out.println(&quot;Nessuna risposta ricevuta...&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;response = response.trim();&#xD;&#xA;&#x9;System.out.println(response);&#xD;&#xA;}"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_MAIN" value="if (response != null &amp;&amp; !response.trim().isEmpty()) {&#xD;&#xA;    response = response&#xD;&#xA;            .replace(&quot;\r\n&quot;, &quot;\n&quot;)&#xD;&#xA;            .replace(&quot;\r&quot;, &quot;\n&quot;);&#xD;&#xA;    String[] parts = response.split(&quot;\\|R\\|&quot;, -1);&#xD;&#xA;    if (parts.length &lt; 3) {&#xD;&#xA;        System.out.println(&quot;Risposta non valida: &quot; + response);&#xD;&#xA;    } else {&#xD;&#xA;        String[] header = parts[0].split(&quot;\\|F\\|&quot;, -1);&#xD;&#xA;        String codice = header.length > 0 ? header[0].trim() : &quot;&quot;;&#xD;&#xA;        String messaggio = header.length > 1 ? header[1].trim() : &quot;&quot;;&#xD;&#xA;        int righeAttese = Integer.parseInt(parts[1].trim());&#xD;&#xA;        String dataBlock = parts[2];&#xD;&#xA;        String[] righe = dataBlock.split(&quot;\\|F\\|&quot;, -1);&#xD;&#xA;        System.out.println(&quot;Righe attese = &quot; + righeAttese);&#xD;&#xA;        System.out.println(&quot;Righe split = &quot; + righe.length);&#xD;&#xA;        for (String riga : righe) {&#xD;&#xA;            riga = riga&#xD;&#xA;                    .replace(&quot;\n&quot;, &quot; &quot;)&#xD;&#xA;                    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xD;&#xA;                    .trim();&#xD;&#xA;            if (riga.isEmpty()) {&#xD;&#xA;                continue;&#xD;&#xA;            }&#xD;&#xA;            String[] campi = riga.split(&quot;\\|\\|&quot;, -1);&#xD;&#xA;            for (int i = 0; i &lt; campi.length; i++) {&#xD;&#xA;                campi[i] = campi[i]&#xD;&#xA;                        .replace(&quot;\n&quot;, &quot; &quot;)&#xD;&#xA;                        .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xD;&#xA;                        .trim();&#xD;&#xA;            }&#xD;&#xA;            output_row.id_proposta = campi.length > 0 ? campi[0] : &quot;&quot;;&#xD;&#xA;            output_row.num_pratica_ocs = campi.length > 1 ? campi[1] : &quot;&quot;;&#xD;&#xA;            output_row.stato_ocs = campi.length > 2 ? campi[2] : &quot;&quot;;&#xD;&#xA;            output_row.procedura = campi.length > 6 ? campi[6] : &quot;&quot;;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_MAIN" value="if (response != null &amp;&amp; !response.trim().isEmpty()) {&#xD;&#xA;    response = response&#xD;&#xA;            .replace(&quot;\r\n&quot;, &quot;\n&quot;)&#xD;&#xA;            .replace(&quot;\r&quot;, &quot;\n&quot;);&#xD;&#xA;    String[] parts = response.split(&quot;\\|R\\|&quot;, -1);&#xD;&#xA;    if (parts.length &lt; 3) {&#xD;&#xA;        System.out.println(&quot;Risposta non valida: &quot; + response);&#xD;&#xA;    } else {&#xD;&#xA;        String[] header = parts[0].split(&quot;\\|F\\|&quot;, -1);&#xD;&#xA;        String codice = header.length > 0 ? header[0].trim() : &quot;&quot;;&#xD;&#xA;        String messaggio = header.length > 1 ? header[1].trim() : &quot;&quot;;&#xD;&#xA;        int righeAttese = Integer.parseInt(parts[1].trim());&#xD;&#xA;        String dataBlock = parts[2];&#xD;&#xA;        String[] righe = dataBlock.split(&quot;\\|F\\|&quot;, -1);&#xD;&#xA;        System.out.println(&quot;Righe attese = &quot; + righeAttese);&#xD;&#xA;        System.out.println(&quot;Righe split = &quot; + righe.length);&#xD;&#xA;        for (String riga : righe) {&#xD;&#xA;            riga = riga&#xD;&#xA;                    .replace(&quot;\n&quot;, &quot; &quot;)&#xD;&#xA;                    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xD;&#xA;                    .trim();&#xD;&#xA;            if (riga.isEmpty()) {&#xD;&#xA;                continue;&#xD;&#xA;            }&#xD;&#xA;            String[] campi = riga.split(&quot;\\|\\|&quot;, -1);&#xD;&#xA;            for (int i = 0; i &lt; campi.length; i++) {&#xD;&#xA;                campi[i] = campi[i]&#xD;&#xA;                        .replace(&quot;\n&quot;, &quot; &quot;)&#xD;&#xA;                        .replaceAll(&quot;\\s+&quot;, &quot; &quot;)&#xD;&#xA;                        .trim();&#xD;&#xA;            }&#xD;&#xA;            output_row.id_proposta     = campi.length > 0 ? campi[0] : &quot;&quot;; // FIdPro&#xD;&#xA;            output_row.num_pratica_ocs = campi.length > 1 ? campi[7] : &quot;&quot;; // FNumPra&#xD;&#xA;            output_row.stato_ocs       = campi.length > 2 ? campi[5] : &quot;&quot;; // FStaOCS&#xD;&#xA;            output_row.attributo_ocs   = campi.length > 3 ? campi[6] : &quot;&quot;; // FAttOCS (NUOVO)&#xD;&#xA;            output_row.procedura       = campi.length > 6 ? campi[10] : &quot;&quot;;"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE_END" value="}&#xD;&#xA;}&#xD;&#xA;}&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="CHECK" name="Version_V2_0" value="false" show="false"/>
     <elementParameter field="CHECK" name="Version_V3_2" value="false" show="false"/>
@@ -213,19 +208,437 @@
       <column key="false" length="0" name="num_pratica_ocs" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="stato_ocs" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="procedura" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="attributo_ocs" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LoadConfigFileToContext_1" offsetLabelX="16" offsetLabelY="1" source="LoadConfigFileToContext_1" target="tFixedFlowInput_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk4" show="false"/>
-  </connection>
-  <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LogToFile_1" offsetLabelX="-18" offsetLabelY="0" source="LogToFile_1" target="LoadConfigFileToContext_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk3" show="false"/>
-  </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tJava_1">
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="920" posY="360">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSetGlobalVar_1" show="false"/>
+    <elementParameter field="TABLE" name="VARIABLES">
+      <elementValue elementRef="KEY" value="&quot;id_proposta&quot;" id="0"/>
+      <elementValue elementRef="VALUE" value="row3.id_proposta" id="1"/>
+      <elementValue elementRef="KEY" value="&quot;num_pratica_ocs&quot;" id="2"/>
+      <elementValue elementRef="VALUE" value="row3.num_pratica_ocs" id="3"/>
+      <elementValue elementRef="KEY" value="&quot;stato_ocs&quot;" id="4"/>
+      <elementValue elementRef="VALUE" value="row3.stato_ocs" id="5"/>
+      <elementValue elementRef="KEY" value="&quot;attributo_ocs&quot;" id="6"/>
+      <elementValue elementRef="VALUE" value="row3.attributo_ocs" id="7"/>
+      <elementValue elementRef="KEY" value="&quot;procedura&quot;" id="8"/>
+      <elementValue elementRef="VALUE" value="row3.procedura" id="9"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSetGlobalVar_1">
+      <column key="false" length="0" name="id_proposta" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column key="false" length="0" name="num_pratica_ocs" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="stato_ocs" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="procedura" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="attributo_ocs" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tAS400Connection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="200">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBConnection_1" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="jt400-20.0.7.jar"/>
+    <elementParameter field="TEXT" name="HOST" value="context.databaseOcsHost"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.databaseOcsDatabase"/>
+    <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="context.databaseOcsUsername"/>
+    <elementParameter field="PASSWORD" name="PASS" value="context.databaseOcsPassword"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="SHARED_CONNECTION_NAME" value="" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;prompt=false&quot;"/>
+    <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="LogToFile" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="280" posY="200">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1"/>
+    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter field="CHECK" name="DUMMY" value="false" show="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
+    <elementParameter field="CHECK" name="START" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="COMPONENT_OK"/>
+    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tJava_1"/>
+    <elementParameter field="TEXT" name="LABEL" value="LogToFile"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter field="MEMO" name="COMMENT" value=""/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="640">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_4" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - DATABASE [AS400] => Esecuzione Query sulla tabella [PLPRATST / PLPRAT / LEPRALOGST / LEPRA] Fallita&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_4"/>
+  </node>
+  <node componentName="tAS400Input" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="640">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_3" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="jt400-20.0.7.jar" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:+RDd1Kwt+hheCRsjouDt1FAPP8uSLq0h/Bu4nKqU" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="((String) globalMap.get(&quot;tableName&quot;))"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="((String) globalMap.get(&quot;query&quot;))"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;prompt=false&quot;" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="PROCEDURA" id="0"/>
+      <elementValue elementRef="TRIM" value="false" id="1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="NUM_PRATICA" id="2"/>
+      <elementValue elementRef="TRIM" value="false" id="3"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="STATO" id="4"/>
+      <elementValue elementRef="TRIM" value="false" id="5"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ATTRIBUTO" id="6"/>
+      <elementValue elementRef="TRIM" value="false" id="7"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DATA" id="8"/>
+      <elementValue elementRef="TRIM" value="false" id="9"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ORA" id="10"/>
+      <elementValue elementRef="TRIM" value="false" id="11"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="UTENTE_OPERATORE" id="12"/>
+      <elementValue elementRef="TRIM" value="false" id="13"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
+    <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" value="30" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_3">
+      <column comment="" key="false" length="-1" name="PROCEDURA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NUM_PRATICA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="STATO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ATTRIBUTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ORA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="UTENTE_OPERATORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="280" posY="640">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSetGlobalVar_2" show="false"/>
+    <elementParameter field="TABLE" name="VARIABLES">
+      <elementValue elementRef="KEY" value="&quot;procedura_db&quot;" id="0"/>
+      <elementValue elementRef="VALUE" value="row4.PROCEDURA" id="1"/>
+      <elementValue elementRef="KEY" value="&quot;pratica_db&quot;" id="2"/>
+      <elementValue elementRef="VALUE" value="row4.NUM_PRATICA" id="3"/>
+      <elementValue elementRef="KEY" value="&quot;stato_db&quot;" id="4"/>
+      <elementValue elementRef="VALUE" value="row4.STATO" id="5"/>
+      <elementValue elementRef="KEY" value="&quot;attributo_db&quot;" id="6"/>
+      <elementValue elementRef="VALUE" value="row4.ATTRIBUTO" id="7"/>
+      <elementValue elementRef="KEY" value="&quot;data_db&quot;" id="8"/>
+      <elementValue elementRef="VALUE" value="row4.DATA" id="9"/>
+      <elementValue elementRef="KEY" value="&quot;ora_db&quot;" id="10"/>
+      <elementValue elementRef="VALUE" value="row4.ORA" id="11"/>
+      <elementValue elementRef="KEY" value="&quot;utente_operatore_db&quot;" id="12"/>
+      <elementValue elementRef="VALUE" value="row4.UTENTE_OPERATORE" id="13"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSetGlobalVar_2">
+      <column comment="" key="false" length="-1" name="PROCEDURA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NUM_PRATICA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="STATO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ATTRIBUTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ORA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="UTENTE_OPERATORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tAS400Connection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="680" posY="480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBConnection_2" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="jt400-20.0.7.jar"/>
+    <elementParameter field="TEXT" name="HOST" value="context.databaseOcsHost"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.databaseOcsDatabase"/>
+    <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="context.databaseOcsUsername"/>
+    <elementParameter field="PASSWORD" name="PASS" value="context.databaseOcsPassword"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="SHARED_CONNECTION_NAME" value="" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;prompt=false&quot;"/>
+    <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="920" posY="480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_3" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - DATABASE [AS400] => Connessione Non Effettuata ! Controllare la raggiungibilita' dei sistemi o le configurazioni&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_3"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="480">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_5" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String state = ((String) globalMap.get(&quot;procedura&quot;)),&#xD;&#xA;&#x9;   type = null, &#xD;&#xA;&#x9;   query = null,&#xD;&#xA;&#x9;   tableName = null;&#xD;&#xA;if (state.equals(&quot;CO&quot;)) {&#xD;&#xA;&#x9;type = &quot;LOAN&quot;;&#xD;&#xA;&#x9;tableName = &quot;PLPRATST&quot;;&#xD;&#xA;&#x9;query = &quot;&quot;&quot;&#xD;&#xA;&#x9;&#x9;&#x9;SELECT &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&quot;CO&quot; AS PROCEDURA,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;PLPRATST.PLPRA_NUM_PRATICA AS NUM_PRATICA, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;PLPRATST.PLPRA_STATO AS STATO, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;PLPRATST.PLPRA_ATTRIBUTO AS ATTRIBUTO, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;PLPRATST.PLPRA_DATA AS DATA, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;PLPRATST.PLPRA_TIME AS ORA, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;PLPRATST.PLPRA_UTENTE AS UTENTE_OPERATORE, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;year(date('1899-12-30') + PLC_DATA_DECORRENZA day) || right('0' || month(date('1899-12-30') + PLC_DATA_DECORRENZA day),2) || right('0' || day(date('1899-12-30') + PLC_DATA_DECORRENZA day),2) AS PLC_DATA_DECORRENZA &#xD;&#xA;&#x9;&#x9;&#x9;FROM PLPRATST &#xD;&#xA;&#x9;&#x9;&#x9;LEFT OUTER JOIN PLPRAT ON (PLPRAT.PLC_NUM_PRATICA = PLPRA_NUM_PRATICA) &#xD;&#xA;&#x9;&#x9;&#x9;WHERE PLPRAT.PLC_NUM_PRATICA = '%s'&#xD;&#xA;&#x9;&#x9;&#x9;ORDER BY PLPRATST.PLPRA_DATA DESC, PLPRATST.PLPRA_TIME DESC &#xD;&#xA;&#x9;&#x9;&#x9;FETCH FIRST 1 ROWS ONLY&#xD;&#xA;&#x9;&#x9;&quot;&quot;&quot;.formatted(&#xD;&#xA;&#x9;&#x9;(String) globalMap.get(&quot;num_pratica_ocs&quot;))&#xD;&#xA;&#x9;&#x9;.trim();&#xD;&#xA;} else if (state.equals(&quot;LE&quot;)) {&#xD;&#xA;&#x9;type = &quot;LEASING&quot;;&#xD;&#xA;&#x9;tableName = &quot;LEPRALOGST&quot;;&#xD;&#xA;&#x9;query = &quot;&quot;&quot;&#xD;&#xA;&#x9;&#x9;&#x9;SELECT &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&quot;LE&quot; AS PROCEDURA,&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;LEPRALOGST.LPCST_NUM_PRATICA AS NUM_PRATICA, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;LEPRALOGST.LPCST_STATO AS STATO, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;LEPRALOGST.LPCST_ATTRIBUTO AS ATTRIBUTO, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;LEPRALOGST.LPCST_DATA_SYS AS DATA, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;LEPRALOGST.LPCST_ORA_SYS AS ORA, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;LEPRALOGST.LPCST_OPERATORE AS UTENTE_OPERATORE, &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;year(date('1899-12-30') + LPC_DATA_CONTRATTO day) || right('0' || month(date('1899-12-30') + LPC_DATA_CONTRATTO day),2) || right('0' || day(date('1899-12-30') + LPC_DATA_CONTRATTO day),2) AS PLC_DATA_DECORRENZA &#xD;&#xA;&#x9;&#x9;&#x9;FROM LEPRALOGST &#xD;&#xA;&#x9;&#x9;&#x9;LEFT OUTER JOIN LEPRA ON (LEPRA.LPC_NUM_PRATICA = LEPRALOGST.LPCST_NUM_PRATICA) &#xD;&#xA;&#x9;&#x9;&#x9;WHERE LEPRALOGST.LPCST_NUM_PRATICA = '%s'&#xD;&#xA;&#x9;&#x9;&#x9;ORDER BY LEPRALOGST.LPCST_DATA_SYS DESC, LEPRALOGST.LPCST_ORA_SYS DESC &#xD;&#xA;&#x9;&#x9;&#x9;FETCH FIRST 1 ROWS ONLY;&#xD;&#xA;&#x9;&#x9;&quot;&quot;&quot;.formatted((String) globalMap.get(&quot;num_pratica_ocs&quot;))&#xD;&#xA;&#x9;&#x9;.trim();&#xD;&#xA;} else {&#xD;&#xA;&#x9;throw new IllegalStateException(&quot;The State of Dossier [%s] is not valid !&quot;.formatted(globalMap.get(&quot;id_proposta&quot;)));&#xD;&#xA;}&#xD;&#xA;globalMap.put(&quot;tableName&quot;, tableName);&#xD;&#xA;globalMap.put(&quot;query&quot;, query);&#xD;&#xA;System.out.println(&quot;==== INQUIRING the DATABASE ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + type);&#xD;&#xA;System.out.println(&quot;TABLE => &quot; + tableName);&#xD;&#xA;System.out.println(&quot;===============================&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_5"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="280" posY="920">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_6" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;==== EXTRACTING NOTES for DOSSIER ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + globalMap.get(&quot;procedura&quot;));&#xD;&#xA;System.out.println(&quot;========================&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_6"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="520" posY="761">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_7" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - DATABASE [AS400] => Esecuzione Query sulla tabella [OXNOFTPR / OXNOFD] Fallita&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_7"/>
+  </node>
+  <node componentName="tAS400Input" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="520" posY="921">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="jt400-20.0.7.jar" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:xU/xaKVp5SgWHXGAYPMJYK0/Zt50Bijmx5R1MyD2" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xD;&#xA;    t1.OXNOTPR_PROGRESSIVO as PROGRESSIVO,&#xD;&#xA;    t2.OXNOD_TESTO AS NOTA&#xD;&#xA;FROM OXNOFTPR t1&#xD;&#xA;INNER JOIN OXNOFD t2 ON t1.OXNOTPR_PROGRESSIVO = t2.OXNOD_PROGRESSIVO&#xD;&#xA;WHERE t1.OXNOTPR_PROCEDURA = '&quot; + (String) globalMap.get(&quot;procedura&quot;) + &quot;'&#xD;&#xA;  AND t1.OXNOTPR_PRATICA   = '&quot; + (String) globalMap.get(&quot;num_pratica_ocs&quot;) + &quot;'&#xD;&#xA;  AND t1.OXNOTPR_TIPOLOGIA = '&quot; +&#xD;&#xA;      (&#xD;&#xA;        (&#xD;&#xA;          &quot;PRAP&quot;.equals((String) globalMap.get(&quot;procedura&quot;)) &amp;&amp;&#xD;&#xA;          &quot;20&quot;.equals((String) globalMap.get(&quot;stato&quot;)) &amp;&amp;&#xD;&#xA;          (&quot;AP&quot;.equals((String) globalMap.get(&quot;attributo&quot;)) || &quot;SP&quot;.equals((String) globalMap.get(&quot;attributo&quot;)))&#xD;&#xA;        ) ? &quot;PRAP&quot; :&#xD;&#xA;        (&#xD;&#xA;          &quot;PRAP&quot;.equals((String) globalMap.get(&quot;procedura&quot;)) &amp;&amp;&#xD;&#xA;          &quot;05&quot;.equals((String) globalMap.get(&quot;stato&quot;)) &amp;&amp;&#xD;&#xA;          (&#xD;&#xA;            (String) globalMap.get(&quot;attributo&quot;) == null || &#xD;&#xA;            &quot;SP&quot;.equals((String) globalMap.get(&quot;attributo&quot;))&#xD;&#xA;          )&#xD;&#xA;        ) ? &quot;PRAP&quot; :&#xD;&#xA;        (&#xD;&#xA;          &quot;PRAP&quot;.equals((String) globalMap.get(&quot;procedura&quot;)) &amp;&amp;&#xD;&#xA;          &quot;15&quot;.equals((String) globalMap.get(&quot;stato&quot;))&#xD;&#xA;        ) ? &quot;PRAP&quot; :&#xD;&#xA;        (&#xD;&#xA;          &quot;PRAR&quot;.equals((String) globalMap.get(&quot;procedura&quot;)) &amp;&amp;&#xD;&#xA;          &quot;30&quot;.equals((String) globalMap.get(&quot;stato&quot;))&#xD;&#xA;        ) ? &quot;PRAR&quot; :&#xD;&#xA;        (&#xD;&#xA;          &quot;PRSL&quot;.equals((String) globalMap.get(&quot;procedura&quot;)) &amp;&amp;&#xD;&#xA;          &quot;30 LS&quot;.equals((String) globalMap.get(&quot;stato&quot;))&#xD;&#xA;        ) ? &quot;PRSL&quot; :&#xD;&#xA;        (&#xD;&#xA;          &quot;PRLI&quot;.equals((String) globalMap.get(&quot;procedura&quot;)) &amp;&amp;&#xD;&#xA;          &quot;15 LS&quot;.equals((String) globalMap.get(&quot;stato&quot;))&#xD;&#xA;        ) ? &quot;PRLI&quot; :&#xD;&#xA;        &quot;&quot;&#xD;&#xA;      ) + &quot;'&#xD;&#xA;  AND t1.OXNOTPR_ANNULLO &lt;> 'S'&#xD;&#xA;ORDER BY t1.OXNOTPR_PROGRESSIVO DESC, t2.OXNOD_RIGA ASC&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;prompt=false&quot;" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="NOTA" id="0"/>
+      <elementValue elementRef="TRIM" value="false" id="1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PROGRESSIVO" id="2"/>
+      <elementValue elementRef="TRIM" value="false" id="3"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
+    <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" value="30" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_1">
+      <column comment="" key="false" length="-1" name="NOTA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="PROGRESSIVO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="921">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSetGlobalVar_3" show="false"/>
+    <elementParameter field="TABLE" name="VARIABLES">
+      <elementValue elementRef="KEY" value="&quot;nota&quot;" id="0"/>
+      <elementValue elementRef="VALUE" value="row5.NOTA" id="1"/>
+      <elementValue elementRef="KEY" value="&quot;progressivo&quot;" id="2"/>
+      <elementValue elementRef="VALUE" value="row5.PROGRESSIVO" id="3"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSetGlobalVar_3">
+      <column comment="" key="false" length="-1" name="NOTA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="PROGRESSIVO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="840" posY="1080">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_8" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;==== EXTRACTING LIQUIDATION and PERSONAL Data ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + globalMap.get(&quot;procedura&quot;));&#xD;&#xA;System.out.println(&quot;=================================================&quot;);&#xD;&#xA;String state = ((String) globalMap.get(&quot;stato_ocs&quot;)),&#xD;&#xA;&#x9;   type = null, &#xD;&#xA;&#x9;   query = null,&#xD;&#xA;&#x9;   tableName = null;&#xD;&#xA;if (state.equals(&quot;40&quot;)) {&#xD;&#xA;&#x9;type = &quot;LOAN&quot;;&#xD;&#xA;&#x9;tableName = &quot;PLPRATAS&quot;;&#xD;&#xA;&#x9;query = &quot;&quot;&quot;&#xD;&#xA;&#x9;&#x9;&#x9;SELECT &#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.PLCAS_DATA_DEST AS DATA_DESTINAZIONE_PAGAMENTO,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.PLCAS_DEST_IMP_VALUTA AS IMPORTO_LIQUIDAZIONE,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.PAGAMENTO AS TIPO_PAGAMENTO,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.ABI AS ABI_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.CAB AS CAB_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.NUMERO_CC AS NUMERO_CONTO_CORRENTE_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWABI.ABI_DENOMINAZIONE AS NOME_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_AGENZIA AS AGENZIA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_INDIRIZZO AS INDIRIZZO_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_LOCALITA AS LOCALITA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRAT.PLC_VENDITORE AS CODICE_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_NOME AS NOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_COGNOME AS COGNOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRAT.PLC_AUTO_TARGA AS TARGA_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRAT.PLC_AUTO_TELAIO AS TELAIO_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    OXCTFPAFD.OXCTPAFD_DATA_SCADENZA AS DATA_SCADENZA_RATA&#xD;&#xA;&#x9;&#x9;&#x9;FROM PLPRATAS&#xD;&#xA;&#x9;&#x9;&#x9;INNER JOIN PLPRAT ON PLPRATAS.PLCAS_NUM_PRATICA = PLPRAT.PLC_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWABI ON PLPRATAS.ABI = CCNEWABI.ABI_ABI&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWCAB ON PLPRATAS.ABI = CCNEWCAB.CAB_ABI &#xD;&#xA;&#x9;&#x9;&#x9;    AND PLPRATAS.CAB = CCNEWCAB.CAB_CAB&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCANAGR ON PLPRAT.PLC_VENDITORE = CCANAGR.AC_CODICE&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN OXCTFPAFD ON PLPRAT.PLC_NUM_PRATICA = OXCTFPAFD.OXCTPAFD_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;    AND OXCTFPAFD.OXCTPAFD_PROCEDURA =  '%s'&#xD;&#xA;&#x9;&#x9;&#x9;    AND OXCTFPAFD.OXCTPAFD_TIPO_RATA = 'R'&#xD;&#xA;&#x9;&#x9;&#x9;    AND OXCTFPAFD.OXCTPAFD_NUMERO_RATA = 1&#xD;&#xA;&#x9;&#x9;&#x9;WHERE PLPRATAS.PLCAS_NUM_PRATICA = '%s'&#xD;&#xA;&#x9;&#x9;&#x9;AND PLPRATAS.PLCAS_TIPO_LIQUIDAZIONE = 'S';&#xD;&#xA;&#x9;&#x9;&quot;&quot;&quot;.formatted(&#xD;&#xA;&#x9;&#x9;(String) globalMap.get(&quot;procedura&quot;),&#xD;&#xA;&#x9;&#x9;(String) globalMap.get(&quot;num_pratica_ocs&quot;))&#xD;&#xA;&#x9;&#x9;.trim();&#xD;&#xA;} else if (state.equals(&quot;25&quot;)) {&#xD;&#xA;&#x9;type = &quot;LEASING&quot;;&#xD;&#xA;&#x9;tableName = &quot;LECES&quot;;&#xD;&#xA;&#x9;query = &quot;&quot;&quot;&#xD;&#xA;&#x9;&#x9;&#x9;SELECT &#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_DATA_PAGAMENTO AS DATA_DESTINAZIONE_PAGAMENTO,    &#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_VALUTA AS IMPORTO_LIQUIDAZIONE, &#xD;&#xA;&#x9;&#x9;&#x9;    NULL AS TIPO_PAGAMENTO,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_ABI AS ABI_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_CAB AS CAB_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_CC AS NUMERO_CONTO_CORRENTE_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWABI.ABI_DENOMINAZIONE AS NOME_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_AGENZIA AS AGENZIA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_INDIRIZZO AS INDIRIZZO_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_LOCALITA AS LOCALITA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    LEPRA.LPC_CODICE_VENDITORE AS CODICE_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_NOME AS NOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_COGNOME AS COGNOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_TARGA AS TARGA_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_TELAIO AS TELAIO_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    LEPAM.LRA_DATA_SCADENZA AS DATA_SCADENZA_RATA&#xD;&#xA;&#x9;&#x9;&#x9;FROM LECES&#xD;&#xA;&#x9;&#x9;&#x9;INNER JOIN LEPRA ON LECES.LCE_NUM_PRATICA = LEPRA.LPC_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWABI ON LECES.LCE_ABI = CCNEWABI.ABI_ABI&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWCAB ON LECES.LCE_ABI = CCNEWCAB.CAB_ABI &#xD;&#xA;&#x9;&#x9;&#x9;    AND LECES.LCE_CAB = CCNEWCAB.CAB_CAB&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCANAGR ON LEPRA.LPC_CODICE_VENDITORE = CCANAGR.AC_CODICE&#xD;&#xA;&#x9;&#x9;&#x9;INNER JOIN LEPAM ON LECES.LCE_NUM_PRATICA = LEPAM.LRA_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;    AND LEPAM.LRA_NUMERO_RATA = 1&#xD;&#xA;&#x9;&#x9;&#x9;WHERE LECES.LCE_NUM_PRATICA = '%s'&#xD;&#xA;&#x9;&#x9;&#x9;AND LECES.LCE_CESPITE = 1;&#xD;&#xA;&#x9;&#x9;&quot;&quot;&quot;.formatted((String) globalMap.get(&quot;num_pratica_ocs&quot;))&#xD;&#xA;&#x9;&#x9;.trim();&#xD;&#xA;} else {&#xD;&#xA;&#x9;throw new IllegalStateException(&quot;The State of Dossier [%s] is not valid !&quot;.formatted(globalMap.get(&quot;id_proposta&quot;)));&#xD;&#xA;}&#xD;&#xA;globalMap.put(&quot;tableName&quot;, tableName);&#xD;&#xA;globalMap.put(&quot;query&quot;, query);&#xD;&#xA;System.out.println(&quot;==== INQUIRING the DATABASE ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + type);&#xD;&#xA;System.out.println(&quot;TABLE => &quot; + tableName);&#xD;&#xA;System.out.println(&quot;===============================&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_8"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="600" posY="1240">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_9" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - DATABASE [AS400] => Esecuzione Query [LOAN / LEASING] Fallita&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_9"/>
+  </node>
+  <node componentName="tAS400Input" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="840" posY="1240">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_2" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="jt400-20.0.7.jar" show="false"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:XxS6a0LhJ+Y5JAjZWlIpC+ZnTWBwC0vdeZuq60cR" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="((String) globalMap.get(&quot;tableName&quot;))"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="((String) globalMap.get(&quot;query&quot;))"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;prompt=false&quot;" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="DATA_DESTINAZIONE_PAGAMENTO" id="0"/>
+      <elementValue elementRef="TRIM" value="false" id="1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IMPORTO_LIQUIDAZIONE" id="2"/>
+      <elementValue elementRef="TRIM" value="false" id="3"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TIPO_PAGAMENTO" id="4"/>
+      <elementValue elementRef="TRIM" value="false" id="5"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ABI_BANCA" id="6"/>
+      <elementValue elementRef="TRIM" value="false" id="7"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CAB_BANCA" id="8"/>
+      <elementValue elementRef="TRIM" value="false" id="9"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="NUMERO_CONTO_CORRENTE_BANCA" id="10"/>
+      <elementValue elementRef="TRIM" value="false" id="11"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="NOME_BANCA" id="12"/>
+      <elementValue elementRef="TRIM" value="false" id="13"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="AGENZIA_BANCA" id="14"/>
+      <elementValue elementRef="TRIM" value="false" id="15"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="INDIRIZZO_BANCA" id="16"/>
+      <elementValue elementRef="TRIM" value="false" id="17"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LOCALITA_BANCA" id="18"/>
+      <elementValue elementRef="TRIM" value="false" id="19"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CODICE_VENDITORE" id="20"/>
+      <elementValue elementRef="TRIM" value="false" id="21"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="NOME_VENDITORE" id="22"/>
+      <elementValue elementRef="TRIM" value="false" id="23"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="COGNOME_VENDITORE" id="24"/>
+      <elementValue elementRef="TRIM" value="false" id="25"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TARGA_VEICOLO" id="26"/>
+      <elementValue elementRef="TRIM" value="false" id="27"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TELAIO_VEICOLO" id="28"/>
+      <elementValue elementRef="TRIM" value="false" id="29"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DATA_SCADENZA_RATA" id="30"/>
+      <elementValue elementRef="TRIM" value="false" id="31"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
+    <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" value="30" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_2">
+      <column comment="" key="false" length="-1" name="DATA_DESTINAZIONE_PAGAMENTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IMPORTO_LIQUIDAZIONE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TIPO_PAGAMENTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ABI_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CAB_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NUMERO_CONTO_CORRENTE_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NOME_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="AGENZIA_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="INDIRIZZO_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LOCALITA_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CODICE_VENDITORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NOME_VENDITORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="COGNOME_VENDITORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TARGA_VEICOLO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TELAIO_VEICOLO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATA_SCADENZA_RATA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="840" posY="1400">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_10" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;==== SYNCRONIZING DATA ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + globalMap.get(&quot;procedura&quot;));&#xD;&#xA;System.out.println(&quot;=================================================&quot;);&#xD;&#xA;String body = new StringBuilder(&quot;&amp;&quot;)&#xD;&#xA;.append(&quot;FIdPro=%s&amp;&quot;.formatted((String) globalMap.get(&quot;id_proposta&quot;)))&#xD;&#xA;.append(&quot;FStaOCS=%s&amp;&quot;.formatted((String) globalMap.get(&quot;stato&quot;)))&#xD;&#xA;.append(&quot;FAttOCS=%s&amp;&quot;.formatted((String) globalMap.get(&quot;attributo&quot;)))&#xD;&#xA;.append(&quot;FNumPra=%s&amp;&quot;.formatted((String) globalMap.get(&quot;num_pratica_ocs&quot;)))&#xD;&#xA;.append(&quot;FStaBDP=%s&amp;&quot;.formatted(&quot;2&quot;)) // constant &#xD;&#xA;.append(&quot;FIndCarBDP=%s&amp;&quot;.formatted(&quot;0&quot;)) // constant&#xD;&#xA;.append(&quot;FDontChangeProStatus=%s&amp;&quot;.formatted(&quot;1&quot;)) // constant&#xD;&#xA;.append(&quot;FDate=%s&amp;&quot;.formatted((String) globalMap.get(&quot;data&quot;)))&#xD;&#xA;.append(&quot;FTime=%s&amp;&quot;.formatted((String) globalMap.get(&quot;ora&quot;)))&#xD;&#xA;.append(&quot;FACCodice=%s&amp;&quot;.formatted(row10.CODICE_VENDITORE))&#xD;&#xA;.toString();&#xD;&#xA;globalMap.put(&quot;restPayload&quot;, body);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_10">
+      <column comment="" key="false" length="-1" name="DATA_DESTINAZIONE_PAGAMENTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="IMPORTO_LIQUIDAZIONE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TIPO_PAGAMENTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ABI_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CAB_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NUMERO_CONTO_CORRENTE_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NOME_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="AGENZIA_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="INDIRIZZO_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LOCALITA_BANCA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CODICE_VENDITORE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NOME_VENDITORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="COGNOME_VENDITORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TARGA_VEICOLO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TELAIO_VEICOLO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATA_SCADENZA_RATA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="400" posY="1720">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_11" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;***** JOB ENDED *****&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_11"/>
+  </node>
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="840" posY="1560">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_2" show="false"/>
+    <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
+    <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
+    <elementParameter field="TABLE" name="VALUES">
+      <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
+      <elementValue elementRef="VALUE" value="context.gatewayCallUrl" id="1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
+      <elementValue elementRef="VALUE" value="&quot;FFun=4&amp;((String) globalMap.get(\&quot;restPayload\&quot;))&quot;" id="3"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="userAgent" id="4"/>
+      <elementValue elementRef="VALUE" value="context.userAgent" id="5"/>
+    </elementParameter>
+    <elementParameter field="RADIO" name="USE_INTABLE" value="false"/>
+    <elementParameter field="TABLE" name="INTABLE" show="false"/>
+    <elementParameter field="RADIO" name="USE_INLINECONTENT" value="false"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;" show="false"/>
+    <elementParameter field="MEMO" name="INLINECONTENT" value="" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFixedFlowInput_2">
+      <column comment="" key="false" length="-1" name="gatewayCallUrl" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="gatewayCallBody" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="userAgent" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="600" posY="1720">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xD;&#xA;String body = row14.Body;&#xD;&#xA;if (body == null || body.trim().isEmpty()) {&#xD;&#xA;    System.out.println(&quot;Nessuna response dal Gateway ricevuta...&quot;);&#xD;&#xA;} else {&#xD;&#xA;&#x9;body.replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;).replaceAll(&quot;\\s+&quot;, &quot; &quot;).trim();     &#xD;&#xA;&#x9;System.out.println(body);&#xD;&#xA;}&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJavaRow_1">
+      <column comment="" key="false" length="-1" name="databaseType" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="databaseHost" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="databaseSchema" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="databasePort" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="databaseUsername" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="databasePassword" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="databaseTable" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="databaseQuery" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="840" posY="1720">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="CallGateway_2"/>
+    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter field="CHECK" name="DUMMY" value="false" show="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" value="true" show="false"/>
+    <elementParameter field="CHECK" name="START" value="false" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="TEXT" name="LABEL" value="CallGateway"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter field="MEMO" name="COMMENT" value=""/>
+    <metadata connector="FLOW" name="CallGateway_2">
+      <column comment="" key="false" length="-1" name="gatewayCallUrl" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="gatewayCallBody" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="userAgent" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="OUTPUT_1" name="OUTPUT_1">
+      <column defaultValue="" key="false" length="0" name="Body" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" source="tJava_1" target="LogToFile_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" source="tJava_1" target="LogToFile_1">
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tJava_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
+  </connection>
+  <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LoadConfigFileToContext_1" offsetLabelX="23" offsetLabelY="1" source="LoadConfigFileToContext_1" target="tDBConnection_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk4" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="CallGateway_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -235,18 +648,90 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
   </connection>
-  <note opaque="true" posX="480" posY="40" sizeHeight="41" sizeWidth="241" text="Execute: at 07:00, 13:30, 20:00">
+  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tJavaFlex_1" offsetLabelX="0" offsetLabelY="0" source="tJavaFlex_1" target="tSetGlobalVar_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row3" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tSetGlobalVar_1" offsetLabelX="0" offsetLabelY="0" source="tSetGlobalVar_1" target="tDBConnection_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk5" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tJava_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError1" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="8" offsetLabelY="0" source="tDBConnection_1" target="tFixedFlowInput_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk2" show="false"/>
+  </connection>
+  <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LogToFile_1" offsetLabelX="0" offsetLabelY="0" source="LogToFile_1" target="LoadConfigFileToContext_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk3" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tSetGlobalVar_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tJava_4">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError2" show="false"/>
+  </connection>
+  <connection connectorName="RUN_IF" label="Liquidata" lineStyle="6" metaname="tSetGlobalVar_2" offsetLabelX="0" offsetLabelY="0" source="tSetGlobalVar_2" target="tJava_6">
+    <elementParameter field="MEMO_JAVA" name="CONDITION" value="((String) globalMap.get(&quot;stato_ocs&quot;)) != ((String) globalMap.get(&quot;stato_db&quot;)) || ((String) globalMap.get(&quot;attributo_ocs&quot;)) != ((String) globalMap.get(&quot;attributo_db&quot;))"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="Liquidata" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBConnection_2" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_2" target="tJava_3">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError4" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_2" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_2" target="tJava_5">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_5" offsetLabelX="0" offsetLabelY="0" source="tJava_5" target="tDBInput_3">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk4" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_6" offsetLabelX="0" offsetLabelY="0" source="tJava_6" target="tDBInput_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk5" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tSetGlobalVar_3">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tJava_7">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError6" show="false"/>
+  </connection>
+  <connection connectorName="RUN_IF" label="LoanLeasing" lineStyle="6" metaname="tSetGlobalVar_3" offsetLabelX="0" offsetLabelY="0" source="tSetGlobalVar_3" target="tJava_8">
+    <elementParameter field="MEMO_JAVA" name="CONDITION" value="((String) globalMap.get(&quot;stato&quot;)).equals(&quot;40&quot;) || ((String) globalMap.get(&quot;stato&quot;)).equals(&quot;25&quot;)"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LoanLeasing" show="false"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tJava_8" offsetLabelX="0" offsetLabelY="0" source="tJava_8" target="tDBInput_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk6" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row10" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tJava_10">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row10" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tJava_9">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError7" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_10" offsetLabelX="0" offsetLabelY="0" source="tJava_10" target="tFixedFlowInput_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk8" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row13" lineStyle="0" metaname="tFixedFlowInput_2" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_2" target="CallGateway_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row13" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJavaRow_1" offsetLabelX="4" offsetLabelY="5" source="tJavaRow_1" target="tJava_11">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk7" show="false"/>
+  </connection>
+  <connection connectorName="OUTPUT_1" label="row14" lineStyle="0" metaname="CallGateway_2" offsetLabelX="0" offsetLabelY="0" source="CallGateway_2" target="tJavaRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row14" show="false"/>
+  </connection>
+  <note opaque="true" posX="400" posY="40" sizeHeight="41" sizeWidth="241" text="Execute: at 07:00, 13:30, 20:00">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
   </note>
+  <note opaque="true" posX="1000" posY="1120" sizeHeight="80" sizeWidth="120" text="NOTA: i campi ritornati dalla query non vengono usati">
+    <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
+  </note>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LoadConfigFileToContext_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
@@ -257,12 +742,92 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LoadConfigFileToContext_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBConnection_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="LogToFile_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_4" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_3" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBConnection_2" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_3" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_5" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_6" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_7" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_8" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_9" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_2" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_11" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_2" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
