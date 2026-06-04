@@ -791,9 +791,8 @@
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
   </note>
-  <note opaque="true" posX="800" posY="1320" sizeHeight="80" sizeWidth="120" text="TODO: check campi che estraggo e invio :/">
-    <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
-    <elementParameter field="CHECK" name="FONT_ITALIC" value="true"/>
+  <note opaque="true" posX="800" posY="1320" sizeHeight="80" sizeWidth="120" text="NOTA: i campi ritornati dalla query non vengono usati">
+    <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
   </note>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
