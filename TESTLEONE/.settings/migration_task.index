@@ -1598,6 +1598,11 @@
     "version" : "5.4.0",
     "status" : "noimpact"
   }, {
+    "id" : "org.talend.repository.model.migration.RemoveJBossFromtMomMigrationTask",
+    "breaks" : "8.0.1",
+    "version" : "8.0.1",
+    "status" : "noimpact"
+  }, {
     "id" : "org.talend.repository.model.migration.RemoveMetadataInPomsFolder",
     "breaks" : "7.4.1",
     "version" : "7.4.1",

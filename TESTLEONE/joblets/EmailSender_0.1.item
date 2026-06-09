@@ -99,8 +99,8 @@
       <elementParameter field="TEXT" name="FROM" value="context.emailSenderFrom"/>
       <elementParameter field="CHECK" name="NEED_PERSONAL_NAME" value="false"/>
       <elementParameter field="TEXT" name="PERSONAL_NAME" value="&quot;sender&quot;" show="false"/>
-      <elementParameter field="TEXT" name="CC" value="&quot;carbon@example.com&quot;"/>
-      <elementParameter field="TEXT" name="BCC" value="&quot;blindcarbon@example.com&quot;"/>
+      <elementParameter field="TEXT" name="CC" value=""/>
+      <elementParameter field="TEXT" name="BCC" value=""/>
       <elementParameter field="TEXT" name="SUBJECT" value="context.emailSenderSubject"/>
       <elementParameter field="MEMO_MESSAGE" name="MESSAGE" value="context.emailSenderMessage"/>
       <elementParameter field="CHECK" name="CHECK_ATTACHMENT" value="true"/>

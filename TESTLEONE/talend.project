@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
-  <TalendProperties:Project xmi:id="_P3D78UiHEfGqmJjvSJWrUA" label="TestLeone" description="" language="java" technicalLabel="TESTLEONE" author="_P3D78kiHEfGqmJjvSJWrUA" productVersion="Qlik Talend Cloud Enterprise Edition-8.0.1.20260422_0906-patch" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/leomiceli-87/testRepoToyota.git&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DQ" itemsRelationVersion="1.3" bigData="false">
-    <componentsSettings xmi:id="_spUJYE6oEfGtS6w3sirHZw" name="DI|tHashInput" family="Technical"/>
-    <componentsSettings xmi:id="_s6pJ8E6oEfGtS6w3sirHZw" name="DI|tHashOutput" family="Technical"/>
+  <TalendProperties:Project xmi:id="_P3D78UiHEfGqmJjvSJWrUA" label="TestLeone" description="" language="java" technicalLabel="TESTLEONE" author="_P3D78kiHEfGqmJjvSJWrUA" productVersion="Talend Cloud Data Integration-8.0.1.20260521_1039-patch" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/leomiceli-87/testRepoToyota.git&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DQ" itemsRelationVersion="1.3" bigData="false">
     <migrationTask xmi:id="_P3v4cEiHEfGqmJjvSJWrUA" id="org.talend.repository.model.migration.CheckProductVersionMigrationTask" breaks="7.1.0" version="7.1.1"/>
   </TalendProperties:Project>
   <TalendProperties:User xmi:id="_P3D78kiHEfGqmJjvSJWrUA" login="l.miceli@trial.c23lt5wn14j7equ.us.qlikcloud.com" firstName="Leone M" lastName="Leone M" type="DQ"/>
@@ -10,4 +8,6 @@
   <TalendProperties:User xmi:id="_F7CpIVOHEfGDoPKRuKjcrQ" login="wirato7560@trial.kshfqu764cv0vst.us.qlikcloud.com" firstName="Joe" lastName="Test" type="DQ"/>
   <TalendProperties:User xmi:id="_gKA3sF8dEfGkn7EzxjOPFg" login="5188i8i4p5@trial.ugsr4sfq2t8hx8a.us.qlikcloud.com" firstName="Another User" lastName="Another" type="DQ"/>
   <TalendProperties:User xmi:id="_gKA3sV8dEfGkn7EzxjOPFg" login="5188i8i4p5@trial.ugsr4sfq2t8hx8a.us.qlikcloud.com" firstName="Another User" lastName="Another" type="DQ"/>
+  <TalendProperties:User xmi:id="_umuWsGPwEfGj94W94hUHyA" login="marcoberlenghini@eval207598.talend.com" firstName="Marco" lastName="Berlenghini" type="DI"/>
+  <TalendProperties:User xmi:id="_umuWsWPwEfGj94W94hUHyA" login="marcoberlenghini@eval207598.talend.com" firstName="Marco" lastName="Berlenghini" type="DI"/>
 </xmi:XMI>
