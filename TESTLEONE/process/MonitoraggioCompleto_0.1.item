@@ -366,7 +366,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_6"/>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="520" posY="761">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="760">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_7" show="false"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;[ERROR] - DATABASE [AS400] => Esecuzione Query sulla tabella [OXNOFTPR / OXNOFD] Fallita&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
