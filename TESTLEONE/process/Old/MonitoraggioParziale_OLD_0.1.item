@@ -125,7 +125,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="WITH PARAMETRI AS (&#xD;&#xA;    SELECT&#xD;&#xA;        VARCHAR_FORMAT(CURRENT TIMESTAMP, 'YYYYMMDD') AS DATA_ODIERNA,&#xD;&#xA;        INTEGER(VARCHAR_FORMAT(CURRENT TIMESTAMP - 30 MINUTES, 'HH24MISS')) AS ORA_LIMITE&#xD;&#xA;    FROM SYSIBM.SYSDUMMY1 -- oppure SYSIBM.DUAL&#xD;&#xA;)&#xD;&#xA;SELECT &#xD;&#xA;    'CO' AS PROCEDURA, &#xD;&#xA;    PLPRATST.PLPRA_NUM_PRATICA AS NUM_PRATICA, &#xD;&#xA;    PLPRATST.PLPRA_STATO AS STATO, &#xD;&#xA;    PLPRATST.PLPRA_ATTRIBUTO AS ATTRIBUTO, &#xD;&#xA;    PLPRATST.PLPRA_DATA AS DATA_VAR, &#xD;&#xA;    PLPRATST.PLPRA_TIME AS ORA_VAR, &#xD;&#xA;    PLPRATST.PLPRA_UTENTE AS UTENTE, &#xD;&#xA;    YEAR(DATE('1899-12-30') + PLPRAT.PLC_DATA_DECORRENZA DAY) ||&#xD;&#xA;    RIGHT('0' || MONTH(DATE('1899-12-30') + PLPRAT.PLC_DATA_DECORRENZA DAY), 2) ||&#xD;&#xA;    RIGHT('0' || DAY(DATE('1899-12-30') + PLPRAT.PLC_DATA_DECORRENZA DAY), 2) &#xD;&#xA;        AS DATA_DECORRENZA&#xD;&#xA;FROM PLPRATST&#xD;&#xA;LEFT OUTER JOIN PLPRAT &#xD;&#xA;    ON PLPRAT.PLC_NUM_PRATICA = PLPRATST.PLPRA_NUM_PRATICA&#xD;&#xA;CROSS JOIN PARAMETRI&#xD;&#xA;WHERE PLPRATST.PLPRA_DATA = PARAMETRI.DATA_ODIERNA&#xD;&#xA;AND PLPRATST.PLPRA_TIME >= PARAMETRI.ORA_LIMITE&#xD;&#xA;UNION ALL&#xD;&#xA;SELECT &#xD;&#xA;    'LE' AS PROCEDURA, &#xD;&#xA;    LEPRALOGST.LPCST_NUM_PRATICA AS NUM_PRATICA, &#xD;&#xA;    LEPRALOGST.LPCST_STATO AS STATO, &#xD;&#xA;    LEPRALOGST.LPCST_ATTRIBUTO AS ATTRIBUTO, &#xD;&#xA;    LEPRALOGST.LPCST_DATA_SYS AS DATA_VAR, &#xD;&#xA;    LEPRALOGST.LPCST_ORA_SYS AS ORA_VAR, &#xD;&#xA;    LEPRALOGST.LPCST_OPERATORE AS UTENTE, &#xD;&#xA;    YEAR(DATE('1899-12-30') + LEPRA.LPC_DATA_DECORRENZA DAY) ||&#xD;&#xA;    RIGHT('0' || MONTH(DATE('1899-12-30') + LEPRA.LPC_DATA_DECORRENZA DAY), 2) ||&#xD;&#xA;    RIGHT('0' || DAY(DATE('1899-12-30') + LEPRA.LPC_DATA_DECORRENZA DAY), 2)&#xD;&#xA;        AS DATA_DECORRENZA&#xD;&#xA;FROM LEPRALOGST&#xD;&#xA;LEFT OUTER JOIN LEPRA &#xD;&#xA;    ON LEPRA.LPC_NUM_PRATICA = LEPRALOGST.LPCST_NUM_PRATICA&#xD;&#xA;CROSS JOIN PARAMETRI&#xD;&#xA;WHERE LEPRALOGST.LPCST_DATA_SYS = PARAMETRI.DATA_ODIERNA&#xD;&#xA;AND LEPRALOGST.LPCST_ORA_SYS >= PARAMETRI.ORA_LIMITE&#xD;&#xA;ORDER BY DATA_VAR, ORA_VAR, PROCEDURA;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;WITH PARAMETRI AS (&#xD;&#xA;    SELECT&#xD;&#xA;        VARCHAR_FORMAT(CURRENT DATE, 'YYYYMMDD') AS DATA_ODIERNA,&#xD;&#xA;        INTEGER(VARCHAR_FORMAT(CURRENT TIMESTAMP - 30 MINUTES, 'HH24MISS')) AS ORA_LIMITE&#xD;&#xA;    FROM SYSIBM.SYSDUMMY1&#xD;&#xA;)&#xD;&#xA;SELECT &#xD;&#xA;    'CO' AS PROCEDURA, &#xD;&#xA;    PLPRATST.PLPRA_NUM_PRATICA AS NUM_PRATICA, &#xD;&#xA;    PLPRATST.PLPRA_STATO AS STATO, &#xD;&#xA;    PLPRATST.PLPRA_ATTRIBUTO AS ATTRIBUTO, &#xD;&#xA;    PLPRATST.PLPRA_DATA AS DATA_VAR, &#xD;&#xA;    PLPRATST.PLPRA_TIME AS ORA_VAR, &#xD;&#xA;    PLPRATST.PLPRA_UTENTE AS UTENTE, &#xD;&#xA;    YEAR(DATE('1899-12-30') + PLC_DATA_DECORRENZA DAY) ||&#xD;&#xA;    RIGHT('0' || MONTH(DATE('1899-12-30') + PLC_DATA_DECORRENZA DAY), 2) ||&#xD;&#xA;    RIGHT('0' || DAY(DATE('1899-12-30') + PLC_DATA_DECORRENZA DAY), 2) &#xD;&#xA;        AS DATA_DECORRENZA&#xD;&#xA;FROM PLPRATST&#xD;&#xA;LEFT OUTER JOIN PLPRAT &#xD;&#xA;    ON PLPRAT.PLC_NUM_PRATICA = PLPRA_NUM_PRATICA&#xD;&#xA;CROSS JOIN PARAMETRI&#xD;&#xA;WHERE PLPRATST.PLPRA_DATA = PARAMETRI.DATA_ODIERNA&#xD;&#xA;AND PLPRATST.PLPRA_TIME >= PARAMETRI.ORA_LIMITE&#xD;&#xA;UNION ALL&#xD;&#xA;SELECT &#xD;&#xA;    'LE' AS PROCEDURA, &#xD;&#xA;    LEPRALOGST.LPCST_NUM_PRATICA AS NUM_PRATICA, &#xD;&#xA;    LEPRALOGST.LPCST_STATO AS STATO, &#xD;&#xA;    LEPRALOGST.LPCST_ATTRIBUTO AS ATTRIBUTO, &#xD;&#xA;    LEPRALOGST.LPCST_DATA_SYS AS DATA_VAR, &#xD;&#xA;    LEPRALOGST.LPCST_ORA_SYS AS ORA_VAR, &#xD;&#xA;    LEPRALOGST.LPCST_OPERATORE AS UTENTE, &#xD;&#xA;    YEAR(DATE('1899-12-30') + LPC_DATA_DECORRENZA DAY) ||&#xD;&#xA;    RIGHT('0' || MONTH(DATE('1899-12-30') + LPC_DATA_DECORRENZA DAY), 2) ||&#xD;&#xA;    RIGHT('0' || DAY(DATE('1899-12-30') + LPC_DATA_DECORRENZA DAY), 2)&#xD;&#xA;        AS DATA_DECORRENZA&#xD;&#xA;FROM LEPRALOGST&#xD;&#xA;LEFT OUTER JOIN LEPRA &#xD;&#xA;    ON LEPRA.LPC_NUM_PRATICA = LEPRALOGST.LPCST_NUM_PRATICA&#xD;&#xA;CROSS JOIN PARAMETRI&#xD;&#xA;WHERE LEPRALOGST.LPCST_DATA_SYS = PARAMETRI.DATA_ODIERNA&#xD;&#xA;AND LEPRALOGST.LPCST_ORA_SYS >= PARAMETRI.ORA_LIMITE&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;prompt=false&quot;" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
@@ -173,23 +173,64 @@
     <elementParameter field="CHECK" name="USE_INNER_JOIN" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJoin_1">
-      <column comment="" key="false" length="-1" name="PROCEDURA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="NUM_PRATICA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="id_proposta" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="num_pratica_ocs" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="procedura" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="STATO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ATTRIBUTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATA_VAR" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ORA_VAR" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="UTENTE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ORA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
-      <column comment="" key="false" length="-1" name="PROCEDURA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="NUM_PRATICA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="id_proposta" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="num_pratica_ocs" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="procedura" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="STATO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ATTRIBUTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATA_VAR" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ORA_VAR" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="UTENTE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ORA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
+  </node>
+  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="40" posY="680">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFlowToIterate_1" show="false"/>
+    <elementParameter field="CHECK" name="DEFAULT_MAP" value="true"/>
+    <elementParameter field="TABLE" name="MAP" show="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFlowToIterate_1"/>
+  </node>
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-80" posY="560">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSetGlobalVar_1" show="false"/>
+    <elementParameter field="TABLE" name="VARIABLES">
+      <elementValue elementRef="KEY" value="&quot;id_proposta&quot;" id="0"/>
+      <elementValue elementRef="VALUE" value="row6.id_proposta" id="1"/>
+      <elementValue elementRef="KEY" value="&quot;num_pratica_ocs&quot;" id="2"/>
+      <elementValue elementRef="VALUE" value="row6.num_pratica_ocs" id="3"/>
+      <elementValue elementRef="KEY" value="&quot;procedura&quot;" id="4"/>
+      <elementValue elementRef="VALUE" value="row6.procedura" id="5"/>
+      <elementValue elementRef="KEY" value="&quot;stato&quot;" id="6"/>
+      <elementValue elementRef="VALUE" value="row6.STATO" id="7"/>
+      <elementValue elementRef="KEY" value="&quot;attributo&quot;" id="8"/>
+      <elementValue elementRef="VALUE" value="row6.ATTRIBUTO" id="9"/>
+      <elementValue elementRef="KEY" value="&quot;data&quot;" id="10"/>
+      <elementValue elementRef="VALUE" value="row6.DATA" id="11"/>
+      <elementValue elementRef="KEY" value="&quot;ora&quot;" id="12"/>
+      <elementValue elementRef="VALUE" value="row6.ORA" id="13"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tSetGlobalVar_1">
+      <column comment="" key="false" length="-1" name="id_proposta" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="num_pratica_ocs" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="procedura" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="stato" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="attributo" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-80" posY="920">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;==== EXTRACTING NOTES for DOSSIER ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + globalMap.get(&quot;procedura&quot;));&#xD;&#xA;System.out.println(&quot;========================&quot;);&#xD;&#xA;"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJavaRow_1"/>
   </node>
   <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="200" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tHashInput_1" show="false"/>
@@ -204,40 +245,6 @@
       <column comment="" key="false" length="-1" name="stato_ocs" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="procedura" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
-  </node>
-  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-80" posY="680">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tSetGlobalVar_1" show="false"/>
-    <elementParameter field="TABLE" name="VARIABLES">
-      <elementValue elementRef="KEY" value="&quot;num_pratica_ocs&quot;" id="0"/>
-      <elementValue elementRef="VALUE" value="row6.NUM_PRATICA" id="1"/>
-      <elementValue elementRef="KEY" value="&quot;procedura&quot;" id="2"/>
-      <elementValue elementRef="VALUE" value="row6.PROCEDURA" id="3"/>
-      <elementValue elementRef="KEY" value="&quot;stato&quot;" id="4"/>
-      <elementValue elementRef="VALUE" value="row6.STATO" id="5"/>
-      <elementValue elementRef="KEY" value="&quot;attributo&quot;" id="6"/>
-      <elementValue elementRef="VALUE" value="row6.ATTRIBUTO" id="7"/>
-      <elementValue elementRef="KEY" value="&quot;data&quot;" id="8"/>
-      <elementValue elementRef="VALUE" value="row6.DATA" id="9"/>
-      <elementValue elementRef="KEY" value="&quot;ora&quot;" id="10"/>
-      <elementValue elementRef="VALUE" value="row6.ORA" id="11"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tSetGlobalVar_1">
-      <column comment="" key="false" length="-1" name="PROCEDURA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="NUM_PRATICA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="STATO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ATTRIBUTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATA_VAR" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ORA_VAR" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="UTENTE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-80" posY="920">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;==== EXTRACTING NOTES for DOSSIER ===&quot;);&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + globalMap.get(&quot;procedura&quot;));&#xD;&#xA;System.out.println(&quot;DATE => &quot; + globalMap.get(&quot;data&quot;));&#xD;&#xA;System.out.println(&quot;========================&quot;);&#xD;&#xA;"/>
-    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tJavaRow_1"/>
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="280" posY="40">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
@@ -411,17 +418,17 @@
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="PROGRESSIVO" id="0"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="NOTA" id="0"/>
       <elementValue elementRef="TRIM" value="false" id="1"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NOTA" id="2"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PROGRESSIVO" id="2"/>
       <elementValue elementRef="TRIM" value="false" id="3"/>
     </elementParameter>
     <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
     <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" value="30" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_2">
-      <column comment="" key="false" length="-1" name="PROGRESSIVO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="NOTA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="PROGRESSIVO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="920">
@@ -434,8 +441,8 @@
     </elementParameter>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tSetGlobalVar_2">
-      <column comment="" key="false" length="-1" name="PROGRESSIVO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="NOTA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="PROGRESSIVO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="880" posY="680">
@@ -531,7 +538,7 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="1400">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_6" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;==== SYNCRONIZING DATA ===&quot;);&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + globalMap.get(&quot;procedura&quot;));&#xD;&#xA;System.out.println(&quot;DATE => &quot; + globalMap.get(&quot;data&quot;));&#xD;&#xA;System.out.println(&quot;=================================================&quot;);&#xD;&#xA;String body = new StringBuilder(&quot;FFun=4&amp;&quot;)&#xD;&#xA;.append(&quot;FIdPro=%s&amp;&quot;.formatted((String) globalMap.get(&quot;id_proposta&quot;)))&#xD;&#xA;.append(&quot;FStaOCS=%s&amp;&quot;.formatted((String) globalMap.get(&quot;stato&quot;)))&#xD;&#xA;.append(&quot;FAttOCS=%s&amp;&quot;.formatted((String) globalMap.get(&quot;attributo&quot;)))&#xD;&#xA;.append(&quot;FNumPra=%s&amp;&quot;.formatted((String) globalMap.get(&quot;num_pratica_ocs&quot;)))&#xD;&#xA;.append(&quot;FStaBDP=%s&amp;&quot;.formatted(&quot;2&quot;)) // constant &#xD;&#xA;.append(&quot;FIndCarBDP=%s&amp;&quot;.formatted(&quot;0&quot;)) // constant&#xD;&#xA;.append(&quot;FDontChangeProStatus=%s&amp;&quot;.formatted(&quot;1&quot;)) // constant&#xD;&#xA;.append(&quot;FDate=%s&amp;&quot;.formatted((String) globalMap.get(&quot;data&quot;)))&#xD;&#xA;.append(&quot;FTime=%s&amp;&quot;.formatted((String) globalMap.get(&quot;ora&quot;)))&#xD;&#xA;.append(&quot;FACCodice=%s&amp;&quot;.formatted(row10.CODICE_VENDITORE))&#xD;&#xA;.toString();&#xD;&#xA;globalMap.put(&quot;restPayload&quot;, body);"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;==== SYNCRONIZING DATA ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + globalMap.get(&quot;procedura&quot;));&#xD;&#xA;System.out.println(&quot;=================================================&quot;);&#xD;&#xA;String body = new StringBuilder(&quot;FFun=4&amp;&quot;)&#xD;&#xA;.append(&quot;FIdPro=%s&amp;&quot;.formatted((String) globalMap.get(&quot;id_proposta&quot;)))&#xD;&#xA;.append(&quot;FStaOCS=%s&amp;&quot;.formatted((String) globalMap.get(&quot;stato&quot;)))&#xD;&#xA;.append(&quot;FAttOCS=%s&amp;&quot;.formatted((String) globalMap.get(&quot;attributo&quot;)))&#xD;&#xA;.append(&quot;FNumPra=%s&amp;&quot;.formatted((String) globalMap.get(&quot;num_pratica_ocs&quot;)))&#xD;&#xA;.append(&quot;FStaBDP=%s&amp;&quot;.formatted(&quot;2&quot;)) // constant &#xD;&#xA;.append(&quot;FIndCarBDP=%s&amp;&quot;.formatted(&quot;0&quot;)) // constant&#xD;&#xA;.append(&quot;FDontChangeProStatus=%s&amp;&quot;.formatted(&quot;1&quot;)) // constant&#xD;&#xA;.append(&quot;FDate=%s&amp;&quot;.formatted((String) globalMap.get(&quot;data&quot;)))&#xD;&#xA;.append(&quot;FTime=%s&amp;&quot;.formatted((String) globalMap.get(&quot;ora&quot;)))&#xD;&#xA;.append(&quot;FACCodice=%s&amp;&quot;.formatted(row10.CODICE_VENDITORE))&#xD;&#xA;.toString();&#xD;&#xA;globalMap.put(&quot;restPayload&quot;, body);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_6">
@@ -562,7 +569,7 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="1080">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_8" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;==== EXTRACTING LIQUIDATION and PERSONAL Data ===&quot;);&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + globalMap.get(&quot;procedura&quot;));&#xD;&#xA;System.out.println(&quot;DATE => &quot; + globalMap.get(&quot;data&quot;));&#xD;&#xA;System.out.println(&quot;=================================================&quot;);&#xD;&#xA;String state = ((String) globalMap.get(&quot;stato&quot;)),&#xD;&#xA;&#x9;   type = null, &#xD;&#xA;&#x9;   query = null,&#xD;&#xA;&#x9;   tableName = null;&#xD;&#xA;if (state.equals(&quot;40&quot;)) {&#xD;&#xA;&#x9;type = &quot;LOAN&quot;;&#xD;&#xA;&#x9;tableName = &quot;PLPRATAS&quot;;&#xD;&#xA;&#x9;query = &quot;&quot;&quot;&#xD;&#xA;&#x9;&#x9;&#x9;SELECT &#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.PLCAS_DATA_DEST AS DATA_DESTINAZIONE_PAGAMENTO,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.PLCAS_DEST_IMP_VALUTA AS IMPORTO_LIQUIDAZIONE,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.PAGAMENTO AS TIPO_PAGAMENTO,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.ABI AS ABI_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.CAB AS CAB_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.NUMERO_CC AS NUMERO_CONTO_CORRENTE_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWABI.ABI_DENOMINAZIONE AS NOME_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_AGENZIA AS AGENZIA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_INDIRIZZO AS INDIRIZZO_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_LOCALITA AS LOCALITA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRAT.PLC_VENDITORE AS CODICE_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_NOME AS NOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_COGNOME AS COGNOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRAT.PLC_AUTO_TARGA AS TARGA_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRAT.PLC_AUTO_TELAIO AS TELAIO_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    OXCTFPAFD.OXCTPAFD_DATA_SCADENZA AS DATA_SCADENZA_RATA&#xD;&#xA;&#x9;&#x9;&#x9;FROM PLPRATAS&#xD;&#xA;&#x9;&#x9;&#x9;INNER JOIN PLPRAT ON PLPRATAS.PLCAS_NUM_PRATICA = PLPRAT.PLC_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWABI ON PLPRATAS.ABI = CCNEWABI.ABI_ABI&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWCAB ON PLPRATAS.ABI = CCNEWCAB.CAB_ABI &#xD;&#xA;&#x9;&#x9;&#x9;    AND PLPRATAS.CAB = CCNEWCAB.CAB_CAB&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCANAGR ON PLPRAT.PLC_VENDITORE = CCANAGR.AC_CODICE&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN OXCTFPAFD ON PLPRAT.PLC_NUM_PRATICA = OXCTFPAFD.OXCTPAFD_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;    AND OXCTFPAFD.OXCTPAFD_PROCEDURA =  '%s'&#xD;&#xA;&#x9;&#x9;&#x9;    AND OXCTFPAFD.OXCTPAFD_TIPO_RATA = 'R'&#xD;&#xA;&#x9;&#x9;&#x9;    AND OXCTFPAFD.OXCTPAFD_NUMERO_RATA = 1&#xD;&#xA;&#x9;&#x9;&#x9;WHERE PLPRATAS.PLCAS_NUM_PRATICA = '%s'&#xD;&#xA;&#x9;&#x9;&#x9;AND PLPRATAS.PLCAS_TIPO_LIQUIDAZIONE = 'S';&#xD;&#xA;&#x9;&#x9;&quot;&quot;&quot;.formatted(&#xD;&#xA;&#x9;&#x9;(String) globalMap.get(&quot;procedura&quot;),&#xD;&#xA;&#x9;&#x9;(String) globalMap.get(&quot;num_pratica_ocs&quot;))&#xD;&#xA;&#x9;&#x9;.trim();&#xD;&#xA;} else if (state.equals(&quot;25&quot;)) {&#xD;&#xA;&#x9;type = &quot;LEASING&quot;;&#xD;&#xA;&#x9;tableName = &quot;LECES&quot;;&#xD;&#xA;&#x9;query = &quot;&quot;&quot;&#xD;&#xA;&#x9;&#x9;&#x9;SELECT &#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_DATA_PAGAMENTO AS DATA_DESTINAZIONE_PAGAMENTO,    &#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_VALUTA AS IMPORTO_LIQUIDAZIONE, &#xD;&#xA;&#x9;&#x9;&#x9;    NULL AS TIPO_PAGAMENTO,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_ABI AS ABI_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_CAB AS CAB_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_CC AS NUMERO_CONTO_CORRENTE_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWABI.ABI_DENOMINAZIONE AS NOME_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_AGENZIA AS AGENZIA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_INDIRIZZO AS INDIRIZZO_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_LOCALITA AS LOCALITA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    LEPRA.LPC_CODICE_VENDITORE AS CODICE_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_NOME AS NOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_COGNOME AS COGNOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_TARGA AS TARGA_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_TELAIO AS TELAIO_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    LEPAM.LRA_DATA_SCADENZA AS DATA_SCADENZA_RATA&#xD;&#xA;&#x9;&#x9;&#x9;FROM LECES&#xD;&#xA;&#x9;&#x9;&#x9;INNER JOIN LEPRA ON LECES.LCE_NUM_PRATICA = LEPRA.LPC_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWABI ON LECES.LCE_ABI = CCNEWABI.ABI_ABI&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWCAB ON LECES.LCE_ABI = CCNEWCAB.CAB_ABI &#xD;&#xA;&#x9;&#x9;&#x9;    AND LECES.LCE_CAB = CCNEWCAB.CAB_CAB&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCANAGR ON LEPRA.LPC_CODICE_VENDITORE = CCANAGR.AC_CODICE&#xD;&#xA;&#x9;&#x9;&#x9;INNER JOIN LEPAM ON LECES.LCE_NUM_PRATICA = LEPAM.LRA_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;    AND LEPAM.LRA_NUMERO_RATA = 1&#xD;&#xA;&#x9;&#x9;&#x9;WHERE LECES.LCE_NUM_PRATICA = '%s'&#xD;&#xA;&#x9;&#x9;&#x9;AND LECES.LCE_CESPITE = 1;&#xD;&#xA;&#x9;&#x9;&quot;&quot;&quot;.formatted((String) globalMap.get(&quot;num_pratica_ocs&quot;))&#xD;&#xA;&#x9;&#x9;.trim();&#xD;&#xA;} else {&#xD;&#xA;&#x9;throw new IllegalStateException(&quot;The State of Dossier [%s] is not valid !&quot;.formatted(globalMap.get(&quot;id_proposta&quot;)));&#xD;&#xA;}&#xD;&#xA;globalMap.put(&quot;tableName&quot;, tableName);&#xD;&#xA;globalMap.put(&quot;query&quot;, query);&#xD;&#xA;System.out.println(&quot;==== INQUIRING the DATABASE ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + type);&#xD;&#xA;System.out.println(&quot;TABLE => &quot; + tableName);&#xD;&#xA;System.out.println(&quot;===============================&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;==== EXTRACTING LIQUIDATION and PERSONAL Data ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + globalMap.get(&quot;procedura&quot;));&#xD;&#xA;System.out.println(&quot;=================================================&quot;);&#xD;&#xA;String state = ((String) globalMap.get(&quot;stato&quot;)),&#xD;&#xA;&#x9;   type = null, &#xD;&#xA;&#x9;   query = null,&#xD;&#xA;&#x9;   tableName = null;&#xD;&#xA;if (state.equals(&quot;40&quot;)) {&#xD;&#xA;&#x9;type = &quot;LOAN&quot;;&#xD;&#xA;&#x9;tableName = &quot;PLPRATAS&quot;;&#xD;&#xA;&#x9;query = &quot;&quot;&quot;&#xD;&#xA;&#x9;&#x9;&#x9;SELECT &#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.PLCAS_DATA_DEST AS DATA_DESTINAZIONE_PAGAMENTO,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.PLCAS_DEST_IMP_VALUTA AS IMPORTO_LIQUIDAZIONE,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.PAGAMENTO AS TIPO_PAGAMENTO,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.ABI AS ABI_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.CAB AS CAB_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRATAS.NUMERO_CC AS NUMERO_CONTO_CORRENTE_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWABI.ABI_DENOMINAZIONE AS NOME_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_AGENZIA AS AGENZIA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_INDIRIZZO AS INDIRIZZO_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_LOCALITA AS LOCALITA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRAT.PLC_VENDITORE AS CODICE_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_NOME AS NOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_COGNOME AS COGNOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRAT.PLC_AUTO_TARGA AS TARGA_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    PLPRAT.PLC_AUTO_TELAIO AS TELAIO_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    OXCTFPAFD.OXCTPAFD_DATA_SCADENZA AS DATA_SCADENZA_RATA&#xD;&#xA;&#x9;&#x9;&#x9;FROM PLPRATAS&#xD;&#xA;&#x9;&#x9;&#x9;INNER JOIN PLPRAT ON PLPRATAS.PLCAS_NUM_PRATICA = PLPRAT.PLC_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWABI ON PLPRATAS.ABI = CCNEWABI.ABI_ABI&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWCAB ON PLPRATAS.ABI = CCNEWCAB.CAB_ABI &#xD;&#xA;&#x9;&#x9;&#x9;    AND PLPRATAS.CAB = CCNEWCAB.CAB_CAB&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCANAGR ON PLPRAT.PLC_VENDITORE = CCANAGR.AC_CODICE&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN OXCTFPAFD ON PLPRAT.PLC_NUM_PRATICA = OXCTFPAFD.OXCTPAFD_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;    AND OXCTFPAFD.OXCTPAFD_PROCEDURA =  '%s'&#xD;&#xA;&#x9;&#x9;&#x9;    AND OXCTFPAFD.OXCTPAFD_TIPO_RATA = 'R'&#xD;&#xA;&#x9;&#x9;&#x9;    AND OXCTFPAFD.OXCTPAFD_NUMERO_RATA = 1&#xD;&#xA;&#x9;&#x9;&#x9;WHERE PLPRATAS.PLCAS_NUM_PRATICA = '%s'&#xD;&#xA;&#x9;&#x9;&#x9;AND PLPRATAS.PLCAS_TIPO_LIQUIDAZIONE = 'S';&#xD;&#xA;&#x9;&#x9;&quot;&quot;&quot;.formatted(&#xD;&#xA;&#x9;&#x9;(String) globalMap.get(&quot;procedura&quot;),&#xD;&#xA;&#x9;&#x9;(String) globalMap.get(&quot;num_pratica_ocs&quot;))&#xD;&#xA;&#x9;&#x9;.trim();&#xD;&#xA;} else if (state.equals(&quot;25&quot;)) {&#xD;&#xA;&#x9;type = &quot;LEASING&quot;;&#xD;&#xA;&#x9;tableName = &quot;LECES&quot;;&#xD;&#xA;&#x9;query = &quot;&quot;&quot;&#xD;&#xA;&#x9;&#x9;&#x9;SELECT &#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_DATA_PAGAMENTO AS DATA_DESTINAZIONE_PAGAMENTO,    &#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_VALUTA AS IMPORTO_LIQUIDAZIONE, &#xD;&#xA;&#x9;&#x9;&#x9;    NULL AS TIPO_PAGAMENTO,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_ABI AS ABI_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_CAB AS CAB_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_CC AS NUMERO_CONTO_CORRENTE_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWABI.ABI_DENOMINAZIONE AS NOME_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_AGENZIA AS AGENZIA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_INDIRIZZO AS INDIRIZZO_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    CCNEWCAB.CAB_LOCALITA AS LOCALITA_BANCA,&#xD;&#xA;&#x9;&#x9;&#x9;    LEPRA.LPC_CODICE_VENDITORE AS CODICE_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_NOME AS NOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    CCANAGR.AC_COGNOME AS COGNOME_VENDITORE,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_TARGA AS TARGA_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    LECES.LCE_TELAIO AS TELAIO_VEICOLO,&#xD;&#xA;&#x9;&#x9;&#x9;    LEPAM.LRA_DATA_SCADENZA AS DATA_SCADENZA_RATA&#xD;&#xA;&#x9;&#x9;&#x9;FROM LECES&#xD;&#xA;&#x9;&#x9;&#x9;INNER JOIN LEPRA ON LECES.LCE_NUM_PRATICA = LEPRA.LPC_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWABI ON LECES.LCE_ABI = CCNEWABI.ABI_ABI&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCNEWCAB ON LECES.LCE_ABI = CCNEWCAB.CAB_ABI &#xD;&#xA;&#x9;&#x9;&#x9;    AND LECES.LCE_CAB = CCNEWCAB.CAB_CAB&#xD;&#xA;&#x9;&#x9;&#x9;LEFT JOIN CCANAGR ON LEPRA.LPC_CODICE_VENDITORE = CCANAGR.AC_CODICE&#xD;&#xA;&#x9;&#x9;&#x9;INNER JOIN LEPAM ON LECES.LCE_NUM_PRATICA = LEPAM.LRA_NUM_PRATICA&#xD;&#xA;&#x9;&#x9;&#x9;    AND LEPAM.LRA_NUMERO_RATA = 1&#xD;&#xA;&#x9;&#x9;&#x9;WHERE LECES.LCE_NUM_PRATICA = '%s'&#xD;&#xA;&#x9;&#x9;&#x9;AND LECES.LCE_CESPITE = 1;&#xD;&#xA;&#x9;&#x9;&quot;&quot;&quot;.formatted((String) globalMap.get(&quot;num_pratica_ocs&quot;))&#xD;&#xA;&#x9;&#x9;.trim();&#xD;&#xA;} else {&#xD;&#xA;&#x9;throw new IllegalStateException(&quot;The State of Dossier [%s] is not valid !&quot;.formatted(globalMap.get(&quot;id_proposta&quot;)));&#xD;&#xA;}&#xD;&#xA;globalMap.put(&quot;tableName&quot;, tableName);&#xD;&#xA;globalMap.put(&quot;query&quot;, query);&#xD;&#xA;System.out.println(&quot;==== INQUIRING the DATABASE ===&quot;);&#xD;&#xA;System.out.println(&quot;ID => &quot; + globalMap.get(&quot;id_proposta&quot;));&#xD;&#xA;System.out.println(&quot;NUMBER (OCS) => &quot; + globalMap.get(&quot;num_pratica_ocs&quot;));&#xD;&#xA;System.out.println(&quot;TYPE => &quot; + type);&#xD;&#xA;System.out.println(&quot;TABLE => &quot; + tableName);&#xD;&#xA;System.out.println(&quot;===============================&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_8"/>
@@ -645,13 +652,14 @@
   <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tJava_4">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentError2" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row6" lineStyle="0" metaname="tJoin_1" offsetLabelX="0" offsetLabelY="0" source="tJoin_1" target="tSetGlobalVar_1">
+  <connection connectorName="FLOW" label="row6" lineStyle="0" metaname="tJoin_1" offsetLabelX="0" offsetLabelY="0" source="tJoin_1" target="tFlowToIterate_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row6" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row5" lineStyle="8" metaname="tHashInput_1" offsetLabelX="0" offsetLabelY="0" source="tHashInput_1" target="tJoin_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
+  <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFlowToIterate_1" offsetLabelX="0" offsetLabelY="0" source="tFlowToIterate_1" target="tSetGlobalVar_1">
+    <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
+    <elementParameter field="TEXT" name="NUMBER_PARALLEL" value="2" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="iterate1" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row7" lineStyle="0" metaname="tSetGlobalVar_1" offsetLabelX="0" offsetLabelY="0" source="tSetGlobalVar_1" target="tJavaRow_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -676,6 +684,10 @@
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJavaRow_1" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_1" target="tDBInput_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk7" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row5" lineStyle="8" metaname="tHashInput_1" offsetLabelX="0" offsetLabelY="0" source="tHashInput_1" target="tJoin_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_1" offsetLabelX="0" offsetLabelY="0" source="tJava_1" target="LogToFile_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
@@ -758,7 +770,7 @@
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
   </note>
-  <note opaque="true" posX="800" posY="1240" sizeHeight="80" sizeWidth="120" text="NOTA: i campi ritornati dalla query non vengono usati. Quindi a che serve eseguire tutte quelle 10 query ??">
+  <note opaque="true" posX="800" posY="1240" sizeHeight="80" sizeWidth="120" text="NOTA: i campi ritornati dalla query non vengono usati">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="225;225;135"/>
   </note>
   <subjob>
