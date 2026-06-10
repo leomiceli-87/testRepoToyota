@@ -1,0 +1,78 @@
+{
+  "itemId" : "_TOY7QGSuEfG-ILVNTJZm0A",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_utG3oFWvEfGR_sec_3d0vw",
+    "parameterList" : [ {
+      "id" : "_dKdq0FWwEfGR_sec_3d0vw",
+      "name" : "ftpHost"
+    }, {
+      "id" : "_dKdq0VWwEfGR_sec_3d0vw",
+      "name" : "ftpPort"
+    }, {
+      "id" : "_dKdq0lWwEfGR_sec_3d0vw",
+      "name" : "ftpUsername"
+    }, {
+      "id" : "_dKdq01WwEfGR_sec_3d0vw",
+      "name" : "ftpPassword"
+    }, {
+      "id" : "_dKdq1FWwEfGR_sec_3d0vw",
+      "name" : "ftpDownloadRemoteDirectory"
+    }, {
+      "id" : "_dKdq1VWwEfGR_sec_3d0vw",
+      "name" : "ftpLocalDirectory"
+    } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_OcNs4FXgEfGyau0Siu7XRg",
+    "parameterList" : [ {
+      "id" : "_2XWhgFXmEfGyau0Siu7XRg",
+      "name" : "ftpUploadRemoteDirectory"
+    } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_Kin7YE9tEfGCKoAZMm_BYg",
+    "parameterList" : [ {
+      "id" : "_AVPvQFLMEfG8Pbfzyc37CA",
+      "name" : "emailServerHost"
+    }, {
+      "id" : "_AVPvQVLMEfG8Pbfzyc37CA",
+      "name" : "emailServerPort"
+    }, {
+      "id" : "_3PUNYFjdEfGSzsBYJrUhXQ",
+      "name" : "emailServerUsername"
+    }, {
+      "id" : "_3PUNYVjdEfGSzsBYJrUhXQ",
+      "name" : "emailServerPassword"
+    }, {
+      "id" : "_DROU4E9uEfGCKoAZMm_BYg",
+      "name" : "emailSenderFrom"
+    }, {
+      "id" : "_DROU4U9uEfGCKoAZMm_BYg",
+      "name" : "emailSenderTo"
+    }, {
+      "id" : "_DROU4k9uEfGCKoAZMm_BYg",
+      "name" : "emailSenderSubject"
+    }, {
+      "id" : "_DROU409uEfGCKoAZMm_BYg",
+      "name" : "emailSenderMessage"
+    } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_32Lo0ELTEfG7HqyOm3C_vw",
+    "parameterList" : [ {
+      "id" : "_A0KZAELrEfG7HqyOm3C_vw",
+      "name" : "configFilePath"
+    } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_A3m9gEMKEfG7HqyOm3C_vw",
+    "parameterList" : [ {
+      "id" : "_y-CsoF2XEfGMmseW008dDg",
+      "name" : "jobName"
+    }, {
+      "id" : "_wQW-YF2XEfGMmseW008dDg",
+      "name" : "logsDirectoryPath"
+    } ]
+  } ]
+}
