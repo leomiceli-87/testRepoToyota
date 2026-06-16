@@ -1,0 +1,34 @@
+{
+  "itemId" : "_uHy1MGllEfGvRttKKTf99g",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_bO1PEELtEfG7HqyOm3C_vw",
+    "parameterList" : [ {
+      "id" : "_MJa_EEMBEfG7HqyOm3C_vw",
+      "name" : "gatewayCallUrl"
+    }, {
+      "id" : "_Ig18UEOlEfGBj7EpAX9f2Q",
+      "name" : "userAgent"
+    }, {
+      "id" : "_Tvk4IEMBEfG7HqyOm3C_vw",
+      "name" : "gatewayCallBody"
+    } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_32Lo0ELTEfG7HqyOm3C_vw",
+    "parameterList" : [ {
+      "id" : "_A0KZAELrEfG7HqyOm3C_vw",
+      "name" : "configFilePath"
+    } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_A3m9gEMKEfG7HqyOm3C_vw",
+    "parameterList" : [ {
+      "id" : "_y-CsoF2XEfGMmseW008dDg",
+      "name" : "jobName"
+    }, {
+      "id" : "_wQW-YF2XEfGMmseW008dDg",
+      "name" : "logsDirectoryPath"
+    } ]
+  } ]
+}
