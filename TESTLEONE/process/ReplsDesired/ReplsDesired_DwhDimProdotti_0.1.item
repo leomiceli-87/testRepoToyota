@@ -7,12 +7,12 @@
     <contextParameter comment="&quot;Percoso e identificativo completo del file di configurazione del Job&quot;" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="_32Lo0ELTEfG7HqyOm3C_vw" type="id_String" value="" internalId="_A0KZAELrEfG7HqyOm3C_vw"/>
     <contextParameter comment="&quot;Identificativo univoco del Job&quot;" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_y-CsoF2XEfGMmseW008dDg"/>
     <contextParameter comment="&quot;Percoso completo della cartella per la memorizzazione dei logs relativi alle esecuzioni&quot;" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_wQW-YF2XEfGMmseW008dDg"/>
-    <contextParameter comment="" name="databaseOracleServerHost" prompt="databaseOracleServerHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okGlaEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseOracleServerPort" prompt="databaseOracleServerPort?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okWlaEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseOracleServerSchema" prompt="databaseOracleServerSchema?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okmlaEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseOracleServerDatabase" prompt="databaseOracleServerDatabase?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2ok2laEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseOracleServerUsername" prompt="databaseOracleServerUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olGlaEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseOracleServerPassword" prompt="databaseOracleServerPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olWlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseOracleHost" prompt="databaseOracleHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okGlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseOraclePort" prompt="databaseOraclePort?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okWlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseOracleSchema" prompt="databaseOracleSchema?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okmlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseOracleDatabase" prompt="databaseOracleDatabase?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2ok2laEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseOracleUsername" prompt="databaseOracleUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olGlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseOraclePassword" prompt="databaseOraclePassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olWlaEfGvRttKKTf99g"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
@@ -163,14 +163,14 @@
     <elementParameter field="CHECK" name="USE_TNS_FILE" value="false"/>
     <elementParameter field="FILE" name="TNS_FILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="TNS_EDITOR" name="TNS_EDITOR" value="" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="context.databaseOracleServerHost"/>
+    <elementParameter field="TEXT" name="HOST" value="context.databaseOracleHost"/>
     <elementParameter field="TEXT" name="TYPE" value="MSSQL" show="false"/>
-    <elementParameter field="TEXT" name="PORT" value="context.databaseOracleServerPort"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.databaseOracleServerDatabase"/>
-    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" value="context.databaseOracleServerDatabase" show="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.databaseOracleServerSchema"/>
-    <elementParameter field="TEXT" name="USER" value="context.databaseOracleServerUsername"/>
-    <elementParameter field="PASSWORD" name="PASS" value="context.databaseOracleServerPassword"/>
+    <elementParameter field="TEXT" name="PORT" value="context.databaseOraclePort"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.databaseOracleDatabase"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" value="context.databaseOracleDatabase" show="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.databaseOracleSchema"/>
+    <elementParameter field="TEXT" name="USER" value="context.databaseOracleUsername"/>
+    <elementParameter field="PASSWORD" name="PASS" value="context.databaseOraclePassword"/>
     <elementParameter field="CHECK" name="USE_SSL" value="false" show="false"/>
     <elementParameter field="FILE" name="SSL_TRUSTSERVER_TRUSTSTORE" value="&quot;&quot;" show="false"/>
     <elementParameter field="PASSWORD" name="SSL_TRUSTSERVER_PASSWORD" value="enc:system.encryption.key.v1:phqUzlYn5PVsFhrTgJBdrUMky0VLXkHMFL3GKnqM" show="false"/>
