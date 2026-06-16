@@ -7,12 +7,12 @@
     <contextParameter comment="&quot;Percoso e identificativo completo del file di configurazione del Job&quot;" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="_32Lo0ELTEfG7HqyOm3C_vw" type="id_String" value="" internalId="_A0KZAELrEfG7HqyOm3C_vw"/>
     <contextParameter comment="&quot;Identificativo univoco del Job&quot;" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_y-CsoF2XEfGMmseW008dDg"/>
     <contextParameter comment="&quot;Percoso completo della cartella per la memorizzazione dei logs relativi alle esecuzioni&quot;" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_wQW-YF2XEfGMmseW008dDg"/>
-    <contextParameter comment="" name="databaseMSqlServerHost" prompt="databaseMSqlServerHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okGlaEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseMSqlServerPort" prompt="databaseMSqlServerPort?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okWlaEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseMSqlServerSchema" prompt="databaseMSqlServerSchema?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okmlaEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseMSqlServerDatabase" prompt="databaseMSqlServerDatabase?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2ok2laEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseMSqlServerUsername" prompt="databaseMSqlServerUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olGlaEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseMSqlServerPassword" prompt="databaseMSqlServerPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olWlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseDB2ServerHost" prompt="databaseDB2ServerHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okGlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseDB2ServerPort" prompt="databaseDB2ServerPort?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okWlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseDB2ServerSchema" prompt="databaseDB2ServerSchema?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okmlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseDB2ServerDatabase" prompt="databaseDB2ServerDatabase?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2ok2laEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseDB2ServerUsername" prompt="databaseDB2ServerUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olGlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseDB2ServerPassword" prompt="databaseDB2ServerPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olWlaEfGvRttKKTf99g"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
@@ -155,63 +155,42 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_1"/>
   </node>
-  <node componentName="tMSSqlConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="200">
+  <node componentName="tAS400Connection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBConnection_1" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP"/>
-    <elementParameter field="TEXT" name="HOST" value="context.databaseMSqlServerHost"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="jt400-20.0.7.jar"/>
+    <elementParameter field="TEXT" name="HOST" value="context.databaseDB2ServerHost"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.databaseDB2ServerDatabase"/>
     <elementParameter field="TEXT" name="TYPE" value="MSSQL" show="false"/>
-    <elementParameter field="TEXT" name="PORT" value="context.databaseMSqlServerPort"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.databaseMSqlServerSchema"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.databaseMSqlServerDatabase"/>
-    <elementParameter field="TEXT" name="USER" value="context.databaseMSqlServerUsername"/>
-    <elementParameter field="PASSWORD" name="PASS" value="context.databaseMSqlServerPassword"/>
+    <elementParameter field="TEXT" name="USER" value="context.databaseDB2ServerUsername"/>
+    <elementParameter field="PASSWORD" name="PASS" value="context.databaseDB2ServerPassword"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="SHARED_CONNECTION_NAME" value="" show="false"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVE_DIR_AUTH" value="false"/>
-    <elementParameter field="CLOSED_LIST" name="ACTIVE_DIR_AUTH_MODE" value="PASSWORD" show="false"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
-    <elementParameter field="CHECK" name="ENABLE_ALWAYS_ENCRYPTED" value="false"/>
-    <elementParameter field="TEXT" name="KEYSTORE_PRINCIPAL_ID" value="" show="false"/>
-    <elementParameter field="PASSWORD" name="KEYSTORE_SECRET" value="" show="false"/>
-    <elementParameter field="CHECK" name="SHARE_IDENTITY_SETTING" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tMSSqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="360">
+  <node componentName="tAS400Input" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="360">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="jt400-20.0.7.jar" show="false"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DRIVER" value="MSSQL_PROP" show="false"/>
-    <elementParameter field="TEXT" name="TYPE" value="MSSQL" show="false"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;1433&quot;" show="false"/>
-    <elementParameter field="TEXT" name="DB_SCHEMA" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="DBNAME" value="&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TYPE" value="AS400" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:CmO0hSOpNHjY3UFfgoDCnO+2U4KUSCpzSK0qjyEB" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:c0Fg9VCLtJK2r/GDxgD7dsz1/nKxkIyBpMdecVqj" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
     <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;...&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime" show="false"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false" show="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="id_MSSQL" show="false"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;" show="false"/>
-    <elementParameter field="CHECK" name="ACTIVE_DIR_AUTH" value="false" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="ACTIVE_DIR_AUTH_MODE" value="PASSWORD" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="ENABLE_ALWAYS_ENCRYPTED" value="false" show="false"/>
-    <elementParameter field="TEXT" name="KEYSTORE_PRINCIPAL_ID" value="" show="false"/>
-    <elementParameter field="PASSWORD" name="KEYSTORE_SECRET" value="" show="false"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN"/>
     <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
