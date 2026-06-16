@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
-  <TalendProperties:Project xmi:id="_P3D78UiHEfGqmJjvSJWrUA" label="TestLeone" description="" language="java" technicalLabel="TESTLEONE" author="_P3D78kiHEfGqmJjvSJWrUA" productVersion="Talend Cloud Data Integration-8.0.1.20260521_1039-patch" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/leomiceli-87/testRepoToyota.git&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DQ" itemsRelationVersion="1.3" bigData="false">
+  <TalendProperties:Project xmi:id="_P3D78UiHEfGqmJjvSJWrUA" label="TestLeone" description="" language="java" technicalLabel="TESTLEONE" author="_P3D78kiHEfGqmJjvSJWrUA" productVersion="Talend Cloud Data Management Platform-8.0.1.20260521_1039-patch" url="{&quot;commitLogPattern&quot;:&quot;{0}&quot;,&quot;location&quot;:&quot;https://github.com/leomiceli-87/testRepoToyota.git&quot;,&quot;settings&quot;:&quot;000&quot;,&quot;storage&quot;:&quot;git&quot;}" type="DQ" itemsRelationVersion="1.3" bigData="false">
     <migrationTask xmi:id="_P3v4cEiHEfGqmJjvSJWrUA" id="org.talend.repository.model.migration.CheckProductVersionMigrationTask" breaks="7.1.0" version="7.1.1"/>
   </TalendProperties:Project>
   <TalendProperties:User xmi:id="_P3D78kiHEfGqmJjvSJWrUA" login="l.miceli@trial.c23lt5wn14j7equ.us.qlikcloud.com" firstName="Leone M" lastName="Leone M" type="DQ"/>
@@ -10,4 +10,7 @@
   <TalendProperties:User xmi:id="_gKA3sV8dEfGkn7EzxjOPFg" login="5188i8i4p5@trial.ugsr4sfq2t8hx8a.us.qlikcloud.com" firstName="Another User" lastName="Another" type="DQ"/>
   <TalendProperties:User xmi:id="_umuWsGPwEfGj94W94hUHyA" login="marcoberlenghini@eval207598.talend.com" firstName="Marco" lastName="Berlenghini" type="DI"/>
   <TalendProperties:User xmi:id="_umuWsWPwEfGj94W94hUHyA" login="marcoberlenghini@eval207598.talend.com" firstName="Marco" lastName="Berlenghini" type="DI"/>
+  <TalendProperties:User xmi:id="_bfCggGiYEfGWUIiiuib43Q" login="marcoberlenghini@toyota-fs.com" firstName="Marco" lastName="Berlenghini" type="DQ"/>
+  <TalendProperties:User xmi:id="_bfCggWiYEfGWUIiiuib43Q" login="marcoberlenghini@toyota-fs.com" firstName="Marco" lastName="Berlenghini" type="DQ"/>
+  <TalendProperties:User xmi:id="_AYr9QGijEfGw-txALq0NgQ" login="vicemi4284@toyota-fs.com" firstName="Gino" lastName="Gini" type="DQ"/>
 </xmi:XMI>
