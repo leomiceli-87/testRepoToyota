@@ -213,7 +213,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;...&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT DISTINCT&#xD;&#xA;Null as VER_BRAND,&#xD;&#xA;CARLINECODE as CAT_CARLINE_CODE,&#xD;&#xA;CARLINENAME as CAT_CARLINE_NAME,&#xD;&#xA;SUBCARLINECODE as SUB_CARLINE_CODE,&#xD;&#xA;SUBCARLINENAME as SUB_CARLINE_NAME,&#xD;&#xA;CARGRADECODE as GRA_GRADE_CODE,&#xD;&#xA;CARGRADENAME as GRA_GRADE,&#xD;&#xA;SERIES as SER_SERIES_NAME,&#xD;&#xA;SERIESREVISION as SER_REVISION,&#xD;&#xA;VERSIONCODE as VER_VERSION_CODE,&#xD;&#xA;DISPLAYNAME as VER_MODEL_NAME,&#xD;&#xA;COMMERCIALNAME as VER_COMMERCIAL_NAME_PUB,&#xD;&#xA;NUMBEROFDOORS as VER_NUMBER_OF_DOOR,&#xD;&#xA;ENGINECAPACITY as VER_ENGINE_CAPACITY,&#xD;&#xA;ENGINETYPE as VER_ENGINE_TYPE,&#xD;&#xA;COALESCE(to_number(to_char(DATAINIZIO, 'yyyymmdd')),0) as DATA_INSERT_TMI,&#xD;&#xA;COALESCE(to_number(to_char(DATAFINE, 'yyyymmdd')),0) as DATA_DELETE_TMI,&#xD;&#xA;COD_MARCA_OCS as COD_MARCA_OCS,&#xD;&#xA;COD_MODELLO_OCS as COD_MODELLO_OCS,&#xD;&#xA;COALESCE(to_number(to_char(DATA_UPDATE_OCS, 'yyyymmdd')),0) as DATA_UPDATE_OCS&#xD;&#xA;FROM CONFIGURAZIONI&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime" show="false"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false" show="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -227,18 +227,101 @@
     <elementParameter field="CHECK" name="USE_CURSOR" value="false"/>
     <elementParameter field="TEXT" name="CURSOR_SIZE" value="1000" show="false"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
-    <elementParameter field="TABLE" name="TRIM_COLUMN"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="VER_BRAND" id="0"/>
+      <elementValue elementRef="TRIM" value="false" id="1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CAT_CARLINE_CODE" id="2"/>
+      <elementValue elementRef="TRIM" value="false" id="3"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CAT_CARLINE_NAME" id="4"/>
+      <elementValue elementRef="TRIM" value="false" id="5"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SUB_CARLINE_CODE" id="6"/>
+      <elementValue elementRef="TRIM" value="false" id="7"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SUB_CARLINE_NAME" id="8"/>
+      <elementValue elementRef="TRIM" value="false" id="9"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="GRA_GRADE_CODE" id="10"/>
+      <elementValue elementRef="TRIM" value="false" id="11"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="GRA_GRADE" id="12"/>
+      <elementValue elementRef="TRIM" value="false" id="13"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SER_SERIES_NAME" id="14"/>
+      <elementValue elementRef="TRIM" value="false" id="15"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SER_REVISION" id="16"/>
+      <elementValue elementRef="TRIM" value="false" id="17"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VER_VERSION_CODE" id="18"/>
+      <elementValue elementRef="TRIM" value="false" id="19"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VER_MODEL_NAME" id="20"/>
+      <elementValue elementRef="TRIM" value="false" id="21"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VER_COMMERCIAL_NAME_PUB" id="22"/>
+      <elementValue elementRef="TRIM" value="false" id="23"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VER_NUMBER_OF_DOOR" id="24"/>
+      <elementValue elementRef="TRIM" value="false" id="25"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VER_ENGINE_CAPACITY" id="26"/>
+      <elementValue elementRef="TRIM" value="false" id="27"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VER_ENGINE_TYPE" id="28"/>
+      <elementValue elementRef="TRIM" value="false" id="29"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DATA_INSERT_TMI" id="30"/>
+      <elementValue elementRef="TRIM" value="false" id="31"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DATA_DELETE_TMI" id="32"/>
+      <elementValue elementRef="TRIM" value="false" id="33"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="COD_MARCA_OCS" id="34"/>
+      <elementValue elementRef="TRIM" value="false" id="35"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="COD_MODELLO_OCS" id="36"/>
+      <elementValue elementRef="TRIM" value="false" id="37"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DATA_UPDATE_OCS" id="38"/>
+      <elementValue elementRef="TRIM" value="false" id="39"/>
+    </elementParameter>
     <elementParameter field="CHECK" name="NO_NULL_VALUES" value="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NLS" value="false" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBInput_1"/>
+    <metadata connector="FLOW" name="tDBInput_1">
+      <column comment="" key="false" length="-1" name="VER_BRAND" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CAT_CARLINE_CODE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CAT_CARLINE_NAME" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SUB_CARLINE_CODE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SUB_CARLINE_NAME" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="GRA_GRADE_CODE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="GRA_GRADE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SER_SERIES_NAME" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SER_REVISION" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VER_VERSION_CODE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VER_MODEL_NAME" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VER_COMMERCIAL_NAME_PUB" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VER_NUMBER_OF_DOOR" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VER_ENGINE_CAPACITY" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VER_ENGINE_TYPE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATA_INSERT_TMI" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATA_DELETE_TMI" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="COD_MARCA_OCS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="COD_MODELLO_OCS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATA_UPDATE_OCS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_4" show="false"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== PREPARING GATEWAY REQUEST =====&quot;);&#xD;&#xA;// TODO: finish mapping query&#xD;&#xA;System.out.println(&quot;TODO: ....&quot;);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tJava_4"/>
+    <metadata connector="FLOW" name="tJava_4">
+      <column comment="" key="false" length="-1" name="VER_BRAND" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CAT_CARLINE_CODE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CAT_CARLINE_NAME" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SUB_CARLINE_CODE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SUB_CARLINE_NAME" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="GRA_GRADE_CODE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="GRA_GRADE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SER_SERIES_NAME" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="SER_REVISION" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VER_VERSION_CODE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VER_MODEL_NAME" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VER_COMMERCIAL_NAME_PUB" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VER_NUMBER_OF_DOOR" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VER_ENGINE_CAPACITY" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="VER_ENGINE_TYPE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATA_INSERT_TMI" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATA_DELETE_TMI" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="COD_MARCA_OCS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="COD_MODELLO_OCS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DATA_UPDATE_OCS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
   </node>
   <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="840" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
@@ -324,6 +407,68 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tJava_4">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="CAT_CARLINE_NAME" id="0"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="1"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="2"/>
+      <elementValue elementRef="TRACE_COLUMN" value="SER_SERIES_NAME" id="3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="4"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="5"/>
+      <elementValue elementRef="TRACE_COLUMN" value="VER_ENGINE_TYPE" id="6"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="7"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="8"/>
+      <elementValue elementRef="TRACE_COLUMN" value="VER_MODEL_NAME" id="9"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="10"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="11"/>
+      <elementValue elementRef="TRACE_COLUMN" value="COD_MARCA_OCS" id="12"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="13"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="14"/>
+      <elementValue elementRef="TRACE_COLUMN" value="CAT_CARLINE_CODE" id="15"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="16"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="17"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DATA_DELETE_TMI" id="18"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="19"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="20"/>
+      <elementValue elementRef="TRACE_COLUMN" value="VER_COMMERCIAL_NAME_PUB" id="21"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="22"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="23"/>
+      <elementValue elementRef="TRACE_COLUMN" value="SUB_CARLINE_CODE" id="24"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="25"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="26"/>
+      <elementValue elementRef="TRACE_COLUMN" value="VER_ENGINE_CAPACITY" id="27"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="28"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="29"/>
+      <elementValue elementRef="TRACE_COLUMN" value="SUB_CARLINE_NAME" id="30"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="31"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="32"/>
+      <elementValue elementRef="TRACE_COLUMN" value="GRA_GRADE_CODE" id="33"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="34"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="35"/>
+      <elementValue elementRef="TRACE_COLUMN" value="GRA_GRADE" id="36"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="37"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="38"/>
+      <elementValue elementRef="TRACE_COLUMN" value="VER_NUMBER_OF_DOOR" id="39"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="40"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="41"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DATA_UPDATE_OCS" id="42"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="43"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="44"/>
+      <elementValue elementRef="TRACE_COLUMN" value="SER_REVISION" id="45"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="46"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="47"/>
+      <elementValue elementRef="TRACE_COLUMN" value="VER_BRAND" id="48"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="49"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="50"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DATA_INSERT_TMI" id="51"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="52"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="53"/>
+      <elementValue elementRef="TRACE_COLUMN" value="VER_VERSION_CODE" id="54"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="55"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="56"/>
+      <elementValue elementRef="TRACE_COLUMN" value="COD_MODELLO_OCS" id="57"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="58"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="59"/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
   </connection>
