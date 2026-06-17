@@ -159,9 +159,9 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBConnection_1" show="false"/>
     <elementParameter field="TEXT" name="HOST" value="context.databaseDB2Host"/>
     <elementParameter field="TEXT" name="TYPE" value="MSSQL" show="false"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;50000&quot;"/>
+    <elementParameter field="TEXT" name="PORT" value="context.databaseDB2Port"/>
     <elementParameter field="TEXT" name="DBNAME" value="context.databaseDB2Database"/>
-    <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TABLESCHEMA" value="context.databaseDB2Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.databaseDB2Username"/>
     <elementParameter field="PASSWORD" name="PASS" value="context.databaseDB2Password"/>
     <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>

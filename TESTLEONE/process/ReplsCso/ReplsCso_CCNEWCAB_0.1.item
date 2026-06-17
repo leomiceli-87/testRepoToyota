@@ -8,7 +8,6 @@
     <contextParameter comment="&quot;Identificativo univoco del Job&quot;" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_y-CsoF2XEfGMmseW008dDg"/>
     <contextParameter comment="&quot;Percoso completo della cartella per la memorizzazione dei logs relativi alle esecuzioni&quot;" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_wQW-YF2XEfGMmseW008dDg"/>
     <contextParameter comment="" name="databaseDB2Host" prompt="databaseDB2Host?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okGlaEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseDB2Port" prompt="databaseDB2Port?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okWlaEfGvRttKKTf99g"/>
     <contextParameter comment="" name="databaseDB2Schema" prompt="databaseDB2Schema?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okmlaEfGvRttKKTf99g"/>
     <contextParameter comment="" name="databaseDB2Username" prompt="databaseDB2Username?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olGlaEfGvRttKKTf99g"/>
     <contextParameter comment="" name="databaseDB2Database" prompt="databaseDB2Database?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2ok2laEfGvRttKKTf99g"/>
