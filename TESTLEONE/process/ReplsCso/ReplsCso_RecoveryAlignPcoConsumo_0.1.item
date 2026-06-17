@@ -186,7 +186,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;...&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#xD;&#xA;'CO' AS PRT_PROCEDURA,&#xD;&#xA;toyodati.PLPRAX.PLCXA_NUM_PRATICA AS PRT_NUM_PRATICA,&#xD;&#xA;toyodati.PLPRAX.PLCXA_CONTROPARTE AS ANA_CODICE,&#xD;&#xA;toyodati.PLPRAX.PLCXA_TIPO_RAPPORTO AS PRT_TIPO_RAPPORTO&#xD;&#xA;FROM toyodati.PLPRAX&#xD;&#xA;JOIN toyodati.PLPRAT ON ( toyodati.PLPRAX.PLCXA_NUM_PRATICA = toyodati.PLPRAT.PLC_NUM_PRATICA )&#xD;&#xA;JOIN toyodati.PLPRATST ON ( toyodati.PLPRATST.PLPRA_NUM_PRATICA = toyodati.PLPRAT.PLC_NUM_PRATICA )&#xD;&#xA;WHERE toyodati.PLPRAX.PLCXA_TIPO_RAPPORTO IN ('GA', 'FI', 'CO') AND&#xD;&#xA;toyodati.PLPRAT.PLC_STATO &lt;> '45' AND toyodati.PLPRAT.PLC_ATTRIBUTO NOT IN ('RT', 'RN', 'EC', 'RE')&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>

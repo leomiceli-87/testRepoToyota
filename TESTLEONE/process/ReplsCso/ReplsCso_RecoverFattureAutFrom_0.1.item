@@ -186,7 +186,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;...&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select&#xD;&#xA;OXCMFTA_PRATICA,OXCMFTA_INVIO_ELETTR,OXCMFTA_DATA_INSER,OXCMFTA_PROCEDURA&#xD;&#xA;from toyodati.OXCMFFTA where OXCMFTA_DATA_INSER >= 20150101&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="as400_id" show="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;" show="false"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
