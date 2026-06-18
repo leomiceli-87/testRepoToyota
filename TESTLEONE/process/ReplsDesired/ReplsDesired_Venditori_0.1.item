@@ -380,6 +380,7 @@
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
   </note>
+  <note opaque="true" posX="1280" posY="200" sizeHeight="80" sizeWidth="120" text="Fcon=Desired&#xD;&#xA;FRows=righe dalla SELECT&#xD;&#xA;--&#xD;&#xA;Tabella Destinazione: ddb_ven"/>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="LoadConfigFileToContext_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
