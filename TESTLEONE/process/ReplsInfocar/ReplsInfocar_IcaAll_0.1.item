@@ -344,6 +344,9 @@
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
   </note>
   <note opaque="true" posX="1280" posY="200" sizeHeight="80" sizeWidth="120" text="Fcon=Desired&#xD;&#xA;FRows=righe dalla SELECT&#xD;&#xA;--&#xD;&#xA;Tabella Destinazione: ica_all"/>
+  <note opaque="true" posX="1280" posY="520" sizeHeight="41" sizeWidth="241" text="Aggiungere query">
+    <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
+  </note>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="LoadConfigFileToContext_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
