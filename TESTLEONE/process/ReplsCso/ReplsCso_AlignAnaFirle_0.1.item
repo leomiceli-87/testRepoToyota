@@ -191,20 +191,245 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
-    <elementParameter field="TABLE" name="TRIM_COLUMN"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_CODICE" id="0"/>
+      <elementValue elementRef="TRIM" value="false" id="1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_RAG_SOCIALE" id="2"/>
+      <elementValue elementRef="TRIM" value="false" id="3"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_INDIRIZZO" id="4"/>
+      <elementValue elementRef="TRIM" value="false" id="5"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_CAP" id="6"/>
+      <elementValue elementRef="TRIM" value="false" id="7"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_FRAZIONE" id="8"/>
+      <elementValue elementRef="TRIM" value="false" id="9"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_LOCALITA" id="10"/>
+      <elementValue elementRef="TRIM" value="false" id="11"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_PROVINCIA" id="12"/>
+      <elementValue elementRef="TRIM" value="false" id="13"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_PAESE_ESTERO" id="14"/>
+      <elementValue elementRef="TRIM" value="false" id="15"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_COD_CAB_COMUNE" id="16"/>
+      <elementValue elementRef="TRIM" value="false" id="17"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_NASCITA_DATA" id="18"/>
+      <elementValue elementRef="TRIM" value="false" id="19"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_NASCITA_LUOGO" id="20"/>
+      <elementValue elementRef="TRIM" value="false" id="21"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_NASCITA_PROV" id="22"/>
+      <elementValue elementRef="TRIM" value="false" id="23"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_NASCITA_NAZIONE" id="24"/>
+      <elementValue elementRef="TRIM" value="false" id="25"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_NASCITA_CAB_LOC" id="26"/>
+      <elementValue elementRef="TRIM" value="false" id="27"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_CITTADINANZA" id="28"/>
+      <elementValue elementRef="TRIM" value="false" id="29"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_SESSO" id="30"/>
+      <elementValue elementRef="TRIM" value="false" id="31"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_TIPO_ANAGRAFICA" id="32"/>
+      <elementValue elementRef="TRIM" value="false" id="33"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_FORMA_GIURIDICA" id="34"/>
+      <elementValue elementRef="TRIM" value="false" id="35"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_CODICE_FISCALE" id="36"/>
+      <elementValue elementRef="TRIM" value="false" id="37"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_PARTITA_IVA" id="38"/>
+      <elementValue elementRef="TRIM" value="false" id="39"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_TELEFONO" id="40"/>
+      <elementValue elementRef="TRIM" value="false" id="41"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_TELEFONO_2" id="42"/>
+      <elementValue elementRef="TRIM" value="false" id="43"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_TELEFONO_CEL" id="44"/>
+      <elementValue elementRef="TRIM" value="false" id="45"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_TELEFONO_SEDE" id="46"/>
+      <elementValue elementRef="TRIM" value="false" id="47"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_FAX" id="48"/>
+      <elementValue elementRef="TRIM" value="false" id="49"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_EMAIL" id="50"/>
+      <elementValue elementRef="TRIM" value="false" id="51"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_IDE_TIPO_DOCUMENTO" id="52"/>
+      <elementValue elementRef="TRIM" value="false" id="53"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_IDE_NUM_DOCUMENTO" id="54"/>
+      <elementValue elementRef="TRIM" value="false" id="55"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_IDE_UFFICIO_RILASCIO" id="56"/>
+      <elementValue elementRef="TRIM" value="false" id="57"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_IDE_LUOGO_RILASCIO" id="58"/>
+      <elementValue elementRef="TRIM" value="false" id="59"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_IDE_PROV_RILASCIO" id="60"/>
+      <elementValue elementRef="TRIM" value="false" id="61"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_IDE_DATA_RILASCIO" id="62"/>
+      <elementValue elementRef="TRIM" value="false" id="63"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_IDE_DATA_SCADENZA" id="64"/>
+      <elementValue elementRef="TRIM" value="false" id="65"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_SOTTOGRUPPO" id="66"/>
+      <elementValue elementRef="TRIM" value="false" id="67"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_RAMOGRUPPO" id="68"/>
+      <elementValue elementRef="TRIM" value="false" id="69"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_COGNOME" id="70"/>
+      <elementValue elementRef="TRIM" value="false" id="71"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_SECONDO_COGNOME" id="72"/>
+      <elementValue elementRef="TRIM" value="false" id="73"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_NOME" id="74"/>
+      <elementValue elementRef="TRIM" value="false" id="75"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_SECONDO_NOME" id="76"/>
+      <elementValue elementRef="TRIM" value="false" id="77"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_CAPOGRUPPO" id="78"/>
+      <elementValue elementRef="TRIM" value="false" id="79"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_UTENTE_INSERIMENTO" id="80"/>
+      <elementValue elementRef="TRIM" value="false" id="81"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_DATA_INSERIMENTO" id="82"/>
+      <elementValue elementRef="TRIM" value="false" id="83"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_UTENTE_VARIAZIONE" id="84"/>
+      <elementValue elementRef="TRIM" value="false" id="85"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_DATA_VARIAZIONE" id="86"/>
+      <elementValue elementRef="TRIM" value="false" id="87"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISCLIENTE" id="88"/>
+      <elementValue elementRef="TRIM" value="false" id="89"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISAGENTE" id="90"/>
+      <elementValue elementRef="TRIM" value="false" id="91"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISALTRO" id="92"/>
+      <elementValue elementRef="TRIM" value="false" id="93"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISGARANTE" id="94"/>
+      <elementValue elementRef="TRIM" value="false" id="95"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISDATIPO" id="96"/>
+      <elementValue elementRef="TRIM" value="false" id="97"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISFORNITORE" id="98"/>
+      <elementValue elementRef="TRIM" value="false" id="99"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISNOTAIO" id="100"/>
+      <elementValue elementRef="TRIM" value="false" id="101"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISPERITO" id="102"/>
+      <elementValue elementRef="TRIM" value="false" id="103"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISPROCURATORE" id="104"/>
+      <elementValue elementRef="TRIM" value="false" id="105"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISDEBIT" id="106"/>
+      <elementValue elementRef="TRIM" value="false" id="107"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISCOOBBLIGATO" id="108"/>
+      <elementValue elementRef="TRIM" value="false" id="109"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISCONVENZIONATO" id="110"/>
+      <elementValue elementRef="TRIM" value="false" id="111"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISDITTA" id="112"/>
+      <elementValue elementRef="TRIM" value="false" id="113"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISFIRMAT" id="114"/>
+      <elementValue elementRef="TRIM" value="false" id="115"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISFACTOR" id="116"/>
+      <elementValue elementRef="TRIM" value="false" id="117"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISDELEGATO" id="118"/>
+      <elementValue elementRef="TRIM" value="false" id="119"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISFONDOPE" id="120"/>
+      <elementValue elementRef="TRIM" value="false" id="121"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISFINANZ" id="122"/>
+      <elementValue elementRef="TRIM" value="false" id="123"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISDIPENDENTE" id="124"/>
+      <elementValue elementRef="TRIM" value="false" id="125"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISESPAZI" id="126"/>
+      <elementValue elementRef="TRIM" value="false" id="127"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_ISTRUTT_PRATICHE" id="128"/>
+      <elementValue elementRef="TRIM" value="false" id="129"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_RILEV_QUALITA" id="130"/>
+      <elementValue elementRef="TRIM" value="false" id="131"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_OFF_COMM_INTERNE" id="132"/>
+      <elementValue elementRef="TRIM" value="false" id="133"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_OFF_COMM_ESTERNE" id="134"/>
+      <elementValue elementRef="TRIM" value="false" id="135"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_SERVIZI_ALTRI" id="136"/>
+      <elementValue elementRef="TRIM" value="false" id="137"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ANA_DATI_SENSIBILI" id="138"/>
+      <elementValue elementRef="TRIM" value="false" id="139"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="newColumn5" id="140"/>
+      <elementValue elementRef="TRIM" value="false" id="141"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="newColumn11" id="142"/>
+      <elementValue elementRef="TRIM" value="false" id="143"/>
+    </elementParameter>
     <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
     <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" value="30" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBInput_1"/>
+    <metadata connector="FLOW" name="tDBInput_1">
+      <column comment="" key="false" length="-1" name="ANA_CODICE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_RAG_SOCIALE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_INDIRIZZO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_CAP" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_FRAZIONE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_LOCALITA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_PROVINCIA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_PAESE_ESTERO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_COD_CAB_COMUNE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_NASCITA_DATA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_NASCITA_LUOGO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_NASCITA_PROV" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_NASCITA_NAZIONE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_NASCITA_CAB_LOC" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_CITTADINANZA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_SESSO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_TIPO_ANAGRAFICA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_FORMA_GIURIDICA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_CODICE_FISCALE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_PARTITA_IVA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_TELEFONO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_TELEFONO_2" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_TELEFONO_CEL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_TELEFONO_SEDE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_FAX" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_EMAIL" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_IDE_TIPO_DOCUMENTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_IDE_NUM_DOCUMENTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_IDE_UFFICIO_RILASCIO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_IDE_LUOGO_RILASCIO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_IDE_PROV_RILASCIO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_IDE_DATA_RILASCIO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_IDE_DATA_SCADENZA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_SOTTOGRUPPO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_RAMOGRUPPO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_COGNOME" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_SECONDO_COGNOME" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_NOME" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_SECONDO_NOME" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_CAPOGRUPPO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_UTENTE_INSERIMENTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_DATA_INSERIMENTO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_UTENTE_VARIAZIONE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_DATA_VARIAZIONE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISCLIENTE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISAGENTE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISALTRO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISGARANTE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISDATIPO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISFORNITORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISNOTAIO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISPERITO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISPROCURATORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISDEBIT" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISCOOBBLIGATO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISCONVENZIONATO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISDITTA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISFIRMAT" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISFACTOR" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISDELEGATO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISFONDOPE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISFINANZ" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISDIPENDENTE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISESPAZI" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_ISTRUTT_PRATICHE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_RILEV_QUALITA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_OFF_COMM_INTERNE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_OFF_COMM_ESTERNE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_SERVIZI_ALTRI" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ANA_DATI_SENSIBILI" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="newColumn5" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="newColumn11" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="520">
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="520">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String ROW_SEP = &quot;|R|&quot;;&#xD;&#xA;String FIELD_SEP = &quot;|F|&quot;;&#xD;&#xA;String KEY_SEP = &quot;,&quot;;&#xD;&#xA;if (globalMap.get(&quot;payload_righe&quot;) == null) {&#xD;&#xA; String tabellaEncoded = java.util.Base64.getEncoder().encodeToString(&quot;ocs_ana&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String key1Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_CODICE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col1Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_CODICE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col2Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_RAG_SOCIALE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col3Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_INDIRIZZO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col4Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_CAP&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col5Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_FRAZIONE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col6Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_LOCALITA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col7Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_PROVINCIA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col8Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_PAESE_ESTERO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col9Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_COD_CAB_COMUNE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col10Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_NASCITA_DATA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col11Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_NASCITA_LUOGO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col12Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_NASCITA_PROV&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col13Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_NASCITA_NAZIONE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col14Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_NASCITA_CAB_LOC&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col15Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_CITTADINANZA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col16Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_SESSO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col17Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_TIPO_ANAGRAFICA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col18Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_FORMA_GIURIDICA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col19Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_CODICE_FISCALE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col20Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_PARTITA_IVA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col21Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_TELEFONO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col22Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_TELEFONO_2&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col23Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_TELEFONO_CEL&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col24Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_TELEFONO_SEDE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col25Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_FAX&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col26Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_EMAIL&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col27Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_IDE_TIPO_DOCUMENTO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col28Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_IDE_NUM_DOCUMENTO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col29Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_IDE_UFFICIO_RILASCIO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col30Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_IDE_LUOGO_RILASCIO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col31Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_IDE_PROV_RILASCIO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col32Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_IDE_DATA_RILASCIO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col33Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_IDE_DATA_SCADENZA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col34Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_SOTTOGRUPPO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col35Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_RAMOGRUPPO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col36Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_COGNOME&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col37Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_SECONDO_COGNOME&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col38Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_NOME&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col39Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_SECONDO_NOME&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col40Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_CAPOGRUPPO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col41Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_UTENTE_INSERIMENTO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col42Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_DATA_INSERIMENTO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col43Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_UTENTE_VARIAZIONE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col44Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_DATA_VARIAZIONE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col45Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISCLIENTE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col46Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISAGENTE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col47Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISALTRO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col48Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISGARANTE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col49Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISDATIPO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col50Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISFORNITORE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col51Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISNOTAIO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col52Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISPERITO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col53Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISPROCURATORE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col54Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISDEBIT&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col55Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISCOOBBLIGATO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col56Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISCONVENZIONATO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col57Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISDITTA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col58Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISFIRMAT&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col59Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISFACTOR&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col60Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISDELEGATO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col61Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISFONDOPE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col62Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISFINANZ&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col63Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISDIPENDENTE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col64Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISESPAZI&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col65Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_ISTRUTT_PRATICHE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col66Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_RILEV_QUALITA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col67Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_OFF_COMM_INTERNE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col68Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_OFF_COMM_ESTERNE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col69Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_SERVIZI_ALTRI&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col70Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ANA_DATI_SENSIBILI&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String header = tabellaEncoded + KEY_SEP + key1Encoded &#xD;&#xA;                 + FIELD_SEP + col1Encoded + FIELD_SEP + col2Encoded + FIELD_SEP + col3Encoded &#xD;&#xA;                 + FIELD_SEP + col4Encoded + FIELD_SEP + col5Encoded + FIELD_SEP + col6Encoded &#xD;&#xA;                 + FIELD_SEP + col7Encoded + FIELD_SEP + col8Encoded + FIELD_SEP + col9Encoded &#xD;&#xA;                 + FIELD_SEP + col10Encoded + FIELD_SEP + col11Encoded + FIELD_SEP + col12Encoded &#xD;&#xA;                 + FIELD_SEP + col13Encoded + FIELD_SEP + col14Encoded + FIELD_SEP + col15Encoded &#xD;&#xA;                 + FIELD_SEP + col16Encoded + FIELD_SEP + col17Encoded + FIELD_SEP + col18Encoded &#xD;&#xA;                 + FIELD_SEP + col19Encoded + FIELD_SEP + col20Encoded + FIELD_SEP + col21Encoded &#xD;&#xA;                 + FIELD_SEP + col22Encoded + FIELD_SEP + col23Encoded + FIELD_SEP + col24Encoded &#xD;&#xA;                 + FIELD_SEP + col25Encoded + FIELD_SEP + col26Encoded + FIELD_SEP + col27Encoded &#xD;&#xA;                 + FIELD_SEP + col28Encoded + FIELD_SEP + col29Encoded + FIELD_SEP + col30Encoded &#xD;&#xA;                 + FIELD_SEP + col31Encoded + FIELD_SEP + col32Encoded + FIELD_SEP + col33Encoded &#xD;&#xA;                 + FIELD_SEP + col34Encoded + FIELD_SEP + col35Encoded + FIELD_SEP + col36Encoded &#xD;&#xA;                 + FIELD_SEP + col37Encoded + FIELD_SEP + col38Encoded + FIELD_SEP + col39Encoded &#xD;&#xA;                 + FIELD_SEP + col40Encoded + FIELD_SEP + col41Encoded + FIELD_SEP + col42Encoded &#xD;&#xA;                 + FIELD_SEP + col43Encoded + FIELD_SEP + col44Encoded + FIELD_SEP + col45Encoded &#xD;&#xA;                 + FIELD_SEP + col46Encoded + FIELD_SEP + col47Encoded + FIELD_SEP + col48Encoded &#xD;&#xA;                 + FIELD_SEP + col49Encoded + FIELD_SEP + col50Encoded + FIELD_SEP + col51Encoded &#xD;&#xA;                 + FIELD_SEP + col52Encoded + FIELD_SEP + col53Encoded + FIELD_SEP + col54Encoded &#xD;&#xA;                 + FIELD_SEP + col55Encoded + FIELD_SEP + col56Encoded + FIELD_SEP + col57Encoded &#xD;&#xA;                 + FIELD_SEP + col58Encoded + FIELD_SEP + col59Encoded + FIELD_SEP + col60Encoded &#xD;&#xA;                 + FIELD_SEP + col61Encoded + FIELD_SEP + col62Encoded + FIELD_SEP + col63Encoded &#xD;&#xA;                 + FIELD_SEP + col64Encoded + FIELD_SEP + col65Encoded + FIELD_SEP + col66Encoded &#xD;&#xA;                 + FIELD_SEP + col67Encoded + FIELD_SEP + col68Encoded + FIELD_SEP + col69Encoded &#xD;&#xA;                 + FIELD_SEP + col70Encoded;&#xD;&#xA; java.util.ArrayList&lt;String> righe = new java.util.ArrayList&lt;String>();&#xD;&#xA; globalMap.put(&quot;payload_righe&quot;, righe);&#xD;&#xA; globalMap.put(&quot;payload_header&quot;, header);&#xD;&#xA;}&#xD;&#xA;String val1 = row4.ANA_CODICE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_CODICE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val2 = row4.ANA_RAG_SOCIALE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_RAG_SOCIALE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val3 = row4.ANA_INDIRIZZO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_INDIRIZZO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val4 = row4.ANA_CAP != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_CAP.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val5 = row4.ANA_FRAZIONE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_FRAZIONE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val6 = row4.ANA_LOCALITA != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_LOCALITA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val7 = row4.ANA_PROVINCIA != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_PROVINCIA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val8 = row4.ANA_PAESE_ESTERO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_PAESE_ESTERO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val9 = row4.ANA_COD_CAB_COMUNE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_COD_CAB_COMUNE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val10 = row4.ANA_NASCITA_DATA != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_NASCITA_DATA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val11 = row4.ANA_NASCITA_LUOGO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_NASCITA_LUOGO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val12 = row4.ANA_NASCITA_PROV != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_NASCITA_PROV.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val13 = row4.ANA_NASCITA_NAZIONE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_NASCITA_NAZIONE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val14 = row4.ANA_NASCITA_CAB_LOC != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_NASCITA_CAB_LOC.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val15 = row4.ANA_CITTADINANZA != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_CITTADINANZA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val16 = row4.ANA_SESSO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_SESSO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val17 = row4.ANA_TIPO_ANAGRAFICA != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_TIPO_ANAGRAFICA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val18 = row4.ANA_FORMA_GIURIDICA != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_FORMA_GIURIDICA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val19 = row4.ANA_CODICE_FISCALE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_CODICE_FISCALE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val20 = row4.ANA_PARTITA_IVA != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_PARTITA_IVA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val21 = row4.ANA_TELEFONO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_TELEFONO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val22 = row4.ANA_TELEFONO_2 != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_TELEFONO_2.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val23 = row4.ANA_TELEFONO_CEL != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_TELEFONO_CEL.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val24 = row4.ANA_TELEFONO_SEDE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_TELEFONO_SEDE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val25 = row4.ANA_FAX != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_FAX.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val26 = row4.ANA_EMAIL != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_EMAIL.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val27 = row4.ANA_IDE_TIPO_DOCUMENTO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_IDE_TIPO_DOCUMENTO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val28 = row4.ANA_IDE_NUM_DOCUMENTO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_IDE_NUM_DOCUMENTO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val29 = row4.ANA_IDE_UFFICIO_RILASCIO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_IDE_UFFICIO_RILASCIO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val30 = row4.ANA_IDE_LUOGO_RILASCIO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_IDE_LUOGO_RILASCIO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val31 = row4.ANA_IDE_PROV_RILASCIO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_IDE_PROV_RILASCIO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val32 = row4.ANA_IDE_DATA_RILASCIO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_IDE_DATA_RILASCIO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val33 = row4.ANA_IDE_DATA_SCADENZA != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_IDE_DATA_SCADENZA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val34 = row4.ANA_SOTTOGRUPPO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_SOTTOGRUPPO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val35 = row4.ANA_RAMOGRUPPO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_RAMOGRUPPO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val36 = row4.ANA_COGNOME != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_COGNOME.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val37 = row4.ANA_SECONDO_COGNOME != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_SECONDO_COGNOME.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val38 = row4.ANA_NOME != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_NOME.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val39 = row4.ANA_SECONDO_NOME != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_SECONDO_NOME.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val40 = row4.ANA_CAPOGRUPPO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_CAPOGRUPPO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val41 = row4.ANA_UTENTE_INSERIMENTO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_UTENTE_INSERIMENTO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val42 = row4.ANA_DATA_INSERIMENTO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_DATA_INSERIMENTO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val43 = row4.ANA_UTENTE_VARIAZIONE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_UTENTE_VARIAZIONE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val44 = row4.ANA_DATA_VARIAZIONE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_DATA_VARIAZIONE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val45 = row4.ANA_ISCLIENTE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISCLIENTE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val46 = row4.ANA_ISAGENTE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISAGENTE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val47 = row4.ANA_ISALTRO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISALTRO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val48 = row4.ANA_ISGARANTE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISGARANTE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val49 = row4.ANA_ISDATIPO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISDATIPO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val50 = row4.ANA_ISFORNITORE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISFORNITORE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val51 = row4.ANA_ISNOTAIO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISNOTAIO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val52 = row4.ANA_ISPERITO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISPERITO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val53 = row4.ANA_ISPROCURATORE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISPROCURATORE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val54 = row4.ANA_ISDEBIT != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISDEBIT.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val55 = row4.ANA_ISCOOBBLIGATO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISCOOBBLIGATO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val56 = row4.ANA_ISCONVENZIONATO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISCONVENZIONATO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val57 = row4.ANA_ISDITTA != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISDITTA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val58 = row4.ANA_ISFIRMAT != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISFIRMAT.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val59 = row4.ANA_ISFACTOR != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISFACTOR.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val60 = row4.ANA_ISDELEGATO != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISDELEGATO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val61 = row4.ANA_ISFONDOPE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISFONDOPE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val62 = row4.ANA_ISFINANZ != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISFINANZ.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val63 = row4.ANA_ISDIPENDENTE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISDIPENDENTE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val64 = row4.ANA_ISESPAZI != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISESPAZI.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val65 = row4.ANA_ISTRUTT_PRATICHE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_ISTRUTT_PRATICHE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val66 = row4.ANA_RILEV_QUALITA != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_RILEV_QUALITA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val67 = row4.ANA_OFF_COMM_INTERNE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_OFF_COMM_INTERNE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val68 = row4.ANA_OFF_COMM_ESTERNE != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_OFF_COMM_ESTERNE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val69 = row4.ANA_SERVIZI_ALTRI != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_SERVIZI_ALTRI.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val70 = row4.ANA_DATI_SENSIBILI != null ? java.util.Base64.getEncoder().encodeToString(row4.ANA_DATI_SENSIBILI.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String riga = val1 + FIELD_SEP + val2 + FIELD_SEP + val3 + FIELD_SEP + val4 &#xD;&#xA;           + FIELD_SEP + val5 + FIELD_SEP + val6 + FIELD_SEP + val7 + FIELD_SEP + val8 &#xD;&#xA;           + FIELD_SEP + val9 + FIELD_SEP + val10 + FIELD_SEP + val11 + FIELD_SEP + val12 &#xD;&#xA;           + FIELD_SEP + val13 + FIELD_SEP + val14 + FIELD_SEP + val15 + FIELD_SEP + val16 &#xD;&#xA;           + FIELD_SEP + val17 + FIELD_SEP + val18 + FIELD_SEP + val19 + FIELD_SEP + val20 &#xD;&#xA;           + FIELD_SEP + val21 + FIELD_SEP + val22 + FIELD_SEP + val23 + FIELD_SEP + val24 &#xD;&#xA;           + FIELD_SEP + val25 + FIELD_SEP + val26 + FIELD_SEP + val27 + FIELD_SEP + val28 &#xD;&#xA;           + FIELD_SEP + val29 + FIELD_SEP + val30 + FIELD_SEP + val31 + FIELD_SEP + val32 &#xD;&#xA;           + FIELD_SEP + val33 + FIELD_SEP + val34 + FIELD_SEP + val35 + FIELD_SEP + val36 &#xD;&#xA;           + FIELD_SEP + val37 + FIELD_SEP + val38 + FIELD_SEP + val39 + FIELD_SEP + val40 &#xD;&#xA;           + FIELD_SEP + val41 + FIELD_SEP + val42 + FIELD_SEP + val43 + FIELD_SEP + val44 &#xD;&#xA;           + FIELD_SEP + val45 + FIELD_SEP + val46 + FIELD_SEP + val47 + FIELD_SEP + val48 &#xD;&#xA;           + FIELD_SEP + val49 + FIELD_SEP + val50 + FIELD_SEP + val51 + FIELD_SEP + val52 &#xD;&#xA;           + FIELD_SEP + val53 + FIELD_SEP + val54 + FIELD_SEP + val55 + FIELD_SEP + val56 &#xD;&#xA;           + FIELD_SEP + val57 + FIELD_SEP + val58 + FIELD_SEP + val59 + FIELD_SEP + val60 &#xD;&#xA;           + FIELD_SEP + val61 + FIELD_SEP + val62 + FIELD_SEP + val63 + FIELD_SEP + val64 &#xD;&#xA;           + FIELD_SEP + val65 + FIELD_SEP + val66 + FIELD_SEP + val67 + FIELD_SEP + val68 &#xD;&#xA;           + FIELD_SEP + val69 + FIELD_SEP + val70;&#xD;&#xA;java.util.ArrayList&lt;String> righe = (java.util.ArrayList&lt;String>) globalMap.get(&quot;payload_righe&quot;);&#xD;&#xA;righe.add(riga);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJavaRow_1"/>
+  </node>
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="920" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_4" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== PREPARING GATEWAY REQUEST =====&quot;);&#xD;&#xA;// TODO: finish mapping query&#xD;&#xA;System.out.println(&quot;TODO: ....&quot;);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== PREPARING GATEWAY REQUEST =====&quot;);&#xD;&#xA;String header = (String) globalMap.get(&quot;payload_header&quot;);&#xD;&#xA;java.util.ArrayList&lt;String> righe = (java.util.ArrayList&lt;String>) globalMap.get(&quot;payload_righe&quot;);&#xD;&#xA;String payload = header;&#xD;&#xA;for (String riga : righe) {&#xD;&#xA; payload += &quot;|R|&quot; + riga;&#xD;&#xA;}&#xD;&#xA;globalMap.put(&quot;payload&quot;, payload);&#xD;&#xA;System.out.println(payload);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_4"/>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="840" posY="520">
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="680" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -212,7 +437,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
       <elementValue elementRef="VALUE" value="context.gatewayCallUrl" id="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
-      <elementValue elementRef="VALUE" value="&quot;FFun=X&quot;" id="3"/>
+      <elementValue elementRef="VALUE" value="&quot;FFun=1&amp;Fcon=MyCSO&amp;FRows=((String) globalMap.get(&quot;payload&quot;))&quot;" id="3"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="userAgent" id="4"/>
       <elementValue elementRef="VALUE" value="context.userAgent" id="5"/>
     </elementParameter>
@@ -229,7 +454,7 @@
       <column comment="" key="false" length="-1" name="userAgent" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="600" posY="520">
+  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="440" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="CallGateway_1"/>
     <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
@@ -252,7 +477,7 @@
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="360" posY="520">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="200" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_3" show="false"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xD;&#xA;String body = row1.Body&#xD;&#xA;    .replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;)&#xD;&#xA;    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)       &#xD;&#xA;    .trim();     &#xD;&#xA;System.out.println(body);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -262,7 +487,7 @@
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="360" posY="640">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="200" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;***** JOB ENDED *****&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -287,14 +512,16 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tJava_4">
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tJavaRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
   </connection>
-  <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tJava_4" offsetLabelX="0" offsetLabelY="0" source="tJava_4" target="tFixedFlowInput_1">
-    <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
-    <elementParameter field="TEXT" name="NUMBER_PARALLEL" value="2" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="iterate1" show="false"/>
+  <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tJavaRow_1" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_1" target="tJava_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_4" offsetLabelX="0" offsetLabelY="0" source="tJava_4" target="tFixedFlowInput_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk7" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="CallGateway_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -350,6 +577,11 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
