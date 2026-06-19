@@ -252,31 +252,21 @@
       <column comment="" key="false" length="-1" name="ETL_DATE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="520">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_4" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== PREPARING GATEWAY REQUEST =====&quot;);&#xD;&#xA;// TODO: finish mapping query&#xD;&#xA;System.out.println(&quot;TODO: ....&quot;);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="520">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String ROW_SEP = &quot;|R|&quot;;&#xD;&#xA;String FIELD_SEP = &quot;|F|&quot;;&#xD;&#xA;String KEY_SEP = &quot;,&quot;;&#xD;&#xA;if (globalMap.get(&quot;payload_righe&quot;) == null) {&#xD;&#xA; String tabellaEncoded = java.util.Base64.getEncoder().encodeToString(&quot;TELAI_TMI&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String key1Encoded = java.util.Base64.getEncoder().encodeToString(&quot;NUMERO_TELAIO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col1Encoded = java.util.Base64.getEncoder().encodeToString(&quot;NUMERO_TELAIO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col2Encoded = java.util.Base64.getEncoder().encodeToString(&quot;NUMERO_FATTURA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col3Encoded = java.util.Base64.getEncoder().encodeToString(&quot;STATO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col4Encoded = java.util.Base64.getEncoder().encodeToString(&quot;DESC_STATO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col5Encoded = java.util.Base64.getEncoder().encodeToString(&quot;DATA_SCADENZA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col6Encoded = java.util.Base64.getEncoder().encodeToString(&quot;TIPO_CESSIONE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col7Encoded = java.util.Base64.getEncoder().encodeToString(&quot;CODICE_IMPORTATORE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col8Encoded = java.util.Base64.getEncoder().encodeToString(&quot;DATA_FATTURA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col9Encoded = java.util.Base64.getEncoder().encodeToString(&quot;KM0&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col10Encoded = java.util.Base64.getEncoder().encodeToString(&quot;DESCRIZIONE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col11Encoded = java.util.Base64.getEncoder().encodeToString(&quot;MODELLO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col12Encoded = java.util.Base64.getEncoder().encodeToString(&quot;CODICE_DEALER&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col13Encoded = java.util.Base64.getEncoder().encodeToString(&quot;PARTITA_IVA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col14Encoded = java.util.Base64.getEncoder().encodeToString(&quot;DATA_ACQ_FLUSSO&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col15Encoded = java.util.Base64.getEncoder().encodeToString(&quot;EURO5&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col16Encoded = java.util.Base64.getEncoder().encodeToString(&quot;ETL_DATE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String header = tabellaEncoded + KEY_SEP + key1Encoded &#xD;&#xA;                 + FIELD_SEP + col1Encoded + FIELD_SEP + col2Encoded + FIELD_SEP + col3Encoded &#xD;&#xA;                 + FIELD_SEP + col4Encoded + FIELD_SEP + col5Encoded + FIELD_SEP + col6Encoded &#xD;&#xA;                 + FIELD_SEP + col7Encoded + FIELD_SEP + col8Encoded + FIELD_SEP + col9Encoded &#xD;&#xA;                 + FIELD_SEP + col10Encoded + FIELD_SEP + col11Encoded + FIELD_SEP + col12Encoded &#xD;&#xA;                 + FIELD_SEP + col13Encoded + FIELD_SEP + col14Encoded + FIELD_SEP + col15Encoded &#xD;&#xA;                 + FIELD_SEP + col16Encoded;&#xD;&#xA; java.util.ArrayList&lt;String> righe = new java.util.ArrayList&lt;String>();&#xD;&#xA; globalMap.put(&quot;payload_righe&quot;, righe);&#xD;&#xA; globalMap.put(&quot;payload_header&quot;, header);&#xD;&#xA;}&#xD;&#xA;String val1 = row4.NUMERO_TELAIO != null ? java.util.Base64.getEncoder().encodeToString(row4.NUMERO_TELAIO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val2 = row4.NUMERO_FATTURA != null ? java.util.Base64.getEncoder().encodeToString(row4.NUMERO_FATTURA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val3 = row4.STATO != null ? java.util.Base64.getEncoder().encodeToString(row4.STATO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val4 = row4.DESC_STATO != null ? java.util.Base64.getEncoder().encodeToString(row4.DESC_STATO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val5 = row4.DATA_SCADENZA != null ? java.util.Base64.getEncoder().encodeToString(row4.DATA_SCADENZA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val6 = row4.TIPO_CESSIONE != null ? java.util.Base64.getEncoder().encodeToString(row4.TIPO_CESSIONE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val7 = row4.CODICE_IMPORTATORE != null ? java.util.Base64.getEncoder().encodeToString(row4.CODICE_IMPORTATORE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val8 = row4.DATA_FATTURA != null ? java.util.Base64.getEncoder().encodeToString(row4.DATA_FATTURA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val9 = row4.KM0 != null ? java.util.Base64.getEncoder().encodeToString(row4.KM0.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val10 = row4.DESCRIZIONE != null ? java.util.Base64.getEncoder().encodeToString(row4.DESCRIZIONE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val11 = row4.MODELLO != null ? java.util.Base64.getEncoder().encodeToString(row4.MODELLO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val12 = row4.CODICE_DEALER != null ? java.util.Base64.getEncoder().encodeToString(row4.CODICE_DEALER.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val13 = row4.PARTITA_IVA != null ? java.util.Base64.getEncoder().encodeToString(row4.PARTITA_IVA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val14 = row4.DATA_ACQ_FLUSSO != null ? java.util.Base64.getEncoder().encodeToString(row4.DATA_ACQ_FLUSSO.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val15 = row4.EURO5 != null ? java.util.Base64.getEncoder().encodeToString(row4.EURO5.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val16 = row4.ETL_DATE != null ? java.util.Base64.getEncoder().encodeToString(row4.ETL_DATE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String riga = val1 + FIELD_SEP + val2 + FIELD_SEP + val3 + FIELD_SEP + val4 &#xD;&#xA;           + FIELD_SEP + val5 + FIELD_SEP + val6 + FIELD_SEP + val7 + FIELD_SEP + val8 &#xD;&#xA;           + FIELD_SEP + val9 + FIELD_SEP + val10 + FIELD_SEP + val11 + FIELD_SEP + val12 &#xD;&#xA;           + FIELD_SEP + val13 + FIELD_SEP + val14 + FIELD_SEP + val15 + FIELD_SEP + val16;&#xD;&#xA;java.util.ArrayList&lt;String> righe = (java.util.ArrayList&lt;String>) globalMap.get(&quot;payload_righe&quot;);&#xD;&#xA;righe.add(riga);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tJava_4">
-      <column comment="" key="false" length="-1" name="NUMERO_TELAIO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="NUMERO_FATTURA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="STATO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DESC_STATO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATA_SCADENZA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="TIPO_CESSIONE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CODICE_IMPORTATORE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATA_FATTURA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="KM0" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DESCRIZIONE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="MODELLO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CODICE_DEALER" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="PARTITA_IVA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DATA_ACQ_FLUSSO" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="EURO5" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ETL_DATE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
+    <metadata connector="FLOW" name="tJavaRow_1"/>
   </node>
-  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="840" posY="520">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="920" posY="520">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_4" show="false"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== PREPARING GATEWAY REQUEST =====&quot;);&#xD;&#xA;String header = (String) globalMap.get(&quot;payload_header&quot;);&#xD;&#xA;java.util.ArrayList&lt;String> righe = (java.util.ArrayList&lt;String>) globalMap.get(&quot;payload_righe&quot;);&#xD;&#xA;String payload = header;&#xD;&#xA;for (String riga : righe) {&#xD;&#xA; payload += &quot;|R|&quot; + riga;&#xD;&#xA;}&#xD;&#xA;globalMap.put(&quot;payload&quot;, payload);&#xD;&#xA;System.out.println(payload);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_4"/>
+  </node>
+  <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="720" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="true"/>
@@ -284,7 +274,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
       <elementValue elementRef="VALUE" value="context.gatewayCallUrl" id="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
-      <elementValue elementRef="VALUE" value="&quot;FFun=X&quot;" id="3"/>
+      <elementValue elementRef="VALUE" value="&quot;FFun=1&amp;Fcon=Desired&amp;FRows=((String) globalMap.get(&quot;payload&quot;))&quot;" id="3"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="userAgent" id="4"/>
       <elementValue elementRef="VALUE" value="context.userAgent" id="5"/>
     </elementParameter>
@@ -301,7 +291,7 @@
       <column comment="" key="false" length="-1" name="userAgent" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="600" posY="520">
+  <node componentName="CallGateway" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="480" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="CallGateway_1"/>
     <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
@@ -324,7 +314,7 @@
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="360" posY="520">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="240" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_3" show="false"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xD;&#xA;String body = row1.Body&#xD;&#xA;    .replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;)&#xD;&#xA;    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)       &#xD;&#xA;    .trim();     &#xD;&#xA;System.out.println(body);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -334,7 +324,7 @@
       <column defaultValue="" key="false" length="0" name="ERROR_CODE" nullable="true" precision="0" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="360" posY="640">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="240" posY="640">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
     <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;***** JOB ENDED *****&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
@@ -359,64 +349,16 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tJava_4">
-    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
-      <elementValue elementRef="TRACE_COLUMN" value="DESC_STATO" id="0"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="1"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="2"/>
-      <elementValue elementRef="TRACE_COLUMN" value="MODELLO" id="3"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="4"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="5"/>
-      <elementValue elementRef="TRACE_COLUMN" value="STATO" id="6"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="7"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="8"/>
-      <elementValue elementRef="TRACE_COLUMN" value="NUMERO_FATTURA" id="9"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="10"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="11"/>
-      <elementValue elementRef="TRACE_COLUMN" value="DATA_FATTURA" id="12"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="13"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="14"/>
-      <elementValue elementRef="TRACE_COLUMN" value="CODICE_DEALER" id="15"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="16"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="17"/>
-      <elementValue elementRef="TRACE_COLUMN" value="TIPO_CESSIONE" id="18"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="19"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="20"/>
-      <elementValue elementRef="TRACE_COLUMN" value="CODICE_IMPORTATORE" id="21"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="22"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="23"/>
-      <elementValue elementRef="TRACE_COLUMN" value="KM0" id="24"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="25"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="26"/>
-      <elementValue elementRef="TRACE_COLUMN" value="PARTITA_IVA" id="27"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="28"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="29"/>
-      <elementValue elementRef="TRACE_COLUMN" value="DATA_ACQ_FLUSSO" id="30"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="31"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="32"/>
-      <elementValue elementRef="TRACE_COLUMN" value="NUMERO_TELAIO" id="33"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="34"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="35"/>
-      <elementValue elementRef="TRACE_COLUMN" value="DATA_SCADENZA" id="36"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="37"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="38"/>
-      <elementValue elementRef="TRACE_COLUMN" value="ETL_DATE" id="39"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="40"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="41"/>
-      <elementValue elementRef="TRACE_COLUMN" value="EURO5" id="42"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="43"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="44"/>
-      <elementValue elementRef="TRACE_COLUMN" value="DESCRIZIONE" id="45"/>
-      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="46"/>
-      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="47"/>
-    </elementParameter>
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tJavaRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
   </connection>
-  <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tJava_4" offsetLabelX="0" offsetLabelY="0" source="tJava_4" target="tFixedFlowInput_1">
-    <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
-    <elementParameter field="TEXT" name="NUMBER_PARALLEL" value="2" show="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="iterate1" show="false"/>
+  <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tJavaRow_1" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_1" target="tJava_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_4" offsetLabelX="0" offsetLabelY="0" source="tJava_4" target="tFixedFlowInput_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk7" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="CallGateway_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -472,6 +414,11 @@
   </subjob>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBInput_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFixedFlowInput_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
   </subjob>
