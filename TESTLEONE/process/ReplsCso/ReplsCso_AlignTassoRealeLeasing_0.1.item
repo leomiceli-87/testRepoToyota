@@ -191,22 +191,33 @@
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
-    <elementParameter field="TABLE" name="TRIM_COLUMN"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="PRT_PROCEDURA" id="0"/>
+      <elementValue elementRef="TRIM" value="false" id="1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PRT_NUM_PRATICA" id="2"/>
+      <elementValue elementRef="TRIM" value="false" id="3"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PRT_TASSO_REALE" id="4"/>
+      <elementValue elementRef="TRIM" value="false" id="5"/>
+    </elementParameter>
     <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
     <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" value="30" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBInput_1"/>
+    <metadata connector="FLOW" name="tDBInput_1">
+      <column comment="" key="false" length="-1" name="PRT_PROCEDURA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="PRT_NUM_PRATICA" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="PRT_TASSO_REALE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="// code sample:&#xA;//&#xA;// multiply by 2 the row identifier&#xA;// output_row.id = input_row.id * 2;&#xA;//&#xA;// lowercase the name&#xA;// output_row.name = input_row.name.toLowerCase();&#xA;&#xA;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String ROW_SEP = &quot;|R|&quot;;&#xD;&#xA;String FIELD_SEP = &quot;|F|&quot;;&#xD;&#xA;String KEY_SEP = &quot;,&quot;;&#xD;&#xA;if (globalMap.get(&quot;payload_righe&quot;) == null) {&#xD;&#xA; String tabellaEncoded = java.util.Base64.getEncoder().encodeToString(&quot;ocs_pra&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String key1Encoded = java.util.Base64.getEncoder().encodeToString(&quot;PRT_NUM_PRATICA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col1Encoded = java.util.Base64.getEncoder().encodeToString(&quot;PRT_PROCEDURA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col2Encoded = java.util.Base64.getEncoder().encodeToString(&quot;PRT_NUM_PRATICA&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col3Encoded = java.util.Base64.getEncoder().encodeToString(&quot;PRT_TASSO_REALE&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String header = tabellaEncoded + KEY_SEP + key1Encoded &#xD;&#xA;                 + FIELD_SEP + col1Encoded + FIELD_SEP + col2Encoded + FIELD_SEP + col3Encoded;&#xD;&#xA; java.util.ArrayList&lt;String> righe = new java.util.ArrayList&lt;String>();&#xD;&#xA; globalMap.put(&quot;payload_righe&quot;, righe);&#xD;&#xA; globalMap.put(&quot;payload_header&quot;, header);&#xD;&#xA;}&#xD;&#xA;String val1 = row4.PRT_PROCEDURA != null ? java.util.Base64.getEncoder().encodeToString(row4.PRT_PROCEDURA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val2 = row4.PRT_NUM_PRATICA != null ? java.util.Base64.getEncoder().encodeToString(row4.PRT_NUM_PRATICA.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val3 = row4.PRT_TASSO_REALE != null ? java.util.Base64.getEncoder().encodeToString(row4.PRT_TASSO_REALE.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String riga = val1 + FIELD_SEP + val2 + FIELD_SEP + val3;&#xD;&#xA;java.util.ArrayList&lt;String> righe = (java.util.ArrayList&lt;String>) globalMap.get(&quot;payload_righe&quot;);&#xD;&#xA;righe.add(riga);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_1"/>
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="920" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_4" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== PREPARING GATEWAY REQUEST =====&quot;);&#xD;&#xA;// TODO: finish mapping query&#xD;&#xA;System.out.println(&quot;TODO: ....&quot;);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== PREPARING GATEWAY REQUEST =====&quot;);&#xD;&#xA;String header = (String) globalMap.get(&quot;payload_header&quot;);&#xD;&#xA;java.util.ArrayList&lt;String> righe = (java.util.ArrayList&lt;String>) globalMap.get(&quot;payload_righe&quot;);&#xD;&#xA;String payload = header;&#xD;&#xA;for (String riga : righe) {&#xD;&#xA; payload += &quot;|R|&quot; + riga;&#xD;&#xA;}&#xD;&#xA;globalMap.put(&quot;payload&quot;, payload);&#xD;&#xA;System.out.println(payload);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_4"/>
@@ -295,6 +306,17 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tJavaRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="PRT_PROCEDURA" id="0"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="1"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="2"/>
+      <elementValue elementRef="TRACE_COLUMN" value="PRT_TASSO_REALE" id="3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="4"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="5"/>
+      <elementValue elementRef="TRACE_COLUMN" value="PRT_NUM_PRATICA" id="6"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="7"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="8"/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
   </connection>
