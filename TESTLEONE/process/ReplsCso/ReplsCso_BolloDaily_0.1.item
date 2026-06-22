@@ -213,22 +213,129 @@
     <elementParameter field="TEXT" name="KEYSTORE_PRINCIPAL_ID" value="" show="false"/>
     <elementParameter field="PASSWORD" name="KEYSTORE_SECRET" value="" show="false"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
-    <elementParameter field="TABLE" name="TRIM_COLUMN"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="Targa" id="0"/>
+      <elementValue elementRef="TRIM" value="false" id="1"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="AnnoBollo" id="2"/>
+      <elementValue elementRef="TRIM" value="false" id="3"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MeseBollo" id="4"/>
+      <elementValue elementRef="TRIM" value="false" id="5"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="AgenziaId" id="6"/>
+      <elementValue elementRef="TRIM" value="false" id="7"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="FileExport" id="8"/>
+      <elementValue elementRef="TRIM" value="false" id="9"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CostoPresunto" id="10"/>
+      <elementValue elementRef="TRIM" value="false" id="11"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="CostoEffettivo" id="12"/>
+      <elementValue elementRef="TRIM" value="false" id="13"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="OneriAgenzia" id="14"/>
+      <elementValue elementRef="TRIM" value="false" id="15"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DataScadenza" id="16"/>
+      <elementValue elementRef="TRIM" value="false" id="17"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DataPagamento" id="18"/>
+      <elementValue elementRef="TRIM" value="false" id="19"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TipoPagamentoId" id="20"/>
+      <elementValue elementRef="TRIM" value="false" id="21"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DataInvioAgenzia" id="22"/>
+      <elementValue elementRef="TRIM" value="false" id="23"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="StatoId" id="24"/>
+      <elementValue elementRef="TRIM" value="false" id="25"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="NumFattura" id="26"/>
+      <elementValue elementRef="TRIM" value="false" id="27"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Note" id="28"/>
+      <elementValue elementRef="TRIM" value="false" id="29"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DataFattura" id="30"/>
+      <elementValue elementRef="TRIM" value="false" id="31"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="FlagOCS" id="32"/>
+      <elementValue elementRef="TRIM" value="false" id="33"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DataOCS" id="34"/>
+      <elementValue elementRef="TRIM" value="false" id="35"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TipoBol" id="36"/>
+      <elementValue elementRef="TRIM" value="false" id="37"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="InsUtenteId" id="38"/>
+      <elementValue elementRef="TRIM" value="false" id="39"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="InsData" id="40"/>
+      <elementValue elementRef="TRIM" value="false" id="41"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="UpdUtenteId" id="42"/>
+      <elementValue elementRef="TRIM" value="false" id="43"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="UpdData" id="44"/>
+      <elementValue elementRef="TRIM" value="false" id="45"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="InviatoAdOCS" id="46"/>
+      <elementValue elementRef="TRIM" value="false" id="47"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PagamentoOneri" id="48"/>
+      <elementValue elementRef="TRIM" value="false" id="49"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MesiValidita" id="50"/>
+      <elementValue elementRef="TRIM" value="false" id="51"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="AnnoPagamentoAnticipato" id="52"/>
+      <elementValue elementRef="TRIM" value="false" id="53"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MesePagamentoAnticipato" id="54"/>
+      <elementValue elementRef="TRIM" value="false" id="55"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="msrepl_tran_version" id="56"/>
+      <elementValue elementRef="TRIM" value="false" id="57"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="FolderFile" id="58"/>
+      <elementValue elementRef="TRIM" value="false" id="59"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="NomeFile" id="60"/>
+      <elementValue elementRef="TRIM" value="false" id="61"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DataRicezioneFile" id="62"/>
+      <elementValue elementRef="TRIM" value="false" id="63"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DataInvioFile" id="64"/>
+      <elementValue elementRef="TRIM" value="false" id="65"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="numerocontratto" id="66"/>
+      <elementValue elementRef="TRIM" value="false" id="67"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="procedura" id="68"/>
+      <elementValue elementRef="TRIM" value="false" id="69"/>
+    </elementParameter>
     <elementParameter field="CHECK" name="SET_QUERY_TIMEOUT" value="false"/>
     <elementParameter field="TEXT" name="QUERY_TIMEOUT_IN_SECONDS" value="30" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBInput_1"/>
+    <metadata connector="FLOW" name="tDBInput_1">
+      <column comment="" key="false" length="-1" name="Targa" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="AnnoBollo" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="MeseBollo" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="AgenziaId" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="FileExport" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CostoPresunto" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CostoEffettivo" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="OneriAgenzia" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DataScadenza" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DataPagamento" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TipoPagamentoId" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DataInvioAgenzia" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="StatoId" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NumFattura" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Note" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DataFattura" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="FlagOCS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DataOCS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="TipoBol" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="InsUtenteId" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="InsData" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="UpdUtenteId" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="UpdData" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="InviatoAdOCS" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="PagamentoOneri" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="MesiValidita" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="AnnoPagamentoAnticipato" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="MesePagamentoAnticipato" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="msrepl_tran_version" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="FolderFile" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="NomeFile" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DataRicezioneFile" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DataInvioFile" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="numerocontratto" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="procedura" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="// code sample:&#xA;//&#xA;// multiply by 2 the row identifier&#xA;// output_row.id = input_row.id * 2;&#xA;//&#xA;// lowercase the name&#xA;// output_row.name = input_row.name.toLowerCase();&#xA;&#xA;"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="String ROW_SEP = &quot;|R|&quot;;&#xD;&#xA;String FIELD_SEP = &quot;|F|&quot;;&#xD;&#xA;String KEY_SEP = &quot;,&quot;;&#xD;&#xA;if (globalMap.get(&quot;payload_righe&quot;) == null) {&#xD;&#xA; String tabellaEncoded = java.util.Base64.getEncoder().encodeToString(&quot;cso_bol&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String key1Encoded = java.util.Base64.getEncoder().encodeToString(&quot;Targa&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String key2Encoded = java.util.Base64.getEncoder().encodeToString(&quot;AnnoBollo&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col1Encoded = java.util.Base64.getEncoder().encodeToString(&quot;Targa&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col2Encoded = java.util.Base64.getEncoder().encodeToString(&quot;AnnoBollo&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col3Encoded = java.util.Base64.getEncoder().encodeToString(&quot;MeseBollo&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col4Encoded = java.util.Base64.getEncoder().encodeToString(&quot;AgenziaId&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col5Encoded = java.util.Base64.getEncoder().encodeToString(&quot;FileExport&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col6Encoded = java.util.Base64.getEncoder().encodeToString(&quot;CostoPresunto&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col7Encoded = java.util.Base64.getEncoder().encodeToString(&quot;CostoEffettivo&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col8Encoded = java.util.Base64.getEncoder().encodeToString(&quot;OneriAgenzia&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col9Encoded = java.util.Base64.getEncoder().encodeToString(&quot;DataScadenza&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col10Encoded = java.util.Base64.getEncoder().encodeToString(&quot;DataPagamento&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col11Encoded = java.util.Base64.getEncoder().encodeToString(&quot;TipoPagamentoId&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col12Encoded = java.util.Base64.getEncoder().encodeToString(&quot;DataInvioAgenzia&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col13Encoded = java.util.Base64.getEncoder().encodeToString(&quot;StatoId&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col14Encoded = java.util.Base64.getEncoder().encodeToString(&quot;NumFattura&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col15Encoded = java.util.Base64.getEncoder().encodeToString(&quot;Note&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col16Encoded = java.util.Base64.getEncoder().encodeToString(&quot;DataFattura&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col17Encoded = java.util.Base64.getEncoder().encodeToString(&quot;FlagOCS&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col18Encoded = java.util.Base64.getEncoder().encodeToString(&quot;DataOCS&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col19Encoded = java.util.Base64.getEncoder().encodeToString(&quot;TipoBol&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col20Encoded = java.util.Base64.getEncoder().encodeToString(&quot;InsUtenteId&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col21Encoded = java.util.Base64.getEncoder().encodeToString(&quot;InsData&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col22Encoded = java.util.Base64.getEncoder().encodeToString(&quot;UpdUtenteId&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col23Encoded = java.util.Base64.getEncoder().encodeToString(&quot;UpdData&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col24Encoded = java.util.Base64.getEncoder().encodeToString(&quot;InviatoAdOCS&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col25Encoded = java.util.Base64.getEncoder().encodeToString(&quot;PagamentoOneri&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col26Encoded = java.util.Base64.getEncoder().encodeToString(&quot;MesiValidita&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col27Encoded = java.util.Base64.getEncoder().encodeToString(&quot;AnnoPagamentoAnticipato&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col28Encoded = java.util.Base64.getEncoder().encodeToString(&quot;MesePagamentoAnticipato&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col29Encoded = java.util.Base64.getEncoder().encodeToString(&quot;msrepl_tran_version&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col30Encoded = java.util.Base64.getEncoder().encodeToString(&quot;FolderFile&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col31Encoded = java.util.Base64.getEncoder().encodeToString(&quot;NomeFile&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col32Encoded = java.util.Base64.getEncoder().encodeToString(&quot;DataRicezioneFile&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col33Encoded = java.util.Base64.getEncoder().encodeToString(&quot;DataInvioFile&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col34Encoded = java.util.Base64.getEncoder().encodeToString(&quot;numerocontratto&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String col35Encoded = java.util.Base64.getEncoder().encodeToString(&quot;procedura&quot;.getBytes(&quot;UTF-8&quot;));&#xD;&#xA; String header = tabellaEncoded + KEY_SEP + key1Encoded + KEY_SEP + key2Encoded &#xD;&#xA;                 + FIELD_SEP + col1Encoded + FIELD_SEP + col2Encoded + FIELD_SEP + col3Encoded &#xD;&#xA;                 + FIELD_SEP + col4Encoded + FIELD_SEP + col5Encoded + FIELD_SEP + col6Encoded &#xD;&#xA;                 + FIELD_SEP + col7Encoded + FIELD_SEP + col8Encoded + FIELD_SEP + col9Encoded &#xD;&#xA;                 + FIELD_SEP + col10Encoded + FIELD_SEP + col11Encoded + FIELD_SEP + col12Encoded &#xD;&#xA;                 + FIELD_SEP + col13Encoded + FIELD_SEP + col14Encoded + FIELD_SEP + col15Encoded &#xD;&#xA;                 + FIELD_SEP + col16Encoded + FIELD_SEP + col17Encoded + FIELD_SEP + col18Encoded &#xD;&#xA;                 + FIELD_SEP + col19Encoded + FIELD_SEP + col20Encoded + FIELD_SEP + col21Encoded &#xD;&#xA;                 + FIELD_SEP + col22Encoded + FIELD_SEP + col23Encoded + FIELD_SEP + col24Encoded &#xD;&#xA;                 + FIELD_SEP + col25Encoded + FIELD_SEP + col26Encoded + FIELD_SEP + col27Encoded &#xD;&#xA;                 + FIELD_SEP + col28Encoded + FIELD_SEP + col29Encoded + FIELD_SEP + col30Encoded &#xD;&#xA;                 + FIELD_SEP + col31Encoded + FIELD_SEP + col32Encoded + FIELD_SEP + col33Encoded &#xD;&#xA;                 + FIELD_SEP + col34Encoded + FIELD_SEP + col35Encoded;&#xD;&#xA; java.util.ArrayList&lt;String> righe = new java.util.ArrayList&lt;String>();&#xD;&#xA; globalMap.put(&quot;payload_righe&quot;, righe);&#xD;&#xA; globalMap.put(&quot;payload_header&quot;, header);&#xD;&#xA;}&#xD;&#xA;String val1 = row4.Targa != null ? java.util.Base64.getEncoder().encodeToString(row4.Targa.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val2 = row4.AnnoBollo != null ? java.util.Base64.getEncoder().encodeToString(row4.AnnoBollo.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val3 = row4.MeseBollo != null ? java.util.Base64.getEncoder().encodeToString(row4.MeseBollo.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val4 = row4.AgenziaId != null ? java.util.Base64.getEncoder().encodeToString(row4.AgenziaId.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val5 = row4.FileExport != null ? java.util.Base64.getEncoder().encodeToString(row4.FileExport.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val6 = row4.CostoPresunto != null ? java.util.Base64.getEncoder().encodeToString(row4.CostoPresunto.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val7 = row4.CostoEffettivo != null ? java.util.Base64.getEncoder().encodeToString(row4.CostoEffettivo.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val8 = row4.OneriAgenzia != null ? java.util.Base64.getEncoder().encodeToString(row4.OneriAgenzia.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val9 = row4.DataScadenza != null ? java.util.Base64.getEncoder().encodeToString(row4.DataScadenza.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val10 = row4.DataPagamento != null ? java.util.Base64.getEncoder().encodeToString(row4.DataPagamento.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val11 = row4.TipoPagamentoId != null ? java.util.Base64.getEncoder().encodeToString(row4.TipoPagamentoId.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val12 = row4.DataInvioAgenzia != null ? java.util.Base64.getEncoder().encodeToString(row4.DataInvioAgenzia.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val13 = row4.StatoId != null ? java.util.Base64.getEncoder().encodeToString(row4.StatoId.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val14 = row4.NumFattura != null ? java.util.Base64.getEncoder().encodeToString(row4.NumFattura.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val15 = row4.Note != null ? java.util.Base64.getEncoder().encodeToString(row4.Note.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val16 = row4.DataFattura != null ? java.util.Base64.getEncoder().encodeToString(row4.DataFattura.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val17 = row4.FlagOCS != null ? java.util.Base64.getEncoder().encodeToString(row4.FlagOCS.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val18 = row4.DataOCS != null ? java.util.Base64.getEncoder().encodeToString(row4.DataOCS.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val19 = row4.TipoBol != null ? java.util.Base64.getEncoder().encodeToString(row4.TipoBol.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val20 = row4.InsUtenteId != null ? java.util.Base64.getEncoder().encodeToString(row4.InsUtenteId.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val21 = row4.InsData != null ? java.util.Base64.getEncoder().encodeToString(row4.InsData.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val22 = row4.UpdUtenteId != null ? java.util.Base64.getEncoder().encodeToString(row4.UpdUtenteId.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val23 = row4.UpdData != null ? java.util.Base64.getEncoder().encodeToString(row4.UpdData.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val24 = row4.InviatoAdOCS != null ? java.util.Base64.getEncoder().encodeToString(row4.InviatoAdOCS.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val25 = row4.PagamentoOneri != null ? java.util.Base64.getEncoder().encodeToString(row4.PagamentoOneri.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val26 = row4.MesiValidita != null ? java.util.Base64.getEncoder().encodeToString(row4.MesiValidita.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val27 = row4.AnnoPagamentoAnticipato != null ? java.util.Base64.getEncoder().encodeToString(row4.AnnoPagamentoAnticipato.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val28 = row4.MesePagamentoAnticipato != null ? java.util.Base64.getEncoder().encodeToString(row4.MesePagamentoAnticipato.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val29 = row4.msrepl_tran_version != null ? java.util.Base64.getEncoder().encodeToString(row4.msrepl_tran_version.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val30 = row4.FolderFile != null ? java.util.Base64.getEncoder().encodeToString(row4.FolderFile.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val31 = row4.NomeFile != null ? java.util.Base64.getEncoder().encodeToString(row4.NomeFile.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val32 = row4.DataRicezioneFile != null ? java.util.Base64.getEncoder().encodeToString(row4.DataRicezioneFile.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val33 = row4.DataInvioFile != null ? java.util.Base64.getEncoder().encodeToString(row4.DataInvioFile.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val34 = row4.numerocontratto != null ? java.util.Base64.getEncoder().encodeToString(row4.numerocontratto.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String val35 = row4.procedura != null ? java.util.Base64.getEncoder().encodeToString(row4.procedura.toString().getBytes(&quot;UTF-8&quot;)) : &quot;&quot;;&#xD;&#xA;String riga = val1 + FIELD_SEP + val2 + FIELD_SEP + val3 + FIELD_SEP + val4 &#xD;&#xA;           + FIELD_SEP + val5 + FIELD_SEP + val6 + FIELD_SEP + val7 + FIELD_SEP + val8 &#xD;&#xA;           + FIELD_SEP + val9 + FIELD_SEP + val10 + FIELD_SEP + val11 + FIELD_SEP + val12 &#xD;&#xA;           + FIELD_SEP + val13 + FIELD_SEP + val14 + FIELD_SEP + val15 + FIELD_SEP + val16 &#xD;&#xA;           + FIELD_SEP + val17 + FIELD_SEP + val18 + FIELD_SEP + val19 + FIELD_SEP + val20 &#xD;&#xA;           + FIELD_SEP + val21 + FIELD_SEP + val22 + FIELD_SEP + val23 + FIELD_SEP + val24 &#xD;&#xA;           + FIELD_SEP + val25 + FIELD_SEP + val26 + FIELD_SEP + val27 + FIELD_SEP + val28 &#xD;&#xA;           + FIELD_SEP + val29 + FIELD_SEP + val30 + FIELD_SEP + val31 + FIELD_SEP + val32 &#xD;&#xA;           + FIELD_SEP + val33 + FIELD_SEP + val34 + FIELD_SEP + val35;&#xD;&#xA;java.util.ArrayList&lt;String> righe = (java.util.ArrayList&lt;String>) globalMap.get(&quot;payload_righe&quot;);&#xD;&#xA;righe.add(riga);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_1"/>
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="920" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_4" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== PREPARING GATEWAY REQUEST =====&quot;);&#xD;&#xA;// TODO: finish mapping query&#xD;&#xA;System.out.println(&quot;TODO: ....&quot;);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== PREPARING GATEWAY REQUEST =====&quot;);&#xD;&#xA;String header = (String) globalMap.get(&quot;payload_header&quot;);&#xD;&#xA;java.util.ArrayList&lt;String> righe = (java.util.ArrayList&lt;String>) globalMap.get(&quot;payload_righe&quot;);&#xD;&#xA;String payload = header;&#xD;&#xA;for (String riga : righe) {&#xD;&#xA; payload += &quot;|R|&quot; + riga;&#xD;&#xA;}&#xD;&#xA;globalMap.put(&quot;payload&quot;, payload);&#xD;&#xA;System.out.println(payload);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_4"/>
@@ -317,6 +424,113 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnSubjobOk1" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tJavaRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="OneriAgenzia" id="0"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="1"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="2"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DataOCS" id="3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="4"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="5"/>
+      <elementValue elementRef="TRACE_COLUMN" value="InsData" id="6"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="7"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="8"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DataInvioAgenzia" id="9"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="10"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="11"/>
+      <elementValue elementRef="TRACE_COLUMN" value="CostoPresunto" id="12"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="13"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="14"/>
+      <elementValue elementRef="TRACE_COLUMN" value="MeseBollo" id="15"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="16"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="17"/>
+      <elementValue elementRef="TRACE_COLUMN" value="Targa" id="18"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="19"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="20"/>
+      <elementValue elementRef="TRACE_COLUMN" value="AgenziaId" id="21"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="22"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="23"/>
+      <elementValue elementRef="TRACE_COLUMN" value="StatoId" id="24"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="25"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="26"/>
+      <elementValue elementRef="TRACE_COLUMN" value="InviatoAdOCS" id="27"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="28"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="29"/>
+      <elementValue elementRef="TRACE_COLUMN" value="PagamentoOneri" id="30"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="31"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="32"/>
+      <elementValue elementRef="TRACE_COLUMN" value="MesiValidita" id="33"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="34"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="35"/>
+      <elementValue elementRef="TRACE_COLUMN" value="NumFattura" id="36"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="37"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="38"/>
+      <elementValue elementRef="TRACE_COLUMN" value="InsUtenteId" id="39"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="40"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="41"/>
+      <elementValue elementRef="TRACE_COLUMN" value="FolderFile" id="42"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="43"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="44"/>
+      <elementValue elementRef="TRACE_COLUMN" value="AnnoBollo" id="45"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="46"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="47"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DataRicezioneFile" id="48"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="49"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="50"/>
+      <elementValue elementRef="TRACE_COLUMN" value="TipoBol" id="51"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="52"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="53"/>
+      <elementValue elementRef="TRACE_COLUMN" value="UpdUtenteId" id="54"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="55"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="56"/>
+      <elementValue elementRef="TRACE_COLUMN" value="UpdData" id="57"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="58"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="59"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DataPagamento" id="60"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="61"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="62"/>
+      <elementValue elementRef="TRACE_COLUMN" value="MesePagamentoAnticipato" id="63"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="64"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="65"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DataScadenza" id="66"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="67"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="68"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DataFattura" id="69"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="70"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="71"/>
+      <elementValue elementRef="TRACE_COLUMN" value="AnnoPagamentoAnticipato" id="72"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="73"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="74"/>
+      <elementValue elementRef="TRACE_COLUMN" value="msrepl_tran_version" id="75"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="76"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="77"/>
+      <elementValue elementRef="TRACE_COLUMN" value="DataInvioFile" id="78"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="79"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="80"/>
+      <elementValue elementRef="TRACE_COLUMN" value="numerocontratto" id="81"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="82"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="83"/>
+      <elementValue elementRef="TRACE_COLUMN" value="FlagOCS" id="84"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="85"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="86"/>
+      <elementValue elementRef="TRACE_COLUMN" value="NomeFile" id="87"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="88"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="89"/>
+      <elementValue elementRef="TRACE_COLUMN" value="TipoPagamentoId" id="90"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="91"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="92"/>
+      <elementValue elementRef="TRACE_COLUMN" value="Note" id="93"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="94"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="95"/>
+      <elementValue elementRef="TRACE_COLUMN" value="procedura" id="96"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="97"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="98"/>
+      <elementValue elementRef="TRACE_COLUMN" value="FileExport" id="99"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="100"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="101"/>
+      <elementValue elementRef="TRACE_COLUMN" value="CostoEffettivo" id="102"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="103"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="104"/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
   </connection>
