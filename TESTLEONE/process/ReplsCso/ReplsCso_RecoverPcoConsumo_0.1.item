@@ -206,7 +206,7 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="920" posY="520">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_4" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== PREPARING GATEWAY REQUEST =====&quot;);&#xD;&#xA;// TODO: finish mapping query&#xD;&#xA;System.out.println(&quot;TODO: ....&quot;);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== PREPARING GATEWAY REQUEST =====&quot;);&#xD;&#xA;String header = (String) globalMap.get(&quot;payload_header&quot;);&#xD;&#xA;java.util.ArrayList&lt;String> righe = (java.util.ArrayList&lt;String>) globalMap.get(&quot;payload_righe&quot;);&#xD;&#xA;String payload = header;&#xD;&#xA;for (String riga : righe) {&#xD;&#xA; payload += &quot;|R|&quot; + riga;&#xD;&#xA;}&#xD;&#xA;globalMap.put(&quot;payload&quot;, payload);&#xD;&#xA;System.out.println(payload);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_4"/>
