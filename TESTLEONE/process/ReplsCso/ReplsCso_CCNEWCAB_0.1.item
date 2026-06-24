@@ -7,11 +7,10 @@
     <contextParameter comment="&quot;Percoso e identificativo completo del file di configurazione del Job&quot;" name="configFilePath" prompt="configFilePath?" promptNeeded="true" repositoryContextId="_32Lo0ELTEfG7HqyOm3C_vw" type="id_String" value="" internalId="_A0KZAELrEfG7HqyOm3C_vw"/>
     <contextParameter comment="&quot;Identificativo univoco del Job&quot;" name="jobName" prompt="jobName?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_y-CsoF2XEfGMmseW008dDg"/>
     <contextParameter comment="&quot;Percoso completo della cartella per la memorizzazione dei logs relativi alle esecuzioni&quot;" name="logsDirectoryPath" prompt="logsDirectoryPath?" promptNeeded="true" repositoryContextId="_A3m9gEMKEfG7HqyOm3C_vw" type="id_String" value="" internalId="_wQW-YF2XEfGMmseW008dDg"/>
-    <contextParameter comment="" name="databaseDB2Host" prompt="databaseDB2Host?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okGlaEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseDB2Schema" prompt="databaseDB2Schema?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okmlaEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseDB2Username" prompt="databaseDB2Username?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olGlaEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseDB2Database" prompt="databaseDB2Database?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2ok2laEfGvRttKKTf99g"/>
-    <contextParameter comment="" name="databaseDB2Password" prompt="databaseDB2Password?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olWlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseOcsHost" prompt="databaseOcsHost?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2okGlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseOcsUsername" prompt="databaseOcsUsername?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olGlaEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseOcsDatabase" prompt="databaseOcsDatabase?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2ok2laEfGvRttKKTf99g"/>
+    <contextParameter comment="" name="databaseOcsPassword" prompt="databaseOcsPassword?" promptNeeded="true" repositoryContextId="built-in" type="id_String" value="" internalId="_6p2olWlaEfGvRttKKTf99g"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" value="Info" show="false"/>
@@ -157,11 +156,11 @@
   <node componentName="tAS400Connection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1080" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tDBConnection_1" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="jt400-20.0.7.jar"/>
-    <elementParameter field="TEXT" name="HOST" value="context.databaseDB2Host"/>
-    <elementParameter field="TEXT" name="DBNAME" value="context.databaseDB2Database"/>
+    <elementParameter field="TEXT" name="HOST" value="context.databaseOcsHost"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.databaseOcsDatabase"/>
     <elementParameter field="TEXT" name="TYPE" value="MSSQL" show="false"/>
-    <elementParameter field="TEXT" name="USER" value="context.databaseDB2Username"/>
-    <elementParameter field="PASSWORD" name="PASS" value="context.databaseDB2Password"/>
+    <elementParameter field="TEXT" name="USER" value="context.databaseOcsUsername"/>
+    <elementParameter field="PASSWORD" name="PASS" value="context.databaseOcsPassword"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="false"/>
