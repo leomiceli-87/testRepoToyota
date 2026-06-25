@@ -199,7 +199,7 @@
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="840" posY="560">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaRow_1" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xD;&#xA;String body = row1.Body&#xD;&#xA;    .replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;)&#xD;&#xA;    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)       &#xD;&#xA;    .trim();     &#xD;&#xA;System.out.println(body);&#xD;&#xA;// TODO: estrarre dati e mappaure in GLOBALMAP&#xD;&#xA;// IdMatch, FMon (mese) e FYea (anno).&#xD;&#xA;&#xD;&#xA;globalMap.put(&quot;&quot;, null);&#xD;&#xA;&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xD;&#xA;String body = row1.Body&#xD;&#xA;    .replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;)&#xD;&#xA;    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)       &#xD;&#xA;    .trim();     &#xD;&#xA;System.out.println(body);&#xD;&#xA;&#xD;&#xA;// TODO: estrarre dati e mappaure in GLOBALMAP&#xD;&#xA;// IdMatch, FMon (mese) e FYea (anno).&#xD;&#xA;&#xD;&#xA;globalMap.put(&quot;IdMatch&quot;, null);&#xD;&#xA;globalMap.put(&quot;FMon&quot;, null);&#xD;&#xA;globalMap.put(&quot;FYea&quot;, null);&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_1"/>
@@ -219,7 +219,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
       <elementValue elementRef="VALUE" value="context.gatewayCallUrl" id="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
-      <elementValue elementRef="VALUE" value="&quot;FFun=7&quot;" id="3"/>
+      <elementValue elementRef="VALUE" value="&quot;FFun=7&amp;IdMatch=((String)globalMap.get(\&quot;IdMatch\&quot;))&amp;FMon=((String)globalMap.get(\&quot;FMon\&quot;))&amp;FYea=((String)globalMap.get(\&quot;FYea\&quot;))&quot;" id="3"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="userAgent" id="4"/>
       <elementValue elementRef="VALUE" value="context.userAgent" id="5"/>
     </elementParameter>
@@ -238,7 +238,7 @@
   </node>
   <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="680" posY="720">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_4" show="false"/>
-    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xD;&#xA;String body = row4.Body&#xD;&#xA;    .replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;)&#xD;&#xA;    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)       &#xD;&#xA;    .trim();     &#xD;&#xA;System.out.println(body);&#xD;&#xA;// TODO: estrarre dati e mappaure in GLOBALMAP&#xD;&#xA;&#xD;&#xA;globalMap.put(&quot;&quot;, null);&#xD;&#xA;&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
+    <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="System.out.println(&quot;===== RESPONSE GATEWAY =====&quot;);&#xD;&#xA;String body = row4.Body&#xD;&#xA;    .replaceAll(&quot;[\\r\\n]+&quot;, &quot; &quot;)&#xD;&#xA;    .replaceAll(&quot;\\s+&quot;, &quot; &quot;)       &#xD;&#xA;    .trim();     &#xD;&#xA;System.out.println(body);&#xD;&#xA;&#xD;&#xA;// TODO: estrarre dati e mappaure in GLOBALMAP&#xD;&#xA;&#xD;&#xA;globalMap.put(&quot;&quot;, null);&#xD;&#xA;&#xD;&#xA;System.out.println(&quot;===== END =====&quot;);"/>
     <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJava_4">
@@ -356,6 +356,17 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row7" lineStyle="0" metaname="tJavaRow_1" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_1" target="tFlowToIterate_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="IdMatch" id="0"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="1"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="2"/>
+      <elementValue elementRef="TRACE_COLUMN" value="FMon" id="3"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="4"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="5"/>
+      <elementValue elementRef="TRACE_COLUMN" value="FYea" id="6"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true" id="7"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value="" id="8"/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row7" show="false"/>
   </connection>
