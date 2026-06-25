@@ -329,7 +329,6 @@
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
   </note>
-  <note opaque="true" posX="1280" posY="200" sizeHeight="80" sizeWidth="120" text="Fcon=MyCSO&#xD;&#xA;FRows=righe dalla SELECT&#xD;&#xA;--&#xD;&#xA;Tabella Destinazione: ocs_ccnewabi"/>
   <note opaque="true" posX="1240" posY="360" sizeHeight="80" sizeWidth="120" text="TODO: mapping campi SELECT">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
   </note>
