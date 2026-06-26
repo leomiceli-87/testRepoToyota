@@ -410,11 +410,6 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row6" show="false"/>
   </connection>
-  <note opaque="true" posX="480" posY="80" sizeHeight="41" sizeWidth="241" text="Execute: ....">
-    <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
-    <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
-    <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
-  </note>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="LoadConfigFileToContext_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>

@@ -170,7 +170,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
       <elementValue elementRef="VALUE" value="context.gatewayCallUrl" id="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
-      <elementValue elementRef="VALUE" value="&quot;FFun=2&amp;((String)globalMap.get(&quot;\fun2Payload\&quot;))&quot;" id="3"/>
+      <elementValue elementRef="VALUE" value="&quot;FFun=2&amp;((String)globalMap.get(\&quot;fun2Payload\&quot;))&quot;" id="3"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="userAgent" id="4"/>
       <elementValue elementRef="VALUE" value="context.userAgent" id="5"/>
     </elementParameter>
@@ -225,7 +225,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
       <elementValue elementRef="VALUE" value="context.gatewayCallUrl" id="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
-      <elementValue elementRef="VALUE" value="&quot;FFun=2&amp;((String)globalMap.get(&quot;\fun2Payload\&quot;))&quot;" id="3"/>
+      <elementValue elementRef="VALUE" value="&quot;FFun=2&amp;((String)globalMap.get(\&quot;fun2Payload\&quot;))&quot;" id="3"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="userAgent" id="4"/>
       <elementValue elementRef="VALUE" value="context.userAgent" id="5"/>
     </elementParameter>
@@ -450,7 +450,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallUrl" id="0"/>
       <elementValue elementRef="VALUE" value="context.gatewayCallUrl" id="1"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="gatewayCallBody" id="2"/>
-      <elementValue elementRef="VALUE" value="&quot;FFun=2&amp;((String)globalMap.get(&quot;\fun2PayloadERR\&quot;))&quot;" id="3"/>
+      <elementValue elementRef="VALUE" value="&quot;FFun=2&amp;((String)globalMap.get(\&quot;fun2PayloadERR\&quot;))&quot;" id="3"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="userAgent" id="4"/>
       <elementValue elementRef="VALUE" value="context.userAgent" id="5"/>
     </elementParameter>
@@ -590,12 +590,12 @@
   <note opaque="true" posX="1120" posY="1120" sizeHeight="41" sizeWidth="121" text="STATO 30%">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="155;199;204"/>
   </note>
-  <note opaque="true" posX="200" posY="960" sizeHeight="41" sizeWidth="161" text="FILE NON ESISTE">
+  <note opaque="true" posX="200" posY="1000" sizeHeight="41" sizeWidth="161" text="FILE NON ESISTE">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
     <elementParameter field="RADIO" name="NOTELABEL_CENTER" value="false"/>
     <elementParameter field="RADIO" name="NOTETXT_TOP" value="true"/>
   </note>
-  <note opaque="true" posX="1120" posY="720" sizeHeight="41" sizeWidth="121" text="FILE ESISTE">
+  <note opaque="true" posX="1120" posY="760" sizeHeight="41" sizeWidth="121" text="FILE ESISTE">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="166;193;152"/>
     <elementParameter field="RADIO" name="NOTELABEL_CENTER" value="false"/>
     <elementParameter field="RADIO" name="NOTETXT_TOP" value="true"/>
@@ -606,10 +606,10 @@
   <note opaque="true" posX="440" posY="2000" sizeHeight="41" sizeWidth="121" text="STATO 100%">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="155;199;204"/>
   </note>
-  <note opaque="true" posX="40" posY="960" sizeHeight="41" sizeWidth="121" text="STATO 100%">
+  <note opaque="true" posX="40" posY="1000" sizeHeight="41" sizeWidth="121" text="STATO 100%">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="155;199;204"/>
   </note>
-  <note opaque="true" posX="-160" posY="1960" sizeHeight="281" sizeWidth="481" text="MASSIMO&#xD;&#xA;TODO: prima dell'update a 100% bisogna chiamare il SENDFILEGATEWAY inviando il file da qualche parte">
+  <note opaque="true" posX="-120" posY="2200" sizeHeight="121" sizeWidth="561" text="MASSIMO&#xD;&#xA;TODO: prima dell'update a 100% bisogna chiamare il SEND_FILE_GATEWAY inviando il file da qualche parte">
     <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
   </note>
   <subjob>

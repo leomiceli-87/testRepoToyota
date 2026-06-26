@@ -107,6 +107,13 @@
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tJava_1"/>
     </node>
+    <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="280" posY="400">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
+      <elementParameter field="MEMO_EDITOR_JAVA" name="CODE" value="// librerie: &#xD;&#xA;// httpclient-4.5.x.jar &#xD;&#xA;// httpmime-4.5.x.jar &#xD;&#xA;// httpcore-4.5.x.jar&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//import org.apache.http.HttpEntity; import org.apache.http.client.methods.CloseableHttpResponse; import org.apache.http.client.methods.HttpPost; import org.apache.http.entity.ContentType; import org.apache.http.entity.mime.MultipartEntityBuilder; import org.apache.http.impl.client.CloseableHttpClient; import org.apache.http.impl.client.HttpClients; import org.apache.http.util.EntityUtils; import java.io.File;  &#xD;&#xA;&#xD;&#xA;//File fileToUpload = new File(row1.filePath); // wTmpPath&#xD;&#xA;//&#xD;&#xA;//CloseableHttpClient httpClient = HttpClients.createDefault();&#xD;&#xA;//HttpPost post = new HttpPost(row1.gatewayUrl);&#xD;&#xA;// &#xD;&#xA;//HttpEntity entity = MultipartEntityBuilder.create()&#xD;&#xA;//    .addBinaryBody(&quot;FFile&quot;,       fileToUpload,&#xD;&#xA;//                   ContentType.APPLICATION_OCTET_STREAM, fileToUpload.getName())&#xD;&#xA;//    .addTextBody(&quot;FDocTip&quot;,       row1.docTip)&#xD;&#xA;//    .addTextBody(&quot;FDocId&quot;,        row1.docId)&#xD;&#xA;//    .addTextBody(&quot;FFun&quot;,          &quot;3&quot;)&#xD;&#xA;//    .addTextBody(&quot;doc_chdoctip&quot;,  row1.doc_chdoctip)&#xD;&#xA;//    .addTextBody(&quot;doc_vcdocpat&quot;,  row1.doc_vcdocpat)&#xD;&#xA;//    .addTextBody(&quot;doc_vcdocfil&quot;,  row1.doc_vcdocfil)&#xD;&#xA;//    .addTextBody(&quot;doc_biidedoc&quot;,  row1.doc_biidedoc)&#xD;&#xA;//    .build();&#xD;&#xA;// &#xD;&#xA;//post.setEntity(entity);&#xD;&#xA;// &#xD;&#xA;//CloseableHttpResponse response = httpClient.execute(post);&#xD;&#xA;// &#xD;&#xA;//try {&#xD;&#xA;//    String responseBody = EntityUtils.toString(response.getEntity(), &quot;UTF-8&quot;);&#xD;&#xA;//    globalMap.put(&quot;sendFile_responseBody&quot;, responseBody);&#xD;&#xA;//    System.out.println(&quot;Response: &quot; + responseBody);&#xD;&#xA;//} finally {&#xD;&#xA;//    response.close();&#xD;&#xA;//    httpClient.close();&#xD;&#xA;//}"/>
+      <elementParameter field="MEMO_EDITOR_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+      <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+      <metadata connector="FLOW" name="tJava_2"/>
+    </node>
     <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tREST_1" offsetLabelX="0" offsetLabelY="0" source="tREST_1" target="OUTPUT_1">
       <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
@@ -126,7 +133,7 @@
     <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJavaRow_2" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_2" target="tREST_1">
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
     </connection>
-    <note opaque="true" posX="680" posY="320" sizeHeight="281" sizeWidth="481" text="MASSIMO&#xD;&#xA;TODO: estendere con fornitura di FILE da inviare ">
+    <note opaque="true" posX="680" posY="320" sizeHeight="281" sizeWidth="481" text="MASSIMO&#xD;&#xA;TODO: estendere con fornitura di FILE da inviare &#xD;&#xA;26/06/2026: non si riesce a capire come inviare il file in binario da talned verso il gateway.&#xD;&#xA;logica da rivedere piu avanti......">
       <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
     </note>
     <subjob>
@@ -141,6 +148,11 @@
     </subjob>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_1" show="false"/>
+      <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
+      <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
+    </subjob>
+    <subjob>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJava_2" show="false"/>
       <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="93;174;241" show="false"/>
       <elementParameter field="COLOR" name="SUBJOB_COLOR" value="93;174;241"/>
     </subjob>

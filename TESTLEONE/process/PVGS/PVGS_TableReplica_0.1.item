@@ -306,13 +306,8 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
   </connection>
-  <note opaque="true" posX="480" posY="80" sizeHeight="41" sizeWidth="241" text="Execute: ....">
-    <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
-    <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
-    <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
-  </note>
   <note opaque="true" posX="600" posY="440" sizeHeight="80" sizeWidth="120" text="TODO: capire che DB usa e costruire la stringa di connessione. Poi capire quali tabelle devono essere pulite. Poi che righe inserire.&#xD;&#xA;Tutto da properties ?">
-    <elementParameter field="COLOR" name="NOTE_COLOR" value="237;201;122"/>
+    <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
   </note>
   <subjob>
