@@ -365,7 +365,7 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_2" offsetLabelX="0" offsetLabelY="0" source="tJava_2" target="LogToFile_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk2" show="false"/>
   </connection>
-  <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LogToFile_1" offsetLabelX="0" offsetLabelY="0" source="LogToFile_1" target="LoadConfigFileToContext_1">
+  <connection connectorName="TRIGGER_OUTPUT_1" label="OnComponentOk (TRIGGER_OUTPUT_1)" lineStyle="3" metaname="LogToFile_1" offsetLabelX="-13" offsetLabelY="0" source="LogToFile_1" target="LoadConfigFileToContext_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk5" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tFixedFlowInput_2" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_2" target="CallGateway_2">

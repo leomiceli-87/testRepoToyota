@@ -254,9 +254,6 @@
     <elementParameter field="TEXT" name="NOTE_FONT" value="Cambria"/>
     <elementParameter field="CHECK" name="FONT_BOLD" value="true"/>
   </note>
-  <note opaque="true" posX="760" posY="480" sizeHeight="80" sizeWidth="120" text="TODO: cosa fare dopo response GATEWAY ???">
-    <elementParameter field="COLOR" name="NOTE_COLOR" value="227;164;156"/>
-  </note>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true" show="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tPrejob_1" show="false"/>
